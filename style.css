@@ -1,9 +1,13 @@
 body {
-    background-color: #121212;
+    bbackground-color: #121212;
     color: #f0f0f0;
     font-family: Arial, sans-serif;
-    margin: 50;
     padding: 0;
+    margin: 0; /* IMPORTANTE pra evitar espaçamento estranho */
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Centraliza horizontalmente */
+    min-height: 100vh;
 }
 
 header {
