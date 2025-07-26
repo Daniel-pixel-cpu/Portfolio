@@ -88,7 +88,7 @@ header {
   content: "";
   position: absolute;
   left: 50%;
-  transform: translateX(-50%);
+  transform: translateX(-5px);
   bottom: 0;
   width: 50px;
   height: 4px;
