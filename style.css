@@ -14,13 +14,13 @@ body {
   transition: background 0.4s, color 0.4s;
 }
 
-/* TEMA CLARO */
+/* Tema Claro */
 body.light {
   background: linear-gradient(to bottom, #f5f5f5, #ffffff);
   color: #1a1a1a;
 }
 
-/* CABEÇALHO */
+/* Cabeçalho */
 header {
   padding: 60px 20px 30px;
   text-align: center;
@@ -48,19 +48,36 @@ header h1 {
   margin-top: 10px;
 }
 
-/* SEÇÕES */
+/* Seções principais */
 section {
   padding: 40px 20px;
   max-width: 800px;
-  margin: auto;
+  margin: 40px auto;
+  background: rgba(255, 255, 255, 0.04);
+  border-radius: 16px;
+  box-shadow: 0 0 20px rgba(0, 255, 195, 0.05);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  transition: background 0.3s, border 0.3s;
 }
 
-.sobre-mim p,
-.projeto-atual p {
-  margin-top: 15px;
+body.light section {
+  background: rgba(255, 255, 255, 0.6);
+  border: 1px solid rgba(0, 0, 0, 0.05);
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.05);
 }
 
-/* LINHA DO TEMPO */
+/* Títulos das seções */
+section h2 {
+  margin-bottom: 15px;
+  color: #00ffc3;
+}
+
+body.light section h2 {
+  color: #007788;
+}
+
+/* Linha do tempo */
 .container {
   max-width: 800px;
   margin: 30px auto;
@@ -87,18 +104,16 @@ section {
   border-radius: 6px;
 }
 
-/* PROJETO ATUAL */
-.projeto-atual h2 {
-  margin-bottom: 15px;
-  color: #00ffc3;
+body.light .ano {
+  color: #007788;
 }
 
-.projeto-atual p {
-  margin-top: 10px;
-  line-height: 1.6;
+body.light .evento {
+  background: rgba(0, 0, 0, 0.04);
+  border-left: 3px solid #007788;
 }
 
-/* BOTÕES */
+/* Botões flutuantes */
 .buttons {
   position: fixed;
   bottom: 20px;
@@ -125,7 +140,13 @@ section {
   background: linear-gradient(to right, #00aaff, #00ffc3);
 }
 
-/* FOOTER */
+body.light .btn {
+  background: linear-gradient(to right, #007788, #00aaff);
+  color: #fff;
+  box-shadow: 0 0 10px rgba(0, 119, 136, 0.4);
+}
+
+/* Rodapé */
 footer {
   text-align: center;
   margin-top: 60px;
@@ -135,41 +156,12 @@ footer {
   border-top: 1px solid #444;
 }
 
-/* TEMA CLARO - adaptações */
-body.light header {
-  background: linear-gradient(to right, #e2e2e2, #f5f5f5);
-  box-shadow: 0 0 20px rgba(0, 0, 0, 0.05);
-}
-
-body.light .subtitulo {
-  color: #444;
-}
-
-body.light .ano {
-  color: #007788;
-}
-
-body.light .evento {
-  background: rgba(0, 0, 0, 0.04);
-  border-left: 3px solid #007788;
-}
-
-body.light .projeto-atual h2 {
-  color: #007788;
-}
-
-body.light .btn {
-  background: linear-gradient(to right, #007788, #00aaff);
-  color: #fff;
-  box-shadow: 0 0 10px rgba(0, 119, 136, 0.4);
-}
-
 body.light footer {
   border-top: 1px solid #ddd;
   color: #555;
 }
 
-/* RESPONSIVO */
+/* Responsivo */
 @media (max-width: 768px) {
   header h1 {
     font-size: 2em;
