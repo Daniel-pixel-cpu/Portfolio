@@ -134,7 +134,7 @@
 }
 
 .sobre-mim h2:hover::after {
-  width: 150px; /* linha sublinhada maior no hover */
+  width: 200px; /* linha sublinhada maior no hover */
 }
 
 .projeto-atual h2 {
