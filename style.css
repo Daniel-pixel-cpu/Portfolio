@@ -34,9 +34,6 @@ header {
   background: linear-gradient(to right, #1c1c1c, #2a2a2a);
   box-shadow: 0 0 40px rgba(255, 255, 255, 0.05);
   border-bottom: 1px solid #333;
-  position: sticky;
-  top: 0;
-  z-index: 1000;
 }
 
 header h1 {
