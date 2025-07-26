@@ -172,7 +172,7 @@
   transition: width 0.3s ease;
 }
 
-.projeto-atual h2:hover::after {
+.projeto-atual h2 {
   width: 100px;
   font-size: 5em;
 }
