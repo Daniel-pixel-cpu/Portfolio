@@ -109,3 +109,9 @@
       position: absolute;
       top: 0;
     }
+   footer {
+     font-style: italic;
+     color: #aaa;
+     letter-spacing: 1px;
+   }
+
