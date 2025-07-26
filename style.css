@@ -149,7 +149,7 @@ footer {
   max-width: 850px;
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
   text-align: left;
-  transform: translateX(-10%);
+  transform: translateX(-5%);
 }
 
 .projeto-atual h2 {
