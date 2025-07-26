@@ -2,41 +2,33 @@
 <html lang="pt-BR">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Linha do Tempo - Daniel</title>
   <link rel="stylesheet" href="style.css" />
   <link rel="icon" type="image/png" href="Favicon.png" />
-  
-  <!-- Font Awesome para os ícones -->
-  <link
-    rel="stylesheet"
-    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
-  />
 </head>
 
 <body>
   <header>
     <h1>Portfólio do Daniel</h1>
     <p class="subtitulo">Desenvolvedor iniciante apaixonado por tecnologia e jogos</p>
-
+    
     <nav class="menu">
-    <a href="#sobre">Sobre mim</a>
-    <a href="#projeto">Projeto Atual</a>
-    <a href="#linha-tempo">Linha do Tempo</a>
-    <a href="#contato">Contato</a>
-  </nav>
+      <a href="#sobre">Sobre mim</a>
+      <a href="#linha-tempo">Linha do Tempo</a>
+      <a href="#projeto">Projeto Atual</a>
+      <a href="#contato">Contato</a>
+    </nav>
   </header>
 
-  <section class="sobre-mim">
+  <section class="sobre-mim" id="sobre">
     <h2>Sobre mim</h2>
     <p>
-      Me chamo Daniel, sou um jovem desenvolvedor com interesse em Python,
-      jogos e criação de interfaces. Sempre buscando aprender e criar projetos
-      cada vez melhores.
+      Me chamo Daniel, sou um jovem desenvolvedor com interesse em Python, jogos e criação de interfaces. Sempre buscando aprender e criar projetos cada vez melhores.
     </p>
   </section>
 
-  <div class="container">
+  <div class="container" id="linha-tempo">
     <div class="ano">2023</div>
     <div class="evento">Criei meu primeiro projeto em Python.</div>
     <div class="evento">Aprendi sobre HTML e CSS.</div>
@@ -46,40 +38,18 @@
     <div class="evento">Iniciei meu portfólio online.</div>
   </div>
 
-  <section class="projeto-atual">
+  <section class="projeto-atual" id="projeto">
     <h2>🎮 Projeto Atual: Survival Game</h2>
     <p>
-      Estou desenvolvendo um jogo em Python usando Pygame, com uma temática de
-      sobrevivência em um mundo tomado por zumbis. O jogador pode explorar o
-      mapa, coletar armas e itens de cura, e enfrentar inimigos enquanto o
-      sistema de câmera acompanha a ação.
+      Estou desenvolvendo um jogo em Python usando Pygame, com uma temática de sobrevivência em um mundo tomado por zumbis. O jogador pode explorar o mapa, coletar armas e itens de cura, e enfrentar inimigos enquanto o sistema de câmera acompanha a ação.
     </p>
     <p>
-      O projeto está em constante evolução e conta com sistema de colisão, HUD,
-      estados de jogo e muito mais. Planejo concluir uma boa parte até o final de
-      julho de 2025.
+      O projeto está em constante evolução e conta com sistema de colisão, HUD, estados de jogo e muito mais. Planejo concluir uma boa parte até o final de julho de 2025.
     </p>
   </section>
 
-  <footer>
+  <footer id="contato">
     &copy; 2025 desenvolvido por Daniel.
-
-    <div class="redes-sociais">
-      <a
-        href="https://github.com/Daniel-pixel-cpu"
-        target="_blank"
-        class="social-icon"
-        title="GitHub"
-        ><i class="fab fa-github"></i
-      ></a>
-      <a
-        href="https://linkedin.com/in/seu-perfil"
-        target="_blank"
-        class="social-icon"
-        title="LinkedIn"
-        ><i class="fab fa-linkedin"></i
-      ></a>
-    </div>
   </footer>
 
   <div class="buttons">
@@ -88,13 +58,11 @@
   </div>
 
   <script>
-    // Botão Trocar Tema
     const botaoTema = document.getElementById("botaoTema");
     botaoTema.addEventListener("click", () => {
       document.body.classList.toggle("light");
     });
 
-    // Botão Voltar ao Topo
     const voltarTopo = document.getElementById("voltarTopo");
     voltarTopo.addEventListener("click", () => {
       window.scrollTo({ top: 0, behavior: "smooth" });
