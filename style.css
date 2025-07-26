@@ -1,41 +1,40 @@
-/* Reset */
+/* Reset básico */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
-/* Corpo */
+/* Estilo base do body */
 body {
   font-family: Arial, sans-serif;
-  background-color: #121212;
-  color: #ffffff;
+  background-color: #1e1e1e;
+  color: #fff;
   line-height: 1.6;
   transition: background-color 0.3s, color 0.3s;
 }
 
-/* Tema Claro */
 body.light {
-  background-color: #f4f4f4;
-  color: #222;
+  background-color: #f9f9f9;
+  color: #111;
 }
 
-/* Header escuro */
+/* Header com fundo mais escuro */
 header {
-  background-color: #1a1a1a;
+  background-color: #111; /* <- Alterado aqui */
   color: #fff;
+  padding: 60px 20px 30px;
   text-align: center;
-  padding: 40px 20px 25px;
 }
 
 header h1 {
-  font-size: 2.4em;
+  font-size: 2.5em;
   margin-bottom: 10px;
 }
 
 .subtitulo {
   font-size: 1.1em;
-  color: #cccccc;
+  color: #ccc;
 }
 
 body.light header {
@@ -44,10 +43,10 @@ body.light header {
 }
 
 body.light .subtitulo {
-  color: #444;
+  color: #555;
 }
 
-/* Seções (Sobre mim, Projeto etc) */
+/* Seções */
 section {
   max-width: 800px;
   margin: 40px auto;
@@ -57,17 +56,17 @@ section {
 /* Sobre mim */
 .sobre-mim h2 {
   font-size: 1.8em;
-  margin-bottom: 15px;
+  margin-bottom: 10px;
 }
 
 .sobre-mim p {
   font-size: 1em;
 }
 
-/* Linha do Tempo */
+/* Linha do tempo */
 .container {
   max-width: 800px;
-  margin: auto;
+  margin: 0 auto;
   padding: 0 20px;
 }
 
@@ -86,7 +85,7 @@ section {
 
 /* Projeto Atual */
 .projeto-atual {
-  background-color: #1f1f1f;
+  background-color: #282828;
   border-radius: 10px;
   padding: 25px 20px;
   margin-top: 40px;
@@ -102,6 +101,7 @@ footer {
   color: #888;
   text-align: center;
   padding: 20px;
+  margin-top: 60px;
 }
 
 body.light footer {
@@ -109,7 +109,7 @@ body.light footer {
   color: #555;
 }
 
-/* Botões fixos */
+/* Botões fixos no canto */
 .buttons {
   position: fixed;
   bottom: 20px;
@@ -134,7 +134,7 @@ body.light footer {
   background-color: #e6b800;
 }
 
-/* Botões no tema claro */
+/* Tema claro para botões */
 body.light .btn {
   background-color: #222;
   color: #fff;
