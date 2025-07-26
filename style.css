@@ -1,58 +1,74 @@
-/* Reset básico */
+/* Reset */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
-/* Corpo da página */
+/* Corpo */
 body {
   font-family: Arial, sans-serif;
   background-color: #121212;
   color: #ffffff;
   line-height: 1.6;
-  padding: 0;
-  margin: 0;
   transition: background-color 0.3s, color 0.3s;
 }
 
-/* Tema claro */
+/* Tema Claro */
 body.light {
-  background-color: #f5f5f5;
+  background-color: #f4f4f4;
   color: #222;
 }
 
-/* Header (topo escuro) */
+/* Header escuro */
 header {
   background-color: #1a1a1a;
-  color: white;
+  color: #fff;
   text-align: center;
-  padding: 40px 20px 20px;
+  padding: 40px 20px 25px;
 }
 
 header h1 {
-  font-size: 2.5em;
+  font-size: 2.4em;
   margin-bottom: 10px;
 }
 
 .subtitulo {
   font-size: 1.1em;
   color: #cccccc;
-  margin-top: 5px;
 }
 
-/* Seções */
+body.light header {
+  background-color: #ddd;
+  color: #000;
+}
+
+body.light .subtitulo {
+  color: #444;
+}
+
+/* Seções (Sobre mim, Projeto etc) */
 section {
-  padding: 40px 20px;
   max-width: 800px;
-  margin: auto;
+  margin: 40px auto;
+  padding: 0 20px;
 }
 
-/* Linha do tempo */
+/* Sobre mim */
+.sobre-mim h2 {
+  font-size: 1.8em;
+  margin-bottom: 15px;
+}
+
+.sobre-mim p {
+  font-size: 1em;
+}
+
+/* Linha do Tempo */
 .container {
-  padding: 20px;
   max-width: 800px;
   margin: auto;
+  padding: 0 20px;
 }
 
 .ano {
@@ -63,18 +79,17 @@ section {
 }
 
 .evento {
-  margin: 10px 0 10px 20px;
+  margin: 10px 0 10px 25px;
   border-left: 3px solid #ffcc00;
   padding-left: 10px;
 }
 
-/* Projeto atual */
+/* Projeto Atual */
 .projeto-atual {
   background-color: #1f1f1f;
-  border-radius: 8px;
-  padding: 30px 20px;
-  margin: 40px auto;
-  max-width: 800px;
+  border-radius: 10px;
+  padding: 25px 20px;
+  margin-top: 40px;
 }
 
 body.light .projeto-atual {
@@ -83,30 +98,35 @@ body.light .projeto-atual {
 
 /* Footer */
 footer {
+  background-color: #111;
+  color: #888;
   text-align: center;
   padding: 20px;
-  background-color: #111;
-  color: #999;
 }
 
-/* Botões flutuantes */
+body.light footer {
+  background-color: #eee;
+  color: #555;
+}
+
+/* Botões fixos */
 .buttons {
   position: fixed;
   bottom: 20px;
   right: 20px;
   display: flex;
-  gap: 10px;
   flex-direction: column;
+  gap: 10px;
 }
 
 .btn {
   padding: 10px 15px;
   border: none;
   background-color: #ffcc00;
-  color: black;
+  color: #000;
+  font-weight: bold;
   border-radius: 5px;
   cursor: pointer;
-  font-weight: bold;
   transition: background-color 0.3s;
 }
 
@@ -114,10 +134,10 @@ footer {
   background-color: #e6b800;
 }
 
-/* Tema claro - botões */
+/* Botões no tema claro */
 body.light .btn {
   background-color: #222;
-  color: white;
+  color: #fff;
 }
 
 body.light .btn:hover {
