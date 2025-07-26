@@ -48,6 +48,39 @@ header h1 {
   margin-top: 10px;
 }
 
+/* Menu de navegação */
+nav {
+  background: rgba(255, 255, 255, 0.05); /* glass effect */
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  padding: 1rem 2rem;
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  position: relative; /* Não fixed para não sobrepor */
+  z-index: 10;
+  border-radius: 0 0 16px 16px;
+  margin: 0 20px 40px;
+}
+
+/* Links do menu */
+nav a {
+  text-decoration: none;
+  color: #00ffc3;
+  font-weight: 700;
+  padding: 0.5rem 1rem;
+  border-radius: 12px;
+  transition: background 0.3s ease, color 0.3s ease;
+}
+
+/* Hover e foco dos links do menu */
+nav a:hover,
+nav a:focus {
+  background: rgba(0, 255, 195, 0.2);
+  color: #005f5f;
+  outline: none;
+}
+
 /* Seções principais */
 section {
   padding: 40px 20px;
@@ -175,5 +208,13 @@ body.light footer {
   .btn {
     padding: 8px 12px;
     font-size: 0.9em;
+  }
+}
+
+@media (max-width: 600px) {
+  nav {
+    flex-direction: column;
+    gap: 1rem;
+    margin: 0 10px 30px;
   }
 }
