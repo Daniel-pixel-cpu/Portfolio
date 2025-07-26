@@ -76,4 +76,83 @@ header {
   color: var(--accent);
   font-size: 3.5em;
   font-weight: 700;
-  text-sha
+  text-shadow: 0 2px 5px rgba(79, 195, 247, 0.7);
+  position: relative;
+  padding-bottom: 10px;
+  cursor: default;
+  text-align: center;
+  margin-top: 60px;
+}
+
+.sobre-mim h2::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: 0;
+  width: 50px;
+  height: 4px;
+  background-color: var(--accent);
+  border-radius: 2px;
+  transition: width 0.3s ease;
+}
+
+.sobre-mim h2:hover::after {
+  width: 200px;
+}
+
+.projeto-atual {
+  max-width: 850px;
+  padding: 20px;
+  background-color: var(--card);
+  border-left: 4px solid var(--accent);
+  border-radius: 10px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+  margin: 40px 20px;
+}
+
+.projeto-atual h2 {
+  margin-top: 0;
+  color: var(--accent);
+  font-size: 2em;
+  font-weight: 700;
+  text-shadow: 0 2px 5px rgba(79, 195, 247, 0.7);
+  position: relative;
+  padding-bottom: 10px;
+  cursor: default;
+}
+
+footer {
+  text-align: center;
+  color: #999;
+  margin: 60px 0 30px;
+  font-size: 0.9em;
+  border-top: 1px solid #333;
+  padding-top: 20px;
+  width: 100%;
+  font-style: italic;
+  letter-spacing: 1px;
+}
+
+.buttons {
+  margin: 20px;
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.btn {
+  background-color: var(--accent);
+  color: var(--bg);
+  padding: 10px 20px;
+  border: none;
+  border-radius: 8px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.btn:hover {
+  background-color: #03a9f4;
+}
