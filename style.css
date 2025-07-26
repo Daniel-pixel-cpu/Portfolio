@@ -25,14 +25,24 @@ header {
   padding: 60px 20px 30px;
   text-align: center;
   background: linear-gradient(to right, #1a1a1a, #2d2d2d);
-  /* box-shadow removido para aliviar */
+  /* box-shadow removido para melhor performance */
   border-bottom: 1px solid #444;
+}
+
+/* Animação glow moderada */
+@keyframes glow {
+  0%, 100% {
+    text-shadow: 0 0 4px #00ffc3;
+  }
+  50% {
+    text-shadow: 0 0 12px #00ffc3;
+  }
 }
 
 header h1 {
   font-size: 2.5em;
-  color: #00ffc3; /* cor direta sem sombra */
-  /* animação glow removida para performance */
+  color: #00ffc3;
+  animation: glow 6s ease-in-out infinite;
 }
 
 .subtitulo {
@@ -43,8 +53,8 @@ header h1 {
 
 /* Menu de navegação */
 nav {
-  background: rgba(255, 255, 255, 0.07); /* leve glass effect */
-  /* backdrop-filter removido */
+  background: rgba(255, 255, 255, 0.07);
+  /* backdrop-filter removido para melhor desempenho */
   border-bottom: 1px solid rgba(255, 255, 255, 0.1);
   padding: 1rem 2rem;
   display: flex;
@@ -80,7 +90,6 @@ section {
   margin: 40px auto;
   background: rgba(255, 255, 255, 0.07);
   border-radius: 16px;
-  /* box-shadow reduzido e filtro removido */
   box-shadow: 0 0 10px rgba(0, 255, 195, 0.03);
   border: 1px solid rgba(255, 255, 255, 0.05);
   transition: background 0.3s, border 0.3s;
@@ -109,7 +118,6 @@ body.light section h2 {
   padding: 30px;
   border-radius: 16px;
   background: rgba(255, 255, 255, 0.07);
-  /* sem backdrop-filter */
   box-shadow: 0 0 15px rgba(0, 255, 195, 0.07);
 }
 
