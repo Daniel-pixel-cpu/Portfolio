@@ -134,6 +134,7 @@
 
 .sobre-mim h2:hover::after {
   width: 700px;
+  font-size: 2.5em;
 }
 
 .projeto-atual {
