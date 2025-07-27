@@ -22,7 +22,7 @@
 
   <main>
     <section class="formulario-contato">
-      <form id="formContato" action="https://formspree.io/f/mjkowdkn" method="POST">
+      <form action="https://formspree.io/f/mjkowdkn" method="POST">
         <label for="nome">Seu Nome</label>
         <input type="text" id="nome" name="nome" required />
 
@@ -32,10 +32,13 @@
         <label for="mensagem">Sua Mensagem</label>
         <textarea id="mensagem" name="mensagem" rows="5" required></textarea>
 
-        <!-- Campo para o assunto do e-mail -->
+        <!-- Campo oculto para o assunto -->
         <input type="hidden" name="_subject" value="Nova mensagem do portfólio!" />
 
-        <!-- Campo extra para desviar o e-mail do corpo da mensagem -->
+        <!-- Redirecionamento após envio -->
+        <input type="hidden" name="_next" value="https://daniel-pixel-cpu.github.io/portfolio/obrigado.html" />
+
+        <!-- Campo extra antispam -->
         <input type="hidden" name="email_oculto" value="Oculto por segurança" />
 
         <button type="submit" class="btn">📨 Enviar Mensagem</button>
@@ -61,27 +64,6 @@
     const voltarTopo = document.getElementById("voltarTopo");
     voltarTopo.addEventListener("click", () => {
       window.scrollTo({ top: 0, behavior: "smooth" });
-    });
-
-    const form = document.getElementById('formContato');
-    form.addEventListener('submit', function(e) {
-      e.preventDefault();
-
-      const data = new FormData(form);
-
-      fetch(form.action, {
-        method: form.method,
-        body: data,
-        headers: { 'Accept': 'application/json' }
-      }).then(response => {
-        if (response.ok) {
-          window.location.href = "https://daniel-pixel-cpu.github.io/portfolio/obrigado.html";
-        } else {
-          alert("Erro no envio, tente novamente.");
-        }
-      }).catch(() => {
-        alert("Erro na conexão, tente novamente.");
-      });
     });
   </script>
 </body>
