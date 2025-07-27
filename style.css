@@ -17,62 +17,67 @@ body {
 
 /* Tema claro com conforto visual */
 body.light {
-  background-color: #e6e6e6;
-  color: #2a2a2a;
+  background: #f1f1f1;
+  color: #222;
 }
 
 body.light header {
-  background-color: #d6d6d6;
-  color: #2a2a2a;
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+  background-color: #e0e0e0;
+  color: #222;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
 }
 
-body.light .menu a {
+body.light nav.menu a {
   color: #333;
 }
 
-body.light .menu a:hover {
+body.light nav.menu a:hover {
   color: #006699;
+  text-shadow: none;
+}
+
+body.light h1, body.light h2 {
+  text-shadow: none;
+  color: #111;
 }
 
 body.light .subtitulo {
   color: #444;
 }
 
-body.light footer {
-  background-color: #cccccc;
-  color: #2a2a2a;
+body.light section {
+  background: #ffffff;
+  color: #222;
+  box-shadow: 0 0 6px rgba(0, 0, 0, 0.05);
 }
 
 body.light .btn {
-  background-color: #c2c2c2;
-  color: #1f1f1f;
-  border: 1px solid #999;
+  background: #dddddd;
+  color: #111;
+  box-shadow: none;
 }
 
 body.light .btn:hover {
-  background-color: #b0b0b0;
-}
-
-body.light section {
-  background: rgba(255, 255, 255, 0.7);
-  color: #1f1f1f;
-  box-shadow: 0 0 8px rgba(0, 0, 0, 0.05);
+  background: #cccccc;
 }
 
 body.light .formulario-contato input,
 body.light .formulario-contato textarea {
-  background: rgba(245, 245, 245, 0.9);
-  border: 1.5px solid #aaa;
-  color: #2a2a2a;
+  background: #f9f9f9;
+  border: 1px solid #bbb;
+  color: #222;
 }
 
 body.light .formulario-contato input:focus,
 body.light .formulario-contato textarea:focus {
-  background: rgba(255, 255, 255, 0.95);
-  border-color: #777;
-  box-shadow: 0 0 6px #aaa;
-  color: #000;
+  border-color: #888;
+  background: #ffffff;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+}
+
+body.light footer {
+  background-color: #e4e4e4;
+  color: #333;
 }
 
 header {
