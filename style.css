@@ -5,91 +5,49 @@
   box-sizing: border-box;
 }
 
-/* Corpo com fundo escuro neutro e gradiente suave */
-body {
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+/* Tema escuro padrão */
+html {
   background: linear-gradient(135deg, #121212, #1c1c1c);
   color: #ddd;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   min-height: 100vh;
   padding-bottom: 120px;
   transition: background-color 0.3s ease, color 0.3s ease;
 }
 
-/* Tema claro com conforto visual */
-body.light {
-  background: #f1f1f1;
+/* Tema claro */
+html.light {
+  background-color: #e5e5e5;
+  color: #1f1f1f;
+}
+
+html.light header {
+  background-color: #dddddd;
+  color: #1f1f1f;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.08);
+}
+
+html.light nav.menu a {
   color: #222;
 }
 
-body.light header {
-  background-color: #e0e0e0;
-  color: #222;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+html.light nav.menu a:hover {
+  color: #005c99;
 }
 
-body.light nav.menu a {
-  color: #333;
-}
-
-body.light nav.menu a:hover {
-  color: #006699;
-  text-shadow: none;
-}
-
-body.light h1, body.light h2 {
-  text-shadow: none;
-  color: #111;
-}
-
-body.light .subtitulo {
-  color: #444;
-}
-
-body.light section {
-  background: #ffffff;
-  color: #222;
-  box-shadow: 0 0 6px rgba(0, 0, 0, 0.05);
-}
-
-body.light .btn {
-  background: #dddddd;
-  color: #111;
-  box-shadow: none;
-}
-
-body.light .btn:hover {
-  background: #cccccc;
-}
-
-body.light .formulario-contato input,
-body.light .formulario-contato textarea {
-  background: #f9f9f9;
-  border: 1px solid #bbb;
-  color: #222;
-}
-
-body.light .formulario-contato input:focus,
-body.light .formulario-contato textarea:focus {
-  border-color: #888;
-  background: #ffffff;
-  box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
-}
-
-body.light footer {
-  background-color: #e4e4e4;
-  color: #333;
-}
-
+/* Cabeçalho */
 header {
   padding: 30px 20px 40px;
   text-align: center;
   background-color: #181818;
-  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 2px 12px rgba(0,0,0,0.3);
   border-bottom: 1px solid #333;
   position: relative;
   z-index: 10;
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
 
+/* Menu */
 nav.menu {
   margin-bottom: 20px;
   display: flex;
@@ -122,12 +80,14 @@ nav.menu a[aria-current="page"] {
   pointer-events: none;
 }
 
+/* Títulos com brilho sutil */
 h1, h2 {
   text-shadow: 0 0 6px #aaccff;
   margin-bottom: 20px;
   font-weight: 900;
 }
 
+/* Subtítulo */
 .subtitulo {
   font-weight: 400;
   font-size: 1.15rem;
@@ -135,6 +95,7 @@ h1, h2 {
   margin-bottom: 25px;
 }
 
+/* Seções com fundo escuro translúcido */
 section {
   max-width: 800px;
   margin: 40px auto;
@@ -146,6 +107,7 @@ section {
   transition: background-color 0.3s ease;
 }
 
+/* Botões simples com leve brilho */
 .btn {
   display: inline-block;
   background: #aaccee;
@@ -168,38 +130,7 @@ section {
   box-shadow: 0 0 15px #ddeeff;
 }
 
-.formulario-contato form {
-  display: flex;
-  flex-direction: column;
-  gap: 20px;
-}
-
-.formulario-contato label {
-  font-weight: 600;
-  color: #aaccff;
-}
-
-.formulario-contato input,
-.formulario-contato textarea {
-  background: rgba(40, 40, 40, 0.8);
-  border: 1.5px solid #aaccee;
-  border-radius: 10px;
-  color: #ddeeff;
-  padding: 12px 16px;
-  font-size: 1rem;
-  transition: border-color 0.3s ease, box-shadow 0.3s ease;
-  resize: vertical;
-  outline: none;
-}
-
-.formulario-contato input:focus,
-.formulario-contato textarea:focus {
-  border-color: #ddeeff;
-  box-shadow: 0 0 10px #ddeeff;
-  background: rgba(60, 60, 60, 0.85);
-  color: #fff;
-}
-
+/* Rodapé */
 footer {
   text-align: center;
   padding: 30px 10px 50px;
@@ -208,6 +139,7 @@ footer {
   user-select: none;
 }
 
+/* Botões fixos canto inferior direito */
 .buttons {
   position: fixed;
   bottom: 25px;
