@@ -1,66 +1,76 @@
-/* Reset básico */
+/* ===============================
+   RESET BÁSICO E CONFIG INICIAL
+================================== */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
-/* Tema escuro padrão */
-html {
-  background: linear-gradient(135deg, #121212, #1c1c1c);
-  color: #ddd;
+body {
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: var(--bg-color);
+  color: var(--text-color);
   min-height: 100vh;
-  padding-bottom: 120px;
   transition: background-color 0.3s ease, color 0.3s ease;
+  padding-bottom: 100px;
 }
 
-/* Tema claro */
-html.light {
-  background-color: #e5e5e5;
-  color: #1f1f1f;
+/* ===============================
+   VARIÁVEIS DE TEMA
+================================== */
+:root {
+  --bg-color: #121212;
+  --header-bg: #1e1e1e;
+  --text-color: #f0f0f0;
+  --section-bg: #1a1a1a;
+  --box-bg: #2a2a2a;
+  --border-color: #333333;
+  --btn-bg: #2d2d2d;
+  --btn-text: #f0f0f0;
+  --btn-hover: #3a3a3a;
+  --accent-color: #aaccee;
 }
 
-html.light header {
-  background-color: #dddddd;
-  color: #1f1f1f;
-  box-shadow: 0 2px 6px rgba(0,0,0,0.08);
+body.light {
+  --bg-color: #f4f4f4;
+  --header-bg: #ffffffee;
+  --text-color: #1a1a1a;
+  --section-bg: #ffffff;
+  --box-bg: #f9f9f9;
+  --border-color: #cccccc;
+  --btn-bg: #e0e0e0;
+  --btn-text: #222222;
+  --btn-hover: #cccccc;
+  --accent-color: #005c99;
 }
 
-html.light nav.menu a {
-  color: #222;
-}
-
-html.light nav.menu a:hover {
-  color: #005c99;
-}
-
-/* Cabeçalho */
+/* ===============================
+   CABEÇALHO E MENU
+================================== */
 header {
+  background-color: var(--header-bg);
   padding: 30px 20px 40px;
   text-align: center;
-  background-color: #181818;
-  box-shadow: 0 2px 12px rgba(0,0,0,0.3);
-  border-bottom: 1px solid #333;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.2);
+  border-bottom: 1px solid var(--border-color);
   position: relative;
   z-index: 10;
-  transition: background-color 0.3s ease, color 0.3s ease;
 }
 
-/* Menu */
 nav.menu {
-  margin-bottom: 20px;
+  margin-top: 20px;
   display: flex;
   justify-content: center;
   gap: 40px;
   flex-wrap: wrap;
   font-weight: 600;
   text-transform: uppercase;
-  letter-spacing: 1.5px;
+  letter-spacing: 1.2px;
 }
 
 nav.menu a {
-  color: #aaccee;
+  color: var(--accent-color);
   text-decoration: none;
   padding: 8px 15px;
   border-radius: 12px;
@@ -69,77 +79,72 @@ nav.menu a {
 
 nav.menu a:hover {
   color: #ddeeff;
-  text-shadow: 0 0 8px #aaccff;
+  text-shadow: 0 0 8px var(--accent-color);
 }
 
 nav.menu a.active,
 nav.menu a[aria-current="page"] {
   color: #eef7ff;
   font-weight: 700;
-  text-shadow: 0 0 10px #aaccff;
+  text-shadow: 0 0 10px var(--accent-color);
   pointer-events: none;
 }
 
-/* Títulos com brilho sutil */
+/* ===============================
+   TEXTOS E TÍTULOS
+================================== */
 h1, h2 {
-  text-shadow: 0 0 6px #aaccff;
+  text-shadow: 0 0 6px var(--accent-color);
   margin-bottom: 20px;
   font-weight: 900;
 }
 
-/* Subtítulo */
 .subtitulo {
   font-weight: 400;
   font-size: 1.15rem;
-  color: #99bbcc;
+  color: var(--accent-color);
   margin-bottom: 25px;
 }
 
-/* Seções com fundo escuro translúcido */
+/* ===============================
+   SEÇÕES GERAIS
+================================== */
 section {
   max-width: 800px;
   margin: 40px auto;
-  background: rgba(20, 20, 20, 0.85);
+  background: var(--section-bg);
   border-radius: 15px;
   padding: 30px 25px;
-  box-shadow: 0 0 12px rgba(170, 200, 255, 0.2);
-  color: #cce0ff;
-  transition: background-color 0.3s ease;
+  box-shadow: 0 0 12px rgba(170, 200, 255, 0.1);
+  border: 1px solid var(--border-color);
 }
 
-/* Botões simples com leve brilho */
+/* ===============================
+   BOTÕES
+================================== */
 .btn {
   display: inline-block;
-  background: #aaccee;
-  color: #121212;
+  background-color: var(--btn-bg);
+  color: var(--btn-text);
   padding: 12px 25px;
   font-weight: 700;
-  font-size: 1.1rem;
+  font-size: 1.05rem;
   border: none;
   border-radius: 15px;
   cursor: pointer;
-  box-shadow: 0 0 8px #aaccee;
-  transition: background-color 0.3s ease, box-shadow 0.3s ease;
-  user-select: none;
+  box-shadow: 0 0 8px rgba(0, 0, 0, 0.15);
+  transition: background-color 0.3s, box-shadow 0.3s;
   text-decoration: none;
   text-align: center;
+  user-select: none;
 }
 
 .btn:hover {
-  background: #ddeeff;
-  box-shadow: 0 0 15px #ddeeff;
+  background-color: var(--btn-hover);
+  box-shadow: 0 0 15px rgba(170, 200, 255, 0.2);
 }
 
-/* Rodapé */
-footer {
-  text-align: center;
-  padding: 30px 10px 50px;
-  color: #aaccee;
-  font-weight: 500;
-  user-select: none;
-}
-
-/* Botões fixos canto inferior direito */
+/* Botões flutuantes */
 .buttons {
   position: fixed;
   bottom: 25px;
@@ -151,11 +156,58 @@ footer {
 }
 
 .buttons .btn {
-  font-size: 1.3rem;
-  padding: 12px 18px;
+  font-size: 1.2rem;
+  padding: 10px 18px;
 }
 
-/* Responsividade */
+/* ===============================
+   FORMULÁRIO DE CONTATO
+================================== */
+.formulario-contato form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.formulario-contato label {
+  font-weight: 600;
+  color: var(--accent-color);
+}
+
+.formulario-contato input,
+.formulario-contato textarea {
+  background: var(--box-bg);
+  border: 1.5px solid var(--accent-color);
+  border-radius: 10px;
+  color: var(--text-color);
+  padding: 12px 16px;
+  font-size: 1rem;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+  resize: vertical;
+  outline: none;
+}
+
+.formulario-contato input:focus,
+.formulario-contato textarea:focus {
+  border-color: #ddeeff;
+  box-shadow: 0 0 10px #ddeeff;
+}
+
+/* ===============================
+   RODAPÉ
+================================== */
+footer {
+  text-align: center;
+  padding: 30px 10px 50px;
+  color: var(--accent-color);
+  font-weight: 500;
+  background-color: var(--header-bg);
+  user-select: none;
+}
+
+/* ===============================
+   RESPONSIVIDADE
+================================== */
 @media (max-width: 768px) {
   nav.menu {
     gap: 20px;
@@ -173,7 +225,7 @@ footer {
   }
 
   .buttons .btn {
-    font-size: 1.1rem;
+    font-size: 1rem;
     padding: 10px 14px;
   }
 }
