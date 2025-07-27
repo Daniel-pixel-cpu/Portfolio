@@ -39,17 +39,23 @@
   </div>
 
   <script>
-    // Inicia no modo escuro
-    const html = document.documentElement;
-    html.classList.remove("light");
+    // Verifica se o tema foi salvo antes
+    const temaSalvo = localStorage.getItem("tema");
+    if (temaSalvo === "light") {
+      document.documentElement.classList.add("light");
+    }
 
-    // Alternar tema
-    document.getElementById("botaoTema").addEventListener("click", () => {
-      html.classList.toggle("light");
+    const botaoTema = document.getElementById("botaoTema");
+    botaoTema.addEventListener("click", () => {
+      document.documentElement.classList.toggle("light");
+
+      // Salva o novo tema
+      const temaAtual = document.documentElement.classList.contains("light") ? "light" : "dark";
+      localStorage.setItem("tema", temaAtual);
     });
 
-    // Voltar ao topo
-    document.getElementById("voltarTopo").addEventListener("click", () => {
+    const voltarTopo = document.getElementById("voltarTopo");
+    voltarTopo.addEventListener("click", () => {
       window.scrollTo({ top: 0, behavior: "smooth" });
     });
   </script>
