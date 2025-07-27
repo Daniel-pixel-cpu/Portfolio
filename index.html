@@ -1,64 +1,32 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="pt-BR" class="">
 <head>
-  <script>
-  // Carrega o tema salvo (ou escuro por padrão)
-  const temaSalvo = localStorage.getItem("tema") || "dark";
-  document.body.classList.toggle("light", temaSalvo === "light");
-
-  // Atualiza botão de tema
-  const botaoTema = document.getElementById("botaoTema");
-  if (botaoTema) {
-    botaoTema.addEventListener("click", () => {
-      const usandoClaro = document.body.classList.toggle("light");
-      localStorage.setItem("tema", usandoClaro ? "light" : "dark");
-    });
-  }
-
-  // Botão Voltar ao Topo
-  const voltarTopo = document.getElementById("voltarTopo");
-  if (voltarTopo) {
-    voltarTopo.addEventListener("click", () => {
-      window.scrollTo({ top: 0, behavior: "smooth" });
-    });
-  }
-</script>
-
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Linha do Tempo - Daniel</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Portfólio do Daniel</title>
   <link rel="stylesheet" href="style.css" />
   <link rel="icon" type="image/png" href="Favicon.png" />
 </head>
-
-<body class="light">
-  <header class="topo-gradiente animate">
+<body>
+  <header>
     <nav class="menu">
-      <a href="index.html">Sobre mim</a>
+      <a href="index.html" aria-current="page" class="active">Sobre mim</a>
       <a href="projeto.html">Projeto Atual</a>
       <a href="contato.html">Contato</a>
     </nav>
-    
+
     <h1>Portfólio do Daniel</h1>
     <p class="subtitulo">Desenvolvedor iniciante apaixonado por tecnologia e jogos</p>
   </header>
 
-  <section class="glass animate" id="sobre">
-    <h2>Sobre mim</h2>
+  <section id="sobre">
+    <h2>🧠 Sobre Mim</h2>
     <p>
-      Me chamo Daniel, sou um jovem desenvolvedor com interesse em Python, jogos e criação de interfaces. Sempre buscando aprender e criar projetos cada vez melhores.
+      Olá! Sou o Daniel, um jovem desenvolvedor com paixão por criar jogos e aprender novas tecnologias. Atualmente estou focado em Python e Pygame, mas sempre em busca de explorar novas linguagens e ferramentas.
     </p>
-  </section>
-
-  <section class="glass animate" id="linha-tempo">
-    <h2>Linha do Tempo</h2>
-    <div class="ano">2023</div>
-    <div class="evento">Criei meu primeiro projeto em Python.</div>
-    <div class="evento">Aprendi sobre HTML e CSS.</div>
-
-    <div class="ano">2024</div>
-    <div class="evento">Comecei a desenvolver jogos com Pygame.</div>
-    <div class="evento">Iniciei meu portfólio online.</div>
+    <p>
+      Meu objetivo é evoluir como programador, criar projetos interessantes e, quem sabe, inspirar outras pessoas no caminho da programação.
+    </p>
   </section>
 
   <footer id="contato">
@@ -71,13 +39,17 @@
   </div>
 
   <script>
-    const botaoTema = document.getElementById("botaoTema");
-    botaoTema.addEventListener("click", () => {
-      document.body.classList.toggle("light");
+    // Inicia no modo escuro
+    const html = document.documentElement;
+    html.classList.remove("light");
+
+    // Alternar tema
+    document.getElementById("botaoTema").addEventListener("click", () => {
+      html.classList.toggle("light");
     });
 
-    const voltarTopo = document.getElementById("voltarTopo");
-    voltarTopo.addEventListener("click", () => {
+    // Voltar ao topo
+    document.getElementById("voltarTopo").addEventListener("click", () => {
       window.scrollTo({ top: 0, behavior: "smooth" });
     });
   </script>
