@@ -1,6 +1,29 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
+  <script>
+  // Carrega o tema salvo (ou escuro por padrão)
+  const temaSalvo = localStorage.getItem("tema") || "dark";
+  document.body.classList.toggle("light", temaSalvo === "light");
+
+  // Atualiza botão de tema
+  const botaoTema = document.getElementById("botaoTema");
+  if (botaoTema) {
+    botaoTema.addEventListener("click", () => {
+      const usandoClaro = document.body.classList.toggle("light");
+      localStorage.setItem("tema", usandoClaro ? "light" : "dark");
+    });
+  }
+
+  // Botão Voltar ao Topo
+  const voltarTopo = document.getElementById("voltarTopo");
+  if (voltarTopo) {
+    voltarTopo.addEventListener("click", () => {
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    });
+  }
+</script>
+
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Contato - Daniel</title>
