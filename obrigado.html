@@ -1,56 +1,29 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="pt-BR" class="">
 <head>
-
-<script>
-  // Carrega o tema salvo (ou escuro por padrão)
-  const temaSalvo = localStorage.getItem("tema") || "dark";
-  document.body.classList.toggle("light", temaSalvo === "light");
-
-  // Atualiza botão de tema
-  const botaoTema = document.getElementById("botaoTema");
-  if (botaoTema) {
-    botaoTema.addEventListener("click", () => {
-      const usandoClaro = document.body.classList.toggle("light");
-      localStorage.setItem("tema", usandoClaro ? "light" : "dark");
-    });
-  }
-
-  // Botão Voltar ao Topo
-  const voltarTopo = document.getElementById("voltarTopo");
-  if (voltarTopo) {
-    voltarTopo.addEventListener("click", () => {
-      window.scrollTo({ top: 0, behavior: "smooth" });
-    });
-  }
-</script>
-
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Obrigado - Daniel</title>
   <link rel="stylesheet" href="style.css" />
-  <link rel="icon" href="Favicon.png" type="image/png" />
+  <link rel="icon" type="image/png" href="Favicon.png" />
 </head>
-
-<body class=light>
+<body>
   <header>
     <nav class="menu">
-      <a href="index.html#sobre">Sobre mim</a>
+      <a href="index.html">Sobre mim</a>
       <a href="projeto.html">Projeto Atual</a>
       <a href="contato.html">Contato</a>
     </nav>
 
-    <h1>Obrigado pelo contato!</h1>
-    <p class="subtitulo">Sua mensagem foi enviada com sucesso. Vou responder assim que possível.</p>
+    <h1>Portfólio do Daniel</h1>
+    <p class="subtitulo">Desenvolvedor iniciante apaixonado por tecnologia e jogos</p>
   </header>
 
-  <main>
-    <section style="text-align:center; padding: 60px 20px 120px;">
-      <p style="margin-bottom: 20px;">Enquanto isso, fique à vontade para navegar pelo site.</p>
-      <a href="index.html" class="btn" style="display: inline-block; margin-top: 10px;">Voltar para o início</a>
-    </section>
-  </main>
-
+  <section id="agradecimento">
+    <h2>✅ Obrigado pelo contato!</h2>
+    <p>Recebi sua mensagem e responderei em breve.</p>
+    <p>Enquanto isso, você pode voltar à <a href="index.html">página inicial</a>.</p>
+  </section>
 
   <footer>
     &copy; 2025 desenvolvido por Daniel.
@@ -62,13 +35,13 @@
   </div>
 
   <script>
-    const botaoTema = document.getElementById("botaoTema");
-    botaoTema.addEventListener("click", () => {
-      document.body.classList.toggle("light");
+    document.documentElement.classList.remove("light");
+
+    document.getElementById("botaoTema").addEventListener("click", () => {
+      document.documentElement.classList.toggle("light");
     });
 
-    const voltarTopo = document.getElementById("voltarTopo");
-    voltarTopo.addEventListener("click", () => {
+    document.getElementById("voltarTopo").addEventListener("click", () => {
       window.scrollTo({ top: 0, behavior: "smooth" });
     });
   </script>
