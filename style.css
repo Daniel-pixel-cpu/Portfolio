@@ -5,48 +5,32 @@
   box-sizing: border-box;
 }
 
-/* Corpo com fundo escuro e gradiente animado */
+/* Corpo com fundo escuro neutro e gradiente suave */
 body {
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  background: linear-gradient(270deg, #1a1a2e, #16213e, #0f3460, #53354a);
-  background-size: 800% 800%;
-  animation: gradientShift 20s ease infinite;
-  color: #e0e0e0;
+  background: linear-gradient(135deg, #121212, #1c1c1c);
+  color: #ddd;
   min-height: 100vh;
   padding-bottom: 120px;
   transition: background-color 0.3s ease, color 0.3s ease;
 }
 
-/* Tema claro - mantém simples */
+/* Tema claro */
 body.light {
   background: #fefefe;
   color: #222;
-  animation: none;
 }
 
-/* Gradiente animado */
-@keyframes gradientShift {
-  0% {
-    background-position: 0% 50%;
-  }
-  50% {
-    background-position: 100% 50%;
-  }
-  100% {
-    background-position: 0% 50%;
-  }
-}
-
-/* Cabeçalho com sombra neon */
+/* Cabeçalho com sombra discreta */
 header {
   padding: 30px 20px 40px;
   text-align: center;
   position: sticky;
   top: 0;
   z-index: 1000;
-  background: rgba(10,10,30,0.75);
-  box-shadow: 0 0 15px #7b2ff7, 0 0 30px #7b2ff7;
-  border-bottom: 1px solid #7b2ff7;
+  background: rgba(28, 28, 28, 0.85);
+  box-shadow: 0 0 12px rgba(150, 190, 255, 0.3);
+  border-bottom: 1px solid rgba(150, 190, 255, 0.25);
 }
 
 nav.menu {
@@ -61,78 +45,68 @@ nav.menu {
 }
 
 nav.menu a {
-  color: #c0c0ff;
+  color: #aaccee;
   text-decoration: none;
   padding: 8px 15px;
   border-radius: 12px;
   transition: color 0.3s ease, text-shadow 0.3s ease;
-  filter: drop-shadow(0 0 2px #7b2ff7);
 }
 
 nav.menu a:hover {
-  color: #fff;
+  color: #ddeeff;
   text-shadow:
-    0 0 5px #7b2ff7,
-    0 0 10px #7b2ff7,
-    0 0 20px #7b2ff7;
+    0 0 8px #aaccff;
 }
 
 nav.menu a.active,
 nav.menu a[aria-current="page"] {
-  color: #fff;
+  color: #eef7ff;
+  font-weight: 700;
   text-shadow:
-    0 0 8px #f76c6c,
-    0 0 15px #f76c6c,
-    0 0 30px #f76c6c;
+    0 0 10px #aaccff;
   pointer-events: none;
 }
 
-/* Títulos com glow */
+/* Títulos com brilho sutil */
 h1, h2 {
   text-shadow:
-    0 0 7px #7b2ff7,
-    0 0 15px #7b2ff7;
+    0 0 6px #aaccff;
   margin-bottom: 20px;
   font-weight: 900;
 }
 
-/* Subtítulo com brilho */
+/* Subtítulo */
 .subtitulo {
   font-weight: 400;
   font-size: 1.15rem;
-  color: #b0b0ff;
-  text-shadow: 0 0 5px #7b2ff7;
+  color: #99bbcc;
   margin-bottom: 25px;
 }
 
-/* Glass neón suave para seções */
+/* Seções com fundo escuro translúcido */
 section {
   max-width: 800px;
   margin: 40px auto;
-  background: rgba(30, 15, 60, 0.65);
-  border-radius: 20px;
+  background: rgba(20, 20, 20, 0.85);
+  border-radius: 15px;
   padding: 30px 25px;
-  box-shadow:
-    0 0 10px #7b2ff7,
-    inset 0 0 30px #53354a;
-  color: #d0d0ff;
+  box-shadow: 0 0 12px rgba(170, 200, 255, 0.2);
+  color: #cce0ff;
   transition: background-color 0.3s ease;
 }
 
-/* Links e botões com neon */
+/* Botões simples com leve brilho */
 .btn {
   display: inline-block;
-  background: #7b2ff7;
-  color: white;
+  background: #aaccee;
+  color: #121212;
   padding: 12px 25px;
   font-weight: 700;
   font-size: 1.1rem;
   border: none;
   border-radius: 15px;
   cursor: pointer;
-  box-shadow:
-    0 0 10px #7b2ff7,
-    0 0 25px #7b2ff7;
+  box-shadow: 0 0 8px #aaccee;
   transition: background-color 0.3s ease, box-shadow 0.3s ease;
   user-select: none;
   text-decoration: none;
@@ -140,14 +114,11 @@ section {
 }
 
 .btn:hover {
-  background: #f76c6c;
-  box-shadow:
-    0 0 15px #f76c6c,
-    0 0 40px #f76c6c;
-  color: white;
+  background: #ddeeff;
+  box-shadow: 0 0 15px #ddeeff;
 }
 
-/* Formulário com estilo futurista */
+/* Formulário clean */
 .formulario-contato form {
   display: flex;
   flex-direction: column;
@@ -155,46 +126,41 @@ section {
 }
 
 .formulario-contato label {
-  font-weight: 700;
-  color: #b0b0ff;
-  text-shadow: 0 0 5px #7b2ff7;
+  font-weight: 600;
+  color: #aaccff;
 }
 
 .formulario-contato input,
 .formulario-contato textarea {
-  background: rgba(10, 5, 30, 0.5);
-  border: 1.5px solid #7b2ff7;
-  border-radius: 12px;
-  color: #d0d0ff;
+  background: rgba(40, 40, 40, 0.8);
+  border: 1.5px solid #aaccee;
+  border-radius: 10px;
+  color: #ddeeff;
   padding: 12px 16px;
   font-size: 1rem;
   transition: border-color 0.3s ease, box-shadow 0.3s ease;
   resize: vertical;
   outline: none;
-  text-shadow: none;
 }
 
 .formulario-contato input:focus,
 .formulario-contato textarea:focus {
-  border-color: #f76c6c;
-  box-shadow:
-    0 0 10px #f76c6c,
-    0 0 20px #f76c6c;
-  background: rgba(20, 10, 40, 0.7);
+  border-color: #ddeeff;
+  box-shadow: 0 0 10px #ddeeff;
+  background: rgba(60, 60, 60, 0.85);
   color: #fff;
 }
 
-/* Rodapé com brilho suave */
+/* Rodapé com brilho leve */
 footer {
   text-align: center;
   padding: 30px 10px 50px;
-  color: #7b2ff7;
+  color: #aaccee;
   font-weight: 500;
-  text-shadow: 0 0 8px #7b2ff7;
   user-select: none;
 }
 
-/* Botões fixos no canto inferior direito com neon */
+/* Botões fixos canto inferior direito */
 .buttons {
   position: fixed;
   bottom: 25px;
@@ -232,4 +198,3 @@ footer {
     padding: 10px 14px;
   }
 }
-
