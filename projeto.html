@@ -39,13 +39,23 @@
   </div>
 
   <script>
-    document.documentElement.classList.remove("light");
+    // Verifica se o tema foi salvo antes
+    const temaSalvo = localStorage.getItem("tema");
+    if (temaSalvo === "light") {
+      document.documentElement.classList.add("light");
+    }
 
-    document.getElementById("botaoTema").addEventListener("click", () => {
+    const botaoTema = document.getElementById("botaoTema");
+    botaoTema.addEventListener("click", () => {
       document.documentElement.classList.toggle("light");
+
+      // Salva o novo tema
+      const temaAtual = document.documentElement.classList.contains("light") ? "light" : "dark";
+      localStorage.setItem("tema", temaAtual);
     });
 
-    document.getElementById("voltarTopo").addEventListener("click", () => {
+    const voltarTopo = document.getElementById("voltarTopo");
+    voltarTopo.addEventListener("click", () => {
       window.scrollTo({ top: 0, behavior: "smooth" });
     });
   </script>
