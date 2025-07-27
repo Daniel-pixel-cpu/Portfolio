@@ -17,9 +17,43 @@ body {
 
 /* Tema claro */
 body.light {
-  background: #fefefe;
-  color: #222;
+  background-color: #f2f2f2; /* cinza bem claro */
+  color: #2c2c2c; /* cinza escuro para texto */
 }
+
+body.light header {
+  background-color: #e8e8e8;
+  color: #2c2c2c;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+body.light .menu a {
+  color: #333;
+}
+
+body.light .menu a:hover {
+  color: #007acc;
+}
+
+body.light .subtitulo {
+  color: #4a4a4a;
+}
+
+body.light footer {
+  background-color: #dcdcdc;
+  color: #2c2c2c;
+}
+
+body.light .btn {
+  background-color: #d1d1d1;
+  color: #2c2c2c;
+  border: 1px solid #bbb;
+}
+
+body.light .btn:hover {
+  background-color: #c0c0c0;
+}
+
 
 header {
   padding: 30px 20px 40px;
