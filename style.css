@@ -5,247 +5,221 @@
   box-sizing: border-box;
 }
 
-/* Fontes e corpo */
+/* Corpo com fundo escuro e gradiente animado */
 body {
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  background: #121212;
-  color: #eee;
-  line-height: 1.6;
+  background: linear-gradient(270deg, #1a1a2e, #16213e, #0f3460, #53354a);
+  background-size: 800% 800%;
+  animation: gradientShift 20s ease infinite;
+  color: #e0e0e0;
   min-height: 100vh;
-  padding-bottom: 120px; /* espaço para botões fixos */
+  padding-bottom: 120px;
   transition: background-color 0.3s ease, color 0.3s ease;
 }
 
-/* Tema claro */
+/* Tema claro - mantém simples */
 body.light {
-  background: #f0f0f0;
+  background: #fefefe;
   color: #222;
+  animation: none;
 }
 
-/* Cabeçalho com gradiente e animação */
-header.topo-gradiente {
-  background: linear-gradient(135deg, #4a90e2, #9013fe);
+/* Gradiente animado */
+@keyframes gradientShift {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+/* Cabeçalho com sombra neon */
+header {
   padding: 30px 20px 40px;
   text-align: center;
-  color: white;
-  box-shadow: 0 3px 6px rgba(0,0,0,0.3);
   position: sticky;
   top: 0;
   z-index: 1000;
+  background: rgba(10,10,30,0.75);
+  box-shadow: 0 0 15px #7b2ff7, 0 0 30px #7b2ff7;
+  border-bottom: 1px solid #7b2ff7;
 }
 
-header.topo-gradiente.animate {
-  animation: fadeInDown 0.8s ease forwards;
-}
-
-/* Menu de navegação */
 nav.menu {
-  margin-bottom: 15px;
+  margin-bottom: 20px;
   display: flex;
   justify-content: center;
-  gap: 30px;
+  gap: 40px;
   flex-wrap: wrap;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
 }
 
 nav.menu a {
+  color: #c0c0ff;
   text-decoration: none;
-  color: inherit;
-  font-weight: 600;
-  padding: 8px 14px;
-  border-radius: 8px;
-  transition: background-color 0.3s ease, color 0.3s ease;
+  padding: 8px 15px;
+  border-radius: 12px;
+  transition: color 0.3s ease, text-shadow 0.3s ease;
+  filter: drop-shadow(0 0 2px #7b2ff7);
 }
 
 nav.menu a:hover {
-  background-color: rgba(255 255 255 / 0.15);
+  color: #fff;
+  text-shadow:
+    0 0 5px #7b2ff7,
+    0 0 10px #7b2ff7,
+    0 0 20px #7b2ff7;
 }
 
 nav.menu a.active,
 nav.menu a[aria-current="page"] {
-  background-color: rgba(255 255 255 / 0.3);
   color: #fff;
+  text-shadow:
+    0 0 8px #f76c6c,
+    0 0 15px #f76c6c,
+    0 0 30px #f76c6c;
   pointer-events: none;
 }
 
-/* Subtítulo */
-.subtitulo {
-  font-weight: 300;
-  font-size: 1.15rem;
-  opacity: 0.85;
-  margin-top: 4px;
+/* Títulos com glow */
+h1, h2 {
+  text-shadow:
+    0 0 7px #7b2ff7,
+    0 0 15px #7b2ff7;
+  margin-bottom: 20px;
+  font-weight: 900;
 }
 
-/* Glassmorphism para seções */
-section.glass {
-  background: rgba(255 255 255 / 0.07);
-  backdrop-filter: blur(15px);
-  -webkit-backdrop-filter: blur(15px);
-  border-radius: 20px;
-  padding: 30px 25px;
+/* Subtítulo com brilho */
+.subtitulo {
+  font-weight: 400;
+  font-size: 1.15rem;
+  color: #b0b0ff;
+  text-shadow: 0 0 5px #7b2ff7;
+  margin-bottom: 25px;
+}
+
+/* Glass neón suave para seções */
+section {
   max-width: 800px;
   margin: 40px auto;
-  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
-  color: #eee;
-  transition: color 0.3s ease;
-}
-
-body.light section.glass {
-  background: rgba(255 255 255 / 0.6);
-  color: #222;
-  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.12);
-}
-
-/* Animação suave para conteúdo */
-.animate {
-  opacity: 0;
-  transform: translateY(15px);
-  animation: fadeInUp 0.8s forwards;
-  animation-delay: 0.3s;
-}
-
-/* Botões fixos no canto inferior direito */
-.buttons {
-  position: fixed;
-  bottom: 20px;
-  right: 20px;
-  display: flex;
-  flex-direction: column;
-  gap: 12px;
-  z-index: 1500;
-}
-
-.btn {
-  background-color: #4a90e2;
-  border: none;
-  color: white;
-  padding: 10px 16px;
-  font-size: 1.15rem;
-  border-radius: 12px;
-  cursor: pointer;
-  box-shadow: 0 5px 15px rgba(74, 144, 226, 0.4);
-  transition: background-color 0.25s ease, box-shadow 0.25s ease;
-  user-select: none;
-}
-
-.btn:hover {
-  background-color: #357ABD;
-  box-shadow: 0 7px 20px rgba(53, 122, 189, 0.6);
-}
-
-/* Links do footer e textos */
-footer {
-  text-align: center;
-  padding: 25px 10px 40px;
-  font-weight: 400;
-  font-size: 0.9rem;
-  color: #999;
-  user-select: none;
-}
-
-/* Seções básicas */
-section {
-  padding: 20px 15px;
-  max-width: 900px;
-  margin: 0 auto;
-}
-
-/* Títulos */
-h1, h2 {
-  margin-bottom: 15px;
-  font-weight: 700;
-}
-
-/* Linha do tempo (exemplo) */
-.container#linha-tempo {
-  max-width: 700px;
-  margin: 50px auto 80px;
-}
-
-.ano {
-  font-weight: 700;
-  font-size: 1.6rem;
-  margin-top: 30px;
-  margin-bottom: 10px;
-  color: #4a90e2;
-}
-
-.evento {
-  background: rgba(255 255 255 / 0.1);
-  margin-bottom: 8px;
-  padding: 10px 15px;
-  border-radius: 10px;
-  font-weight: 500;
+  background: rgba(30, 15, 60, 0.65);
+  border-radius: 20px;
+  padding: 30px 25px;
+  box-shadow:
+    0 0 10px #7b2ff7,
+    inset 0 0 30px #53354a;
+  color: #d0d0ff;
   transition: background-color 0.3s ease;
 }
 
-.evento:hover {
-  background: rgba(74, 144, 226, 0.15);
+/* Links e botões com neon */
+.btn {
+  display: inline-block;
+  background: #7b2ff7;
+  color: white;
+  padding: 12px 25px;
+  font-weight: 700;
+  font-size: 1.1rem;
+  border: none;
+  border-radius: 15px;
+  cursor: pointer;
+  box-shadow:
+    0 0 10px #7b2ff7,
+    0 0 25px #7b2ff7;
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+  user-select: none;
+  text-decoration: none;
+  text-align: center;
 }
 
-/* Formulário contato */
+.btn:hover {
+  background: #f76c6c;
+  box-shadow:
+    0 0 15px #f76c6c,
+    0 0 40px #f76c6c;
+  color: white;
+}
+
+/* Formulário com estilo futurista */
 .formulario-contato form {
   display: flex;
   flex-direction: column;
-  gap: 15px;
-  max-width: 500px;
-  margin: 40px auto 60px;
-  background: rgba(255 255 255 / 0.07);
-  padding: 25px 25px 30px;
-  border-radius: 18px;
-  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.25);
-  color: #eee;
-  transition: color 0.3s ease;
-}
-
-body.light .formulario-contato form {
-  background: rgba(255 255 255 / 0.7);
-  color: #222;
-  box-shadow: 0 8px 32px rgba(0,0,0,0.1);
+  gap: 20px;
 }
 
 .formulario-contato label {
-  font-weight: 600;
+  font-weight: 700;
+  color: #b0b0ff;
+  text-shadow: 0 0 5px #7b2ff7;
 }
 
 .formulario-contato input,
 .formulario-contato textarea {
-  padding: 10px 12px;
-  border-radius: 10px;
-  border: none;
-  outline: none;
+  background: rgba(10, 5, 30, 0.5);
+  border: 1.5px solid #7b2ff7;
+  border-radius: 12px;
+  color: #d0d0ff;
+  padding: 12px 16px;
   font-size: 1rem;
-  background: rgba(255 255 255 / 0.15);
-  color: inherit;
-  transition: background-color 0.3s ease;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
   resize: vertical;
-}
-
-body.light .formulario-contato input,
-body.light .formulario-contato textarea {
-  background: rgba(0 0 0 / 0.07);
-  color: #222;
+  outline: none;
+  text-shadow: none;
 }
 
 .formulario-contato input:focus,
 .formulario-contato textarea:focus {
-  background: rgba(74 144 226 / 0.3);
+  border-color: #f76c6c;
+  box-shadow:
+    0 0 10px #f76c6c,
+    0 0 20px #f76c6c;
+  background: rgba(20, 10, 40, 0.7);
+  color: #fff;
+}
+
+/* Rodapé com brilho suave */
+footer {
+  text-align: center;
+  padding: 30px 10px 50px;
+  color: #7b2ff7;
+  font-weight: 500;
+  text-shadow: 0 0 8px #7b2ff7;
+  user-select: none;
+}
+
+/* Botões fixos no canto inferior direito com neon */
+.buttons {
+  position: fixed;
+  bottom: 25px;
+  right: 25px;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  z-index: 1500;
+}
+
+.buttons .btn {
+  font-size: 1.3rem;
+  padding: 12px 18px;
 }
 
 /* Responsividade */
-@media (max-width: 700px) {
+@media (max-width: 768px) {
   nav.menu {
-    gap: 18px;
-    font-size: 0.9rem;
+    gap: 20px;
+    font-size: 0.95rem;
   }
 
-  section.glass {
+  section {
     margin: 25px 15px;
     padding: 25px 20px;
-  }
-
-  .formulario-contato form {
-    margin: 25px 15px 50px;
-    padding: 20px 15px 25px;
   }
 
   .buttons {
@@ -253,27 +227,9 @@ body.light .formulario-contato textarea {
     right: 15px;
   }
 
-  .btn {
-    font-size: 1rem;
-    padding: 9px 14px;
+  .buttons .btn {
+    font-size: 1.1rem;
+    padding: 10px 14px;
   }
 }
 
-/* Animações */
-@keyframes fadeInUp {
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-@keyframes fadeInDown {
-  from {
-    opacity: 0;
-    transform: translateY(-15px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
