@@ -1,1 +1,60 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contato - Daniel</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="icon" type="image/png" href="Favicon.png" />
+</head>
+
+<body>
+  <header>
+    <nav class="menu">
+      <a href="index.html#sobre">Sobre mim</a>
+      <a href="index.html#linha-tempo">Linha do Tempo</a>
+      <a href="projeto.html">Projeto Atual</a>
+      <a href="contato.html">Contato</a>
+    </nav>
+    <h1>Entre em Contato</h1>
+    <p class="subtitulo">Fique à vontade para mandar uma mensagem!</p>
+  </header>
+
+  <section class="formulario-contato">
+    <form action="#" method="POST">
+      <label for="nome">Nome</label>
+      <input type="text" id="nome" name="nome" required />
+
+      <label for="email">E-mail</label>
+      <input type="email" id="email" name="email" required />
+
+      <label for="mensagem">Mensagem</label>
+      <textarea id="mensagem" name="mensagem" rows="5" required></textarea>
+
+      <button type="submit" class="btn">Enviar</button>
+    </form>
+  </section>
+
+  <footer>
+    &copy; 2025 desenvolvido por Daniel.
+  </footer>
+
+  <div class="buttons">
+    <button class="btn" id="botaoTema">🌗 Trocar Tema</button>
+    <button class="btn" id="voltarTopo">🔝 Voltar ao Topo</button>
+  </div>
+
+  <script>
+    const botaoTema = document.getElementById("botaoTema");
+    botaoTema.addEventListener("click", () => {
+      document.body.classList.toggle("light");
+    });
+
+    const voltarTopo = document.getElementById("voltarTopo");
+    voltarTopo.addEventListener("click", () => {
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    });
+  </script>
+</body>
+</html>
 
