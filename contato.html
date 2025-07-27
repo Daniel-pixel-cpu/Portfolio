@@ -22,8 +22,8 @@
     <p class="subtitulo">Quer mandar uma mensagem? Preencha o formulário abaixo 👇</p>
   </header>
 
-  <section class="formulario-contato">
-    <form action="https://formspree.io/f/mjkowdkn" method="POST" onsubmit="return handleFormSubmit(event)">
+<section class="formulario-contato">
+  <form action="https://formspree.io/f/mjkowdkn" method="POST">
     <label for="nome">Seu Nome</label>
     <input type="text" id="nome" name="nome" required />
 
@@ -33,14 +33,18 @@
     <label for="mensagem">Sua Mensagem</label>
     <textarea id="mensagem" name="mensagem" rows="5" required></textarea>
 
-    <!-- Campo oculto para não exibir o e-mail no corpo -->
+    <!-- Campo para o assunto do e-mail -->
     <input type="hidden" name="_subject" value="Nova mensagem do portfólio!" />
+
+    <!-- Redirecionamento automático após envio -->
     <input type="hidden" name="_next" value="obrigado.html" />
 
-    <button type="submit" class="btn">📨 Enviar Mensagem</button>
-    </form>
+    <!-- Campo extra para desviar o e-mail do corpo da mensagem -->
+    <input type="hidden" name="email_oculto" value="Oculto por segurança" />
 
-  </section>
+    <button type="submit" class="btn">📨 Enviar Mensagem</button>
+  </form>
+</section>
 
   <footer>
     &copy; 2025 desenvolvido por Daniel.
