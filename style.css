@@ -41,7 +41,7 @@ header {
 
 header h1 {
   font-size: 2.5em;
-  color: rgb(0, 122, 170);
+  color: #00ffc3;
   animation: glow 6s ease-in-out infinite;
 }
 
