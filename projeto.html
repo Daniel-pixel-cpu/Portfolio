@@ -1,39 +1,16 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="pt-BR" class="">
 <head>
-  <script>
-  // Carrega o tema salvo (ou escuro por padrão)
-  const temaSalvo = localStorage.getItem("tema") || "dark";
-  document.body.classList.toggle("light", temaSalvo === "light");
-
-  // Atualiza botão de tema
-  const botaoTema = document.getElementById("botaoTema");
-  if (botaoTema) {
-    botaoTema.addEventListener("click", () => {
-      const usandoClaro = document.body.classList.toggle("light");
-      localStorage.setItem("tema", usandoClaro ? "light" : "dark");
-    });
-  }
-
-  // Botão Voltar ao Topo
-  const voltarTopo = document.getElementById("voltarTopo");
-  if (voltarTopo) {
-    voltarTopo.addEventListener("click", () => {
-      window.scrollTo({ top: 0, behavior: "smooth" });
-    });
-  }
-</script>
-
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Projeto Atual - Daniel</title>
   <link rel="stylesheet" href="style.css" />
   <link rel="icon" type="image/png" href="Favicon.png" />
 </head>
-<body class="light">
-  <header class="topo-gradiente animate">
+<body>
+  <header>
     <nav class="menu">
-      <a href="index.html#sobre">Sobre mim</a>
+      <a href="index.html">Sobre mim</a>
       <a href="projeto.html" aria-current="page" class="active">Projeto Atual</a>
       <a href="contato.html">Contato</a>
     </nav>
@@ -42,8 +19,7 @@
     <p class="subtitulo">Desenvolvedor iniciante apaixonado por tecnologia e jogos</p>
   </header>
 
-  <!-- Conteúdo específico do projeto -->
-  <section class="projeto-atual glass animate" id="projeto">
+  <section id="projeto">
     <h2>🎮 Projeto Atual: Survival Game</h2>
     <p>
       Estou desenvolvendo um jogo em Python usando Pygame, com uma temática de sobrevivência em um mundo tomado por zumbis. O jogador pode explorar o mapa, coletar armas e itens de cura, e enfrentar inimigos enquanto o sistema de câmera acompanha a ação.
@@ -63,13 +39,13 @@
   </div>
 
   <script>
-    const botaoTema = document.getElementById("botaoTema");
-    botaoTema.addEventListener("click", () => {
-      document.body.classList.toggle("light");
+    document.documentElement.classList.remove("light");
+
+    document.getElementById("botaoTema").addEventListener("click", () => {
+      document.documentElement.classList.toggle("light");
     });
 
-    const voltarTopo = document.getElementById("voltarTopo");
-    voltarTopo.addEventListener("click", () => {
+    document.getElementById("voltarTopo").addEventListener("click", () => {
       window.scrollTo({ top: 0, behavior: "smooth" });
     });
   </script>
