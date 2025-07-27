@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Contato - Daniel</title>
   <link rel="stylesheet" href="style.css" />
-  <link rel="icon" type="image/png" href="Favicon.png" />
+  <link rel="icon" href="Favicon.png" type="image/png" />
 </head>
 
 <body>
@@ -16,22 +16,24 @@
       <a href="projeto.html">Projeto Atual</a>
       <a href="contato.html">Contato</a>
     </nav>
-    <h1>Entre em Contato</h1>
-    <p class="subtitulo">Fique à vontade para mandar uma mensagem!</p>
+
+    <h1>Fale Comigo</h1>
+    <p class="subtitulo">Quer mandar uma mensagem? Preencha o formulário abaixo 👇</p>
   </header>
 
   <section class="formulario-contato">
-    <form action="#" method="POST">
-      <label for="nome">Nome</label>
+    <form action="https://formspree.io/f/SEU-ENDPOINT" method="POST">
+      <label for="nome">Seu Nome</label>
       <input type="text" id="nome" name="nome" required />
 
-      <label for="email">E-mail</label>
+      <label for="email">Seu E-mail</label>
       <input type="email" id="email" name="email" required />
 
-      <label for="mensagem">Mensagem</label>
+      <label for="mensagem">Sua Mensagem</label>
       <textarea id="mensagem" name="mensagem" rows="5" required></textarea>
 
-      <button type="submit" class="btn">Enviar</button>
+      <input type="hidden" name="_subject" value="Nova mensagem do portfólio!" />
+      <button type="submit" class="btn">📨 Enviar Mensagem</button>
     </form>
   </section>
 
@@ -57,4 +59,3 @@
   </script>
 </body>
 </html>
-
