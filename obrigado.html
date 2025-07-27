@@ -2,33 +2,43 @@
 <html lang="pt-BR">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Obrigado - Daniel</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contato - Daniel</title>
   <link rel="stylesheet" href="style.css" />
   <link rel="icon" href="Favicon.png" type="image/png" />
 </head>
 
 <body>
-  <header>
+  <header class="topo-gradiente">
     <nav class="menu">
       <a href="index.html#sobre">Sobre mim</a>
       <a href="projeto.html">Projeto Atual</a>
-      <a href="contato.html">Contato</a>
+      <a href="contato.html" class="ativo">Contato</a>
     </nav>
-
-    <h1>Obrigado pelo contato!</h1>
-    <p class="subtitulo">Sua mensagem foi enviada com sucesso. Vou responder assim que possível.</p>
+    <h1>Fale Comigo</h1>
+    <p class="subtitulo">Quer mandar uma mensagem? Preencha o formulário abaixo 👇</p>
   </header>
 
-
   <main>
-    <section style="text-align:center; padding: 60px 20px 120px;">
-      <p style="margin-bottom: 20px;">Enquanto isso, fique à vontade para navegar pelo site.</p>
-      <a href="index.html" class="btn" style="display: inline-block; margin-top: 10px;">Voltar para o início</a>
+    <section class="evento glass animate" style="max-width: 600px; margin: auto;">
+      <form action="https://formspree.io/f/mjkowdkn" method="POST" class="formulario">
+        <label for="nome">Seu Nome</label>
+        <input type="text" id="nome" name="nome" required />
+
+        <label for="email">Seu E-mail</label>
+        <input type="email" id="email" name="email" required />
+
+        <label for="mensagem">Sua Mensagem</label>
+        <textarea id="mensagem" name="mensagem" rows="5" required></textarea>
+
+        <input type="hidden" name="_subject" value="Nova mensagem do portfólio!" />
+        <input type="hidden" name="_next" value="https://daniel-pixel-cpu.github.io/portfolio/obrigado.html" />
+        <input type="hidden" name="email_oculto" value="Oculto por segurança" />
+
+        <button type="submit" class="btn">📨 Enviar Mensagem</button>
+      </form>
     </section>
   </main>
-
-
 
   <footer>
     &copy; 2025 desenvolvido por Daniel.
@@ -40,13 +50,11 @@
   </div>
 
   <script>
-    const botaoTema = document.getElementById("botaoTema");
-    botaoTema.addEventListener("click", () => {
+    document.getElementById("botaoTema").addEventListener("click", () => {
       document.body.classList.toggle("light");
     });
 
-    const voltarTopo = document.getElementById("voltarTopo");
-    voltarTopo.addEventListener("click", () => {
+    document.getElementById("voltarTopo").addEventListener("click", () => {
       window.scrollTo({ top: 0, behavior: "smooth" });
     });
   </script>
