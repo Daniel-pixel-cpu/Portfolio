@@ -23,22 +23,23 @@
   </header>
 
   <section class="formulario-contato">
-    <form action="https://formspree.io/f/mjkowdkn" method="POST">
-      <!-- Campo invisível anti-spam -->
-      <input type="text" name="_honey" style="display:none">
+    <form action="https://formspree.io/f/mjkowdkn" method="POST" onsubmit="return handleFormSubmit(event)">
+    <label for="nome">Seu Nome</label>
+    <input type="text" id="nome" name="nome" required />
 
-      <label for="nome">Seu Nome</label>
-      <input type="text" id="nome" name="nome" required />
+    <label for="email">Seu E-mail</label>
+    <input type="email" id="email" name="email" required />
 
-      <label for="email">Seu E-mail</label>
-      <input type="email" id="email" name="email" required />
+    <label for="mensagem">Sua Mensagem</label>
+    <textarea id="mensagem" name="mensagem" rows="5" required></textarea>
 
-      <label for="mensagem">Sua Mensagem</label>
-      <textarea id="mensagem" name="mensagem" rows="5" required></textarea>
+    <!-- Campo oculto para não exibir o e-mail no corpo -->
+    <input type="hidden" name="_subject" value="Nova mensagem do portfólio!" />
+    <input type="hidden" name="_next" value="obrigado.html" />
 
-      <input type="hidden" name="_subject" value="Nova mensagem do portfólio!" />
-      <button type="submit" class="btn">📨 Enviar Mensagem</button>
+    <button type="submit" class="btn">📨 Enviar Mensagem</button>
     </form>
+
   </section>
 
   <footer>
