@@ -3,37 +3,69 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Projeto Atual - Seu Site</title>
-  <link rel="stylesheet" href="styles.css" />
-  <!-- styles.css é seu arquivo CSS com o brilho moderado que já fizemos -->
+  <title>Projeto Atual - Daniel</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="icon" type="image/png" href="Favicon.png" />
 </head>
 <body>
   <header>
-      <nav>
-        <a href="index.html#inicio">Início</a>
-        
-        <a href="index.html#sobre">Sobre</a>
-        
-        <a href="projeto.html" aria-current="page" class="active">Projeto Atual</a>
-        
-        <a href="index.html#contato">Contato</a>
-      </nav>
-  
-    <h1>Projeto Atual</h1>
-    <p class="subtitulo">Aqui você encontra os detalhes do projeto atual.</p>
+    <nav class="menu">
+      <a href="index.html#sobre">Sobre mim</a>
+      <a href="index.html#linha-tempo">Linha do Tempo</a>
+      <a href="projeto.html" aria-current="page" class="active">Projeto Atual</a>
+      <a href="index.html#contato">Contato</a>
+    </nav>
+
+    <h1>Portfólio do Daniel</h1>
+    <p class="subtitulo">Desenvolvedor iniciante apaixonado por tecnologia e jogos</p>
   </header>
 
-  <section id="projeto-conteudo">
-    <h2>Descrição do Projeto</h2>
+  <section class="sobre-mim" id="sobre">
+    <h2>Sobre mim</h2>
     <p>
-      Este é o espaço para você detalhar seu projeto atual. Pode adicionar imagens, textos, links e tudo que quiser.
+      Me chamo Daniel, sou um jovem desenvolvedor com interesse em Python, jogos e criação de interfaces. Sempre buscando aprender e criar projetos cada vez melhores.
     </p>
-    <!-- Coloque aqui seu conteúdo -->
   </section>
 
-  <footer>
-    &copy; 2025 Seu Nome. Todos os direitos reservados.
+  <div class="container" id="linha-tempo">
+    <div class="ano">2023</div>
+    <div class="evento">Criei meu primeiro projeto em Python.</div>
+    <div class="evento">Aprendi sobre HTML e CSS.</div>
+
+    <div class="ano">2024</div>
+    <div class="evento">Comecei a desenvolver jogos com Pygame.</div>
+    <div class="evento">Iniciei meu portfólio online.</div>
+  </div>
+
+  <section class="projeto-atual" id="projeto">
+    <h2>🎮 Projeto Atual: Survival Game</h2>
+    <p>
+      Estou desenvolvendo um jogo em Python usando Pygame, com uma temática de sobrevivência em um mundo tomado por zumbis. O jogador pode explorar o mapa, coletar armas e itens de cura, e enfrentar inimigos enquanto o sistema de câmera acompanha a ação.
+    </p>
+    <p>
+      O projeto está em constante evolução e conta com sistema de colisão, HUD, estados de jogo e muito mais. Planejo concluir uma boa parte até o final de julho de 2025.
+    </p>
+  </section>
+
+  <footer id="contato">
+    &copy; 2025 desenvolvido por Daniel.
   </footer>
+
+  <div class="buttons">
+    <button class="btn" id="botaoTema">🌗 Trocar Tema</button>
+    <button class="btn" id="voltarTopo">🔝 Voltar ao Topo</button>
+  </div>
+
+  <script>
+    const botaoTema = document.getElementById("botaoTema");
+    botaoTema.addEventListener("click", () => {
+      document.body.classList.toggle("light");
+    });
+
+    const voltarTopo = document.getElementById("voltarTopo");
+    voltarTopo.addEventListener("click", () => {
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    });
+  </script>
 </body>
 </html>
-
