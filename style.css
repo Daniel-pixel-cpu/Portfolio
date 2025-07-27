@@ -15,14 +15,14 @@ body {
   transition: background-color 0.3s ease, color 0.3s ease;
 }
 
-/* Tema claro (ajustado para conforto visual) */
+/* Tema claro confortável */
 body.light {
-  background-color: #e5e5e5; /* fundo mais neutro */
-  color: #1f1f1f; /* texto levemente escurecido */
+  background-color: #f0f0f0;
+  color: #1f1f1f;
 }
 
 body.light header {
-  background-color: #dddddd; /* menos branco */
+  background-color: #e0e0e0;
   color: #1f1f1f;
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
 }
@@ -40,7 +40,7 @@ body.light .subtitulo {
 }
 
 body.light footer {
-  background-color: #cccccc;
+  background-color: #dddddd;
   color: #1f1f1f;
 }
 
@@ -54,16 +54,41 @@ body.light .btn:hover {
   background-color: #aaaaaa;
 }
 
+/* Estilo das seções no modo claro */
+body.light section {
+  background: rgba(255, 255, 255, 0.85);
+  color: #1f1f1f;
+  box-shadow: 0 0 12px rgba(0, 0, 0, 0.1);
+}
+
+/* Inputs no modo claro */
+body.light .formulario-contato input,
+body.light .formulario-contato textarea {
+  background: rgba(250, 250, 250, 0.9);
+  border: 1.5px solid #999;
+  color: #1f1f1f;
+}
+
+body.light .formulario-contato input:focus,
+body.light .formulario-contato textarea:focus {
+  background: rgba(255, 255, 255, 0.95);
+  border-color: #555;
+  box-shadow: 0 0 8px #999;
+  color: #000;
+}
+
+/* Cabeçalho */
 header {
   padding: 30px 20px 40px;
   text-align: center;
-  background-color: #181818; /* fundo sólido */
+  background-color: #181818;
   box-shadow: 0 2px 12px rgba(0, 0, 0, 0.3);
   border-bottom: 1px solid #333;
-  position: relative; /* sem fixar */
+  position: relative;
   z-index: 10;
 }
 
+/* Menu de navegação */
 nav.menu {
   margin-bottom: 20px;
   display: flex;
@@ -85,23 +110,20 @@ nav.menu a {
 
 nav.menu a:hover {
   color: #ddeeff;
-  text-shadow:
-    0 0 8px #aaccff;
+  text-shadow: 0 0 8px #aaccff;
 }
 
 nav.menu a.active,
 nav.menu a[aria-current="page"] {
   color: #eef7ff;
   font-weight: 700;
-  text-shadow:
-    0 0 10px #aaccff;
+  text-shadow: 0 0 10px #aaccff;
   pointer-events: none;
 }
 
-/* Títulos com brilho sutil */
+/* Títulos */
 h1, h2 {
-  text-shadow:
-    0 0 6px #aaccff;
+  text-shadow: 0 0 6px #aaccff;
   margin-bottom: 20px;
   font-weight: 900;
 }
@@ -114,7 +136,7 @@ h1, h2 {
   margin-bottom: 25px;
 }
 
-/* Seções com fundo escuro translúcido */
+/* Seções */
 section {
   max-width: 800px;
   margin: 40px auto;
@@ -126,7 +148,7 @@ section {
   transition: background-color 0.3s ease;
 }
 
-/* Botões simples com leve brilho */
+/* Botões */
 .btn {
   display: inline-block;
   background: #aaccee;
@@ -149,7 +171,7 @@ section {
   box-shadow: 0 0 15px #ddeeff;
 }
 
-/* Formulário clean */
+/* Formulário */
 .formulario-contato form {
   display: flex;
   flex-direction: column;
@@ -182,7 +204,7 @@ section {
   color: #fff;
 }
 
-/* Rodapé com brilho leve */
+/* Rodapé */
 footer {
   text-align: center;
   padding: 30px 10px 50px;
@@ -191,7 +213,7 @@ footer {
   user-select: none;
 }
 
-/* Botões fixos canto inferior direito */
+/* Botões flutuantes */
 .buttons {
   position: fixed;
   bottom: 25px;
