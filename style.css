@@ -6,277 +6,162 @@
 }
 
 body {
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-family: sans-serif;
   line-height: 1.6;
-  background: linear-gradient(to bottom, #0d0d0d, #1a1a1a);
-  color: #eaeaea;
-  padding-bottom: 60px;
-  transition: background 0.4s, color 0.4s;
+  background-color: #111;
+  color: #fff;
+  padding: 0 1rem;
 }
 
-/* Tema Claro */
-body.light {
-  background: linear-gradient(to bottom, #f5f5f5, #ffffff);
-  color: #1a1a1a;
-}
-
-/* Cabeçalho */
+/* Cabeçalho e navegação */
 header {
-  padding: 60px 20px 30px;
+  padding: 2rem 0;
   text-align: center;
-  background: linear-gradient(to right, #1a1a1a, #2d2d2d);
-  /* box-shadow removido para melhor performance */
-  border-bottom: 1px solid #444;
 }
 
-/* Animação glow moderada */
-@keyframes glow {
-  0%, 100% {
-    text-shadow: 0 0 4px #00ffc3;
-  }
-  50% {
-    text-shadow: 0 0 12px #00ffc3;
-  }
+.menu {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
 }
 
-header h1 {
-  font-size: 2.5em;
-  color: #00ffc3;
-  animation: glow 6s ease-in-out infinite;
+.menu a {
+  color: #fff;
+  text-decoration: none;
+  font-weight: bold;
+  transition: color 0.3s;
+}
+
+.menu a:hover {
+  color: #00ffff;
+}
+
+h1 {
+  font-size: 2.2rem;
+  margin-bottom: 0.5rem;
 }
 
 .subtitulo {
-  font-size: 1.2em;
-  color: #ccc;
-  margin-top: 10px;
+  font-size: 1.1rem;
+  color: #aaa;
+  margin-bottom: 2rem;
 }
 
-/* Menu de navegação */
-nav {
-  background: rgba(255, 255, 255, 0.07);
-  /* backdrop-filter removido para melhor desempenho */
-  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-  padding: 1rem 2rem;
-  display: flex;
-  justify-content: center;
-  gap: 2rem;
-  position: relative;
-  z-index: 10;
-  border-radius: 0 0 16px 16px;
-  margin: 0 20px 40px;
-}
-
-/* Links do menu */
-nav a {
-  text-decoration: none;
-  color: #00ffc3;
-  font-weight: 700;
-  padding: 0.5rem 1rem;
-  border-radius: 12px;
-  transition: background 0.3s ease, color 0.3s ease;
-}
-
-nav a:hover,
-nav a:focus {
-  background: rgba(0, 255, 195, 0.15);
-  color: #005f5f;
-  outline: none;
-}
-
-/* Seções principais */
-section {
-  padding: 40px 20px;
-  max-width: 800px;
-  margin: 40px auto;
-  background: rgba(255, 255, 255, 0.07);
-  border-radius: 16px;
-  box-shadow: 0 0 10px rgba(0, 255, 195, 0.03);
-  border: 1px solid rgba(255, 255, 255, 0.05);
-  transition: background 0.3s, border 0.3s;
-}
-
-body.light section {
-  background: rgba(255, 255, 255, 0.5);
-  border: 1px solid rgba(0, 0, 0, 0.03);
-  box-shadow: none;
-}
-
-/* Títulos das seções */
-section h2 {
-  margin-bottom: 15px;
-  color: #00ffc3;
-}
-
-body.light section h2 {
-  color: #007788;
-}
-
-/* Linha do tempo */
-.container {
-  max-width: 800px;
-  margin: 30px auto;
-  padding: 30px;
-  border-radius: 16px;
-  background: rgba(255, 255, 255, 0.07);
-  box-shadow: 0 0 15px rgba(0, 255, 195, 0.07);
-}
-
-.ano {
-  font-size: 1.4em;
-  font-weight: bold;
-  color: #00ffc3;
-  margin-top: 20px;
-}
-
-.evento {
-  margin-left: 20px;
-  margin-bottom: 10px;
-  padding: 8px 12px;
-  border-left: 3px solid #00ffc3;
-  background: rgba(255, 255, 255, 0.05);
-  border-radius: 6px;
-}
-
-body.light .ano {
-  color: #007788;
-}
-
-body.light .evento {
-  background: rgba(0, 0, 0, 0.06);
-  border-left: 3px solid #007788;
-}
-
-/* Botões flutuantes */
-.buttons {
-  position: fixed;
-  bottom: 20px;
-  right: 20px;
-  display: flex;
-  gap: 12px;
-  z-index: 100;
-}
-
-.btn {
-  padding: 10px 16px;
-  border: none;
-  border-radius: 8px;
-  background: linear-gradient(to right, #00ffc3, #00aaff);
-  color: #000;
-  font-weight: bold;
-  cursor: pointer;
-  box-shadow: 0 0 8px rgba(0, 255, 195, 0.4);
-  transition: transform 0.2s, background 0.3s;
-}
-
-.btn:hover {
-  transform: scale(1.05);
-  background: linear-gradient(to right, #00aaff, #00ffc3);
-}
-
-body.light .btn {
-  background: linear-gradient(to right, #007788, #00aaff);
-  color: #fff;
-  box-shadow: 0 0 8px rgba(0, 119, 136, 0.3);
-}
-
-/* Rodapé */
-footer {
-  text-align: center;
-  margin-top: 60px;
-  padding: 20px;
-  font-size: 0.9em;
-  color: #888;
-  border-top: 1px solid #444;
-}
-
-body.light footer {
-  border-top: 1px solid #ddd;
-  color: #555;
-}
-
-/* Responsivo */
-@media (max-width: 768px) {
-  header h1 {
-    font-size: 2em;
-  }
-
-  .buttons {
-    flex-direction: column;
-    right: 10px;
-  }
-
-  .btn {
-    padding: 8px 12px;
-    font-size: 0.9em;
-  }
-}
-
-@media (max-width: 600px) {
-  nav {
-    flex-direction: column;
-    gap: 1rem;
-    margin: 0 10px 30px;
-  }
-}
-
-/* ==== CONTATO ==== */
-
+/* Formulário */
 .formulario-contato {
   max-width: 600px;
-  margin: 60px auto;
-  padding: 2rem;
-  background: rgba(255, 255, 255, 0.05);
-  border-radius: 1rem;
-  box-shadow: 0 0 10px rgba(0, 255, 255, 0.1);
-  backdrop-filter: blur(8px);
+  margin: auto;
+  padding: 1rem;
 }
 
-.formulario-contato form {
+form {
   display: flex;
   flex-direction: column;
   gap: 1rem;
 }
 
-.formulario-contato label {
-  font-weight: bold;
-  color: #ddd;
-}
-
-body.light .formulario-contato label {
-  color: #333;
-}
-
-.formulario-contato input,
-.formulario-contato textarea {
+input, textarea {
   padding: 0.8rem;
   border: none;
-  border-radius: 0.5rem;
-  background: rgba(255, 255, 255, 0.15);
-  color: #fff;
+  border-radius: 8px;
   font-size: 1rem;
+}
+
+textarea {
   resize: vertical;
 }
 
-body.light .formulario-contato input,
-body.light .formulario-contato textarea {
-  background: rgba(0, 0, 0, 0.05);
+/* Botões */
+.btn {
+  background-color: #00ffff;
   color: #000;
-}
-
-.formulario-contato input:focus,
-.formulario-contato textarea:focus {
-  outline: 2px solid #00ffff;
-}
-
-.formulario-contato .btn {
-  background-color: #00bcd4;
-  color: white;
-  border: none;
   padding: 0.8rem;
+  border: none;
+  border-radius: 8px;
+  font-weight: bold;
   cursor: pointer;
-  transition: background 0.3s;
+  transition: background-color 0.3s;
 }
 
-.formulario-contato .btn:hover {
-  background-color: #0097a7;
+.btn:hover {
+  background-color: #00cccc;
+}
+
+/* Rodapé */
+footer {
+  text-align: center;
+  padding: 2rem 1rem;
+  font-size: 0.9rem;
+  color: #aaa;
+}
+
+/* Botões flutuantes */
+.buttons {
+  position: fixed;
+  bottom: 1rem;
+  right: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+/* Tema claro */
+body.light {
+  background-color: #f5f5f5;
+  color: #111;
+}
+
+body.light .menu a {
+  color: #111;
+}
+
+body.light .menu a:hover {
+  color: #00aaaa;
+}
+
+body.light .btn {
+  background-color: #111;
+  color: #fff;
+}
+
+body.light .btn:hover {
+  background-color: #333;
+}
+
+/* 📱 Responsividade */
+@media (max-width: 768px) {
+  h1 {
+    font-size: 1.8rem;
+  }
+
+  .menu {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  .formulario-contato {
+    padding: 1rem 0.5rem;
+  }
+
+  .buttons {
+    right: 0.5rem;
+    bottom: 0.5rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .btn {
+    font-size: 0.95rem;
+    padding: 0.7rem;
+  }
+
+  input, textarea {
+    font-size: 0.95rem;
+  }
+
+  footer {
+    font-size: 0.8rem;
+  }
 }
