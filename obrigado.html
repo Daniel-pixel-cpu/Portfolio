@@ -3,22 +3,78 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Obrigado!</title>
+  <title>Mensagem Enviada</title>
   <link rel="stylesheet" href="style.css" />
+  <link rel="icon" href="Favicon.png" type="image/png" />
+  <style>
+    .agradecimento {
+      text-align: center;
+      padding: 60px 20px;
+      animation: fadeIn 1s ease-in-out;
+    }
+
+    .agradecimento .icone {
+      font-size: 4em;
+      margin-bottom: 0.3em;
+    }
+
+    .agradecimento h1 {
+      font-size: 2.5em;
+      margin-bottom: 0.5em;
+    }
+
+    .agradecimento p {
+      font-size: 1.2em;
+      color: var(--texto-claro, #444);
+    }
+
+    .agradecimento a.btn {
+      margin-top: 20px;
+      display: inline-block;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+  </style>
 </head>
+
 <body>
   <header>
-    <h1>Mensagem enviada ✅</h1>
-    <p class="subtitulo">Obrigado por entrar em contato, Daniel irá ler sua mensagem assim que possível!</p>
+    <nav class="menu">
+      <a href="index.html#sobre">Sobre mim</a>
+      <a href="projeto.html">Projeto Atual</a>
+      <a href="contato.html">Contato</a>
+    </nav>
   </header>
 
-  <section class="formulario-contato">
-    <a href="index.html" class="btn">⬅ Voltar ao Início</a>
-  </section>
+  <main class="agradecimento">
+    <div class="icone">📩</div>
+    <h1>Obrigado pela sua mensagem!</h1>
+    <p>Assim que possível, retornarei o contato. 😊</p>
+    <a href="index.html" class="btn">⬅ Voltar à Página Inicial</a>
+  </main>
 
   <footer>
     &copy; 2025 desenvolvido por Daniel.
   </footer>
+
+  <div class="buttons">
+    <button class="btn" id="botaoTema">🌗 Trocar Tema</button>
+    <button class="btn" id="voltarTopo">🔝 Voltar ao Topo</button>
+  </div>
+
+  <script>
+    const botaoTema = document.getElementById("botaoTema");
+    botaoTema.addEventListener("click", () => {
+      document.body.classList.toggle("light");
+    });
+
+    const voltarTopo = document.getElementById("voltarTopo");
+    voltarTopo.addEventListener("click", () => {
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    });
+  </script>
 </body>
 </html>
-
