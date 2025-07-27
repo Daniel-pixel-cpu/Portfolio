@@ -12,9 +12,7 @@
   <header>
     <nav class="menu">
       <a href="index.html#sobre">Sobre mim</a>
-      
       <a href="projeto.html">Projeto Atual</a>
-      
       <a href="contato.html">Contato</a>
     </nav>
 
@@ -22,29 +20,31 @@
     <p class="subtitulo">Quer mandar uma mensagem? Preencha o formulário abaixo 👇</p>
   </header>
 
-<section class="obrigado.html">
-  <form action="https://formspree.io/f/mjkowdkn" method="POST">
-    <label for="nome">Seu Nome</label>
-    <input type="text" id="nome" name="nome" required />
+  <main>
+    <section class="formulario-contato">
+      <form action="https://formspree.io/f/mjkowdkn" method="POST">
+        <label for="nome">Seu Nome</label>
+        <input type="text" id="nome" name="nome" required />
 
-    <label for="email">Seu E-mail</label>
-    <input type="email" id="email" name="email" required />
+        <label for="email">Seu E-mail</label>
+        <input type="email" id="email" name="email" required />
 
-    <label for="mensagem">Sua Mensagem</label>
-    <textarea id="mensagem" name="mensagem" rows="5" required></textarea>
+        <label for="mensagem">Sua Mensagem</label>
+        <textarea id="mensagem" name="mensagem" rows="5" required></textarea>
 
-    <!-- Campo para o assunto do e-mail -->
-    <input type="hidden" name="_subject" value="Nova mensagem do portfólio!" />
+        <!-- Campo para o assunto do e-mail -->
+        <input type="hidden" name="_subject" value="Nova mensagem do portfólio!" />
 
-    <!-- Redirecionamento automático após envio -->
-    <input type="hidden" name="_next" value="obrigado.html" />
+        <!-- Redirecionamento automático após envio -->
+        <input type="hidden" name="_next" value="obrigado.html" />
 
-    <!-- Campo extra para desviar o e-mail do corpo da mensagem -->
-    <input type="hidden" name="email_oculto" value="Oculto por segurança" />
+        <!-- Campo extra para desviar o e-mail do corpo da mensagem -->
+        <input type="hidden" name="email_oculto" value="Oculto por segurança" />
 
-    <button type="submit" class="btn">📨 Enviar Mensagem</button>
-  </form>
-</section>
+        <button type="submit" class="btn">📨 Enviar Mensagem</button>
+      </form>
+    </section>
+  </main>
 
   <footer>
     &copy; 2025 desenvolvido por Daniel.
