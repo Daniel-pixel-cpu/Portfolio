@@ -21,16 +21,14 @@ body.light {
   color: #222;
 }
 
-/* Cabeçalho com sombra discreta */
 header {
   padding: 30px 20px 40px;
   text-align: center;
-  position: sticky;
-  top: 0;
-  z-index: 1000;
-  background: rgba(28, 28, 28, 0.85);
-  box-shadow: 0 0 12px rgba(150, 190, 255, 0.3);
-  border-bottom: 1px solid rgba(150, 190, 255, 0.25);
+  background-color: #181818; /* fundo sólido */
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.3);
+  border-bottom: 1px solid #333;
+  position: relative; /* sem fixar */
+  z-index: 10;
 }
 
 nav.menu {
