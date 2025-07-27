@@ -1,4 +1,4 @@
-/* Reset básico */
+/* RESET BÁSICO */
 * {
   margin: 0;
   padding: 0;
@@ -6,162 +6,164 @@
 }
 
 body {
-  font-family: sans-serif;
+  font-family: "Segoe UI", sans-serif;
   line-height: 1.6;
-  background-color: #111;
-  color: #fff;
-  padding: 0 1rem;
+  background: #0a0a0a;
+  color: #f5f5f5;
+  transition: background 0.3s, color 0.3s;
+  padding-bottom: 120px;
 }
 
-/* Cabeçalho e navegação */
+body.light {
+  background: #f5f5f5;
+  color: #111;
+}
+
 header {
-  padding: 2rem 0;
+  padding: 2rem 1rem;
   text-align: center;
 }
 
+/* GRADIENTE NO TOPO */
+.topo-gradiente {
+  background: linear-gradient(135deg, #2d2dff, #8b5cf6);
+  color: white;
+  border-bottom-left-radius: 30px;
+  border-bottom-right-radius: 30px;
+}
+
+/* MENU */
 .menu {
   display: flex;
-  flex-wrap: wrap;
   justify-content: center;
-  gap: 1rem;
-  margin-bottom: 1.5rem;
+  gap: 2rem;
+  margin-bottom: 1rem;
+  flex-wrap: wrap;
 }
 
 .menu a {
-  color: #fff;
+  color: inherit;
   text-decoration: none;
   font-weight: bold;
   transition: color 0.3s;
 }
 
-.menu a:hover {
-  color: #00ffff;
+.menu a:hover,
+.menu a.ativo {
+  color: #ffd700;
 }
 
-h1 {
-  font-size: 2.2rem;
-  margin-bottom: 0.5rem;
-}
-
+/* SUBTÍTULO */
 .subtitulo {
   font-size: 1.1rem;
-  color: #aaa;
-  margin-bottom: 2rem;
+  margin-top: 0.5rem;
 }
 
-/* Formulário */
-.formulario-contato {
-  max-width: 600px;
-  margin: auto;
-  padding: 1rem;
+/* FORMULÁRIO COM GLASSMORPHISM */
+.glass {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  border-radius: 20px;
+  padding: 2rem;
+  margin: 2rem 1rem;
+  border: 1px solid rgba(255, 255, 255, 0.2);
 }
 
-form {
-  display: flex;
-  flex-direction: column;
-  gap: 1rem;
-}
-
-input, textarea {
-  padding: 0.8rem;
-  border: none;
-  border-radius: 8px;
-  font-size: 1rem;
-}
-
-textarea {
-  resize: vertical;
-}
-
-/* Botões */
+/* BOTÃO */
 .btn {
-  background-color: #00ffff;
-  color: #000;
-  padding: 0.8rem;
+  background: linear-gradient(135deg, #6b46c1, #805ad5);
+  color: white;
   border: none;
-  border-radius: 8px;
+  padding: 0.75rem 1.5rem;
   font-weight: bold;
+  border-radius: 10px;
   cursor: pointer;
-  transition: background-color 0.3s;
+  transition: background 0.3s;
+  margin-top: 1rem;
 }
 
 .btn:hover {
-  background-color: #00cccc;
+  background: linear-gradient(135deg, #805ad5, #6b46c1);
 }
 
-/* Rodapé */
-footer {
-  text-align: center;
-  padding: 2rem 1rem;
-  font-size: 0.9rem;
-  color: #aaa;
+.light .btn {
+  background: linear-gradient(135deg, #5b21b6, #9333ea);
+  color: white;
 }
 
-/* Botões flutuantes */
+/* FORMULÁRIO */
+input[type="text"],
+input[type="email"],
+textarea {
+  width: 100%;
+  padding: 0.75rem;
+  margin-top: 0.5rem;
+  margin-bottom: 1rem;
+  border-radius: 8px;
+  border: none;
+  font-size: 1rem;
+  background: #222;
+  color: white;
+}
+
+.light input,
+.light textarea {
+  background: #e5e5e5;
+  color: black;
+}
+
+/* ANIMAÇÃO DE ENTRADA */
+.animate {
+  animation: fadeInUp 0.6s ease-out;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* BOTÕES FIXOS */
 .buttons {
   position: fixed;
-  bottom: 1rem;
-  right: 1rem;
+  bottom: 20px;
+  right: 20px;
   display: flex;
   flex-direction: column;
-  gap: 0.5rem;
+  gap: 10px;
+  z-index: 10;
 }
 
-/* Tema claro */
-body.light {
-  background-color: #f5f5f5;
-  color: #111;
+/* FOOTER */
+footer {
+  text-align: center;
+  padding: 1rem;
+  margin-top: 2rem;
+  opacity: 0.6;
 }
 
-body.light .menu a {
-  color: #111;
-}
-
-body.light .menu a:hover {
-  color: #00aaaa;
-}
-
-body.light .btn {
-  background-color: #111;
-  color: #fff;
-}
-
-body.light .btn:hover {
-  background-color: #333;
-}
-
-/* 📱 Responsividade */
-@media (max-width: 768px) {
-  h1 {
-    font-size: 1.8rem;
-  }
-
+/* RESPONSIVO */
+@media (max-width: 600px) {
   .menu {
     flex-direction: column;
     gap: 0.5rem;
   }
 
-  .formulario-contato {
-    padding: 1rem 0.5rem;
+  .glass {
+    margin: 1rem;
+    padding: 1.5rem;
   }
 
-  .buttons {
-    right: 0.5rem;
-    bottom: 0.5rem;
+  h1 {
+    font-size: 1.5rem;
   }
-}
 
-@media (max-width: 480px) {
   .btn {
-    font-size: 0.95rem;
-    padding: 0.7rem;
-  }
-
-  input, textarea {
-    font-size: 0.95rem;
-  }
-
-  footer {
-    font-size: 0.8rem;
+    width: 100%;
   }
 }
