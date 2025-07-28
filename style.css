@@ -135,3 +135,55 @@ footer {
   font-size: 0.9rem;
   opacity: 0.7;
 }
+
+/* ===== Aparência das seções modernas ===== */
+section {
+  margin: 40px auto;
+  padding: 30px;
+  max-width: 900px;
+  border-radius: 20px;
+  backdrop-filter: blur(10px);
+  background-color: rgba(255, 255, 255, 0.05);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+  transition: transform 0.3s ease, background-color 0.3s ease;
+  animation: fadeIn 0.6s ease forwards;
+}
+
+html.light section {
+  background-color: rgba(0, 0, 0, 0.03);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* ===== Animação de entrada ===== */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ===== Estilo para a seção clicável do projeto ===== */
+.projeto-atual.clicavel {
+  cursor: pointer;
+  border: 2px solid transparent;
+  transition: border 0.3s ease, transform 0.2s ease;
+}
+
+.projeto-atual.clicavel:hover {
+  border: 2px solid #7fffd4;
+  transform: scale(1.01);
+}
+
+/* ===== Melhora para o título principal ===== */
+h1 {
+  font-size: 2.5rem;
+  margin-bottom: 10px;
+}
+
+h2 {
+  margin-bottom: 15px;
+}
