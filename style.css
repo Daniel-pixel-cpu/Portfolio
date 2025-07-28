@@ -164,6 +164,7 @@ footer {
   padding: 20px;
   margin: 20px 0;
   background-color: var(--cor-secundaria-escuro);
+  text-aling: center;
 }
 
 .clicavel:hover {
