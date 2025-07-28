@@ -6,49 +6,63 @@
 }
 
 body {
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  line-height: 1.6;
+  font-family: "Segoe UI", Roboto, sans-serif;
   background-color: var(--bg);
   color: var(--text);
-  transition: background-color 0.3s ease, color 0.3s ease;
+  line-height: 1.6;
+  transition: background-color 0.4s ease, color 0.4s ease;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
 }
 
+/* Paleta padrão (claro) e dark */
 :root {
-  --bg: #f0fff4;
-  --text: #222;
+  --bg: #f9fffa;
+  --text: #1a202c;
   --primary: #2f855a;
-  --secondary: #48bb78;
-  --button-bg: #38a169;
+  --secondary: #38b2ac;
+  --accent: #48bb78;
+  --button-bg: #2f855a;
+  --button-hover: #276749;
   --button-text: #fff;
-  --button-hover: #2f855a;
   --section-bg: rgba(255, 255, 255, 0.9);
-  --section-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
-  --section-border: 1px solid #d4f5e0;
+  --section-border: 1px solid #c6f6d5;
+  --section-shadow: 0 8px 24px rgba(0, 0, 0, 0.06);
 }
 
 .dark {
-  --bg: #121212;
-  --text: #e0e0e0;
+  --bg: #0d1117;
+  --text: #e6edf3;
   --primary: #90ee90;
-  --secondary: #00ff9f;
-  --button-bg: #1f1f1f;
-  --button-text: #00ff9f;
-  --button-hover: #333;
-  --section-bg: rgba(0, 0, 0, 0.3);
+  --secondary: #00ffbf;
+  --accent: #00ffaa;
+  --button-bg: #1a1a1a;
+  --button-hover: #2c2c2c;
+  --button-text: #00ffbf;
+  --section-bg: rgba(0, 0, 0, 0.35);
+  --section-border: 1px solid rgba(255, 255, 255, 0.1);
   --section-shadow: 0 8px 32px rgba(0, 0, 0, 0.6);
-  --section-border: 1px solid rgba(255, 255, 255, 0.2);
 }
 
 /* Cabeçalho */
 header {
+  background: linear-gradient(135deg, var(--primary), var(--secondary));
   padding: 2rem;
   text-align: center;
-  background: linear-gradient(45deg, var(--primary), var(--secondary));
   color: white;
-  border-bottom: 4px solid var(--secondary);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+header h1 {
+  font-size: 2.5rem;
+  margin-bottom: 0.3rem;
+  text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.3);
+}
+
+.subtitulo {
+  font-size: 1.2rem;
+  opacity: 0.9;
 }
 
 .menu {
@@ -57,86 +71,99 @@ header {
   gap: 2rem;
   margin-bottom: 1rem;
 }
+
 .menu a {
-  text-decoration: none;
   color: white;
+  text-decoration: none;
   font-weight: bold;
   position: relative;
+  transition: 0.3s;
 }
 .menu a::after {
   content: "";
   position: absolute;
-  width: 0;
-  height: 2px;
-  bottom: -4px;
+  bottom: -5px;
   left: 0;
+  width: 0%;
+  height: 2px;
   background-color: white;
-  transition: 0.3s;
+  transition: width 0.3s;
 }
 .menu a:hover::after {
   width: 100%;
 }
 
-/* Seções com estilo */
+/* Seção de agradecimento */
 section {
   background: var(--section-bg);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border-radius: 1.5rem;
   box-shadow: var(--section-shadow);
   border: var(--section-border);
   padding: 3rem 2rem;
-  margin: 2rem auto;
-  width: 90%;
+  margin: 3rem auto;
   max-width: 800px;
-  border-radius: 1rem;
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
-  transition: all 0.3s ease;
+  width: 90%;
+  text-align: center;
+  transition: all 0.4s ease;
 }
 
 #agradecimento h2 {
-  font-size: 2rem;
+  font-size: 2.2rem;
   margin-bottom: 1rem;
-  color: var(--primary);
+  color: var(--accent);
+  text-shadow: 0 0 8px rgba(72, 187, 120, 0.4);
 }
+
 #agradecimento p {
   font-size: 1.1rem;
-  margin: 0.5rem 0;
+  margin: 0.8rem 0;
 }
+
 #agradecimento a {
   color: var(--secondary);
   text-decoration: underline;
 }
 #agradecimento a:hover {
-  color: var(--primary);
+  color: var(--accent);
 }
 
-/* Botões */
+/* Botões flutuantes */
 .buttons {
   position: fixed;
   bottom: 1rem;
   right: 1rem;
   display: flex;
   flex-direction: column;
-  gap: 0.5rem;
+  gap: 0.7rem;
 }
+
 .btn {
-  padding: 0.6rem 1rem;
-  font-size: 0.9rem;
+  padding: 0.7rem 1.2rem;
+  font-size: 0.95rem;
   background-color: var(--button-bg);
   color: var(--button-text);
   border: none;
-  border-radius: 6px;
+  border-radius: 10px;
   cursor: pointer;
-  transition: background 0.3s;
+  font-weight: 600;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  transition: background 0.3s, transform 0.2s;
 }
+
 .btn:hover {
   background-color: var(--button-hover);
+  transform: scale(1.05);
 }
 
 /* Rodapé */
 footer {
-  text-align: center;
-  padding: 1rem;
   margin-top: auto;
+  padding: 1rem;
+  text-align: center;
   background-color: var(--primary);
   color: white;
+  font-weight: bold;
+  letter-spacing: 0.5px;
 }
