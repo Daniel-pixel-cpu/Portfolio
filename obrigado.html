@@ -1,19 +1,25 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-<script>
-  // Tema é aplicado logo no início, antes do carregamento do CSS
-  (function () {
-    const temaSalvo = localStorage.getItem("tema");
-    if (temaSalvo === "dark") {
-      document.documentElement.classList.add("dark");
-    }
-  })();
-</script>
-  
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Obrigado - Daniel</title>
+
+  <!-- AQUI: aplica tema salvo ANTES de carregar o CSS -->
+  <script>
+    (function () {
+      try {
+        const temaSalvo = localStorage.getItem("tema");
+        if (temaSalvo === "dark") {
+          document.documentElement.classList.add("dark");
+        }
+      } catch (e) {
+        console.warn("Erro ao aplicar tema salvo:", e);
+      }
+    })();
+  </script>
+
+  <!-- Agora carrega o estilo já com a classe certa -->
   <link rel="stylesheet" href="estilo_obrigado.css" />
   <link rel="icon" type="image/png" href="Favicon.png" />
   <script src="script.js" defer></script>
