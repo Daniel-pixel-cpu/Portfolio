@@ -1,148 +1,127 @@
-/* Estilo base */
-body {
+/* Reset básico */
+* {
   margin: 0;
-  font-family: 'Segoe UI', sans-serif;
-  background-color: #f5f5f5;
-  color: #222;
-  transition: background-color 0.3s, color 0.3s;
+  padding: 0;
+  box-sizing: border-box;
 }
 
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  line-height: 1.6;
+  background-color: var(--bg);
+  color: var(--text);
+  transition: background-color 0.3s ease, color 0.3s ease;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+:root {
+  --bg: #f0fff4;
+  --text: #222;
+  --primary: #2f855a;
+  --secondary: #48bb78;
+  --button-bg: #38a169;
+  --button-text: #fff;
+  --button-hover: #2f855a;
+}
+
+.dark {
+  --bg: #121212;
+  --text: #e0e0e0;
+  --primary: #90ee90;
+  --secondary: #00ff9f;
+  --button-bg: #1f1f1f;
+  --button-text: #00ff9f;
+  --button-hover: #333;
+}
+
+/* Cabeçalho */
 header {
-  background: linear-gradient(90deg, #00c9ff, #92fe9d);
-  color: #000;
-  padding: 2rem 1rem;
+  padding: 2rem;
   text-align: center;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  background: linear-gradient(45deg, var(--primary), var(--secondary));
+  color: white;
+  border-bottom: 4px solid var(--secondary);
 }
 
+/* Menu */
 .menu {
   display: flex;
   justify-content: center;
   gap: 2rem;
   margin-bottom: 1rem;
-  flex-wrap: wrap;
 }
-
 .menu a {
   text-decoration: none;
-  color: inherit;
+  color: white;
   font-weight: bold;
-  padding: 0.5rem;
-  transition: color 0.3s, background-color 0.3s;
+  position: relative;
+}
+.menu a::after {
+  content: "";
+  position: absolute;
+  width: 0;
+  height: 2px;
+  bottom: -4px;
+  left: 0;
+  background-color: white;
+  transition: 0.3s;
+}
+.menu a:hover::after {
+  width: 100%;
 }
 
-.menu a:hover {
-  background-color: rgba(0, 0, 0, 0.1);
-  border-radius: 8px;
-}
-
-h1 {
-  font-size: 2.5rem;
-  margin: 0;
-}
-
-.subtitulo {
-  margin-top: 0.5rem;
-  font-size: 1.2rem;
-  opacity: 0.8;
-}
-
+/* Seção de agradecimento */
 #agradecimento {
-  max-width: 600px;
-  margin: 3rem auto;
-  padding: 2rem;
-  background: rgba(255, 255, 255, 0.8);
-  border-radius: 16px;
-  box-shadow: 0 0 16px rgba(0, 0, 0, 0.08);
   text-align: center;
-  backdrop-filter: blur(8px);
+  padding: 4rem 2rem;
 }
-
 #agradecimento h2 {
   font-size: 2rem;
-  color: #2c7;
+  margin-bottom: 1rem;
+  color: var(--primary);
 }
-
+#agradecimento p {
+  font-size: 1.1rem;
+  margin: 0.5rem 0;
+}
 #agradecimento a {
-  color: #00bfff;
-  text-decoration: none;
-  font-weight: bold;
-}
-
-#agradecimento a:hover {
+  color: var(--secondary);
   text-decoration: underline;
 }
+#agradecimento a:hover {
+  color: var(--primary);
+}
 
+/* Botões flutuantes */
+.buttons {
+  position: fixed;
+  bottom: 1rem;
+  right: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+.btn {
+  padding: 0.6rem 1rem;
+  font-size: 0.9rem;
+  background-color: var(--button-bg);
+  color: var(--button-text);
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+.btn:hover {
+  background-color: var(--button-hover);
+}
+
+/* Rodapé */
 footer {
   text-align: center;
   padding: 1rem;
-  font-size: 0.9rem;
-  color: #666;
-  margin-top: 2rem;
-}
-
-/* Botões */
-.buttons {
-  position: fixed;
-  bottom: 20px;
-  right: 20px;
-  display: flex;
-  gap: 1rem;
-}
-
-.btn {
-  padding: 0.6rem 1rem;
-  background: #00c9ff;
-  border: none;
-  border-radius: 12px;
-  font-weight: bold;
-  cursor: pointer;
-  color: black;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
-  transition: background 0.3s, transform 0.2s;
-}
-
-.btn:hover {
-  background: #009ac6;
-  transform: translateY(-2px);
-}
-
-/* Tema Escuro */
-body.dark-mode {
-  background-color: #0d1117;
-  color: #e0e0e0;
-}
-
-body.dark-mode header {
-  background: linear-gradient(90deg, #0ff, #6ff);
-  color: #000;
-  box-shadow: 0 4px 12px rgba(0, 255, 255, 0.2);
-}
-
-body.dark-mode .menu a:hover {
-  background-color: rgba(255, 255, 255, 0.1);
-}
-
-body.dark-mode #agradecimento {
-  background: rgba(20, 20, 30, 0.6);
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  color: #e0e0e0;
-}
-
-body.dark-mode a {
-  color: #6cf;
-}
-
-/* Responsividade */
-@media (max-width: 600px) {
-  header h1 {
-    font-size: 2rem;
-  }
-  .menu {
-    flex-direction: column;
-    gap: 0.8rem;
-  }
-  #agradecimento {
-    margin: 2rem 1rem;
-  }
+  margin-top: auto;
+  background-color: var(--primary);
+  color: white;
 }
