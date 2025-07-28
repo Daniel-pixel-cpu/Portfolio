@@ -1,25 +1,56 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
+  <script>
+    (function () {
+      const temaSalvo = localStorage.getItem("tema");
+      if (temaSalvo === "claro") {
+        document.documentElement.classList.add("light");
+      }
+    })();
+  </script>
+
   <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Obrigado - Daniel</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Obrigado!</title>
   <link rel="stylesheet" href="estilo_obrigado.css" />
   <link rel="icon" type="image/png" href="Favicon.png" />
+  <script src="script.js" defer></script>
   <script defer src="script.js"></script>
 </head>
+
 <body>
   <header>
+    <nav class="menu">
+      <a href="index.html">Sobre mim</a>
+      <a href="projeto.html">Projeto Atual</a>
+      <a href="contato.html">Contato</a>
+    </nav>
+
+    <h1>Portfólio do Daniel</h1>
+    <p class="subtitulo">Desenvolvedor iniciante apaixonado por tecnologia e jogos</p>
     <button id="botaoTema">🌗 Tema</button>
   </header>
 
+  <section id="agradecimento">
+    <h2>✅ Obrigado pelo contato!</h2>
+    <p>Recebi sua mensagem e responderei em breve.</p>
+    <p>Enquanto isso, você pode voltar à <a href="index.html">página inicial</a></p>
+  </section>
   <main>
     <h1>Obrigado pelo seu contato!</h1>
     <p>Recebemos sua mensagem e responderemos em breve.</p>
   </main>
 
   <footer>
+    &copy; 2025 desenvolvido por Daniel.
     <button id="voltarTopo">🔝 Voltar ao topo</button>
   </footer>
+
+  <div class="buttons">
+    <button class="btn" id="botaoTema">🌗 Trocar Tema</button>
+  </div>
 </body>
 </html>
