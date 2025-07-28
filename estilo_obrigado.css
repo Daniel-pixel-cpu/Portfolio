@@ -1,4 +1,4 @@
-/* Reset básico */
+/* Reset */
 * {
   margin: 0;
   padding: 0;
@@ -24,6 +24,9 @@ body {
   --button-bg: #38a169;
   --button-text: #fff;
   --button-hover: #2f855a;
+  --section-bg: rgba(255, 255, 255, 0.9);
+  --section-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+  --section-border: 1px solid #d4f5e0;
 }
 
 .dark {
@@ -34,6 +37,9 @@ body {
   --button-bg: #1f1f1f;
   --button-text: #00ff9f;
   --button-hover: #333;
+  --section-bg: rgba(0, 0, 0, 0.3);
+  --section-shadow: 0 8px 32px rgba(0, 0, 0, 0.6);
+  --section-border: 1px solid rgba(255, 255, 255, 0.2);
 }
 
 /* Cabeçalho */
@@ -45,7 +51,6 @@ header {
   border-bottom: 4px solid var(--secondary);
 }
 
-/* Menu */
 .menu {
   display: flex;
   justify-content: center;
@@ -72,11 +77,21 @@ header {
   width: 100%;
 }
 
-/* Seção de agradecimento */
-#agradecimento {
-  text-align: center;
-  padding: 4rem 2rem;
+/* Seções com estilo */
+section {
+  background: var(--section-bg);
+  box-shadow: var(--section-shadow);
+  border: var(--section-border);
+  padding: 3rem 2rem;
+  margin: 2rem auto;
+  width: 90%;
+  max-width: 800px;
+  border-radius: 1rem;
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  transition: all 0.3s ease;
 }
+
 #agradecimento h2 {
   font-size: 2rem;
   margin-bottom: 1rem;
@@ -94,7 +109,7 @@ header {
   color: var(--primary);
 }
 
-/* Botões flutuantes */
+/* Botões */
 .buttons {
   position: fixed;
   bottom: 1rem;
