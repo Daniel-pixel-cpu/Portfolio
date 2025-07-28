@@ -30,7 +30,4 @@ document.addEventListener("DOMContentLoaded", () => {
     voltarTopo.addEventListener("click", () => {
       window.scrollTo({ top: 0, behavior: "smooth" });
     });
-  } else {
-    console.warn("❗ Botão voltar ao topo não encontrado na página.");
-  }
 });
