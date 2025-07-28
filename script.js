@@ -9,19 +9,19 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // Aplica o tema salvo
   const temaSalvo = localStorage.getItem("tema");
-  if (temaSalvo === "claro") {
-    html.classList.add("light");
-    console.log("🎨 Tema salvo: claro (aplicado)");
+  if (temaSalvo === "dark") {
+    html.classList.add("dark");
+    console.log("🎨 Tema salvo: escuro (aplicado)");
   } else {
-    html.classList.remove("light");
-    console.log("🎨 Tema salvo: escuro (ou nenhum)");
+    html.classList.remove("dark");
+    console.log("🎨 Tema salvo: claro (ou nenhum)");
   }
 
   // Troca de tema
   if (botaoTema) {
     botaoTema.addEventListener("click", () => {
-      html.classList.toggle("light");
-      const temaAtual = html.classList.contains("light") ? "claro" : "escuro";
+      html.classList.toggle("dark");
+      const temaAtual = html.classList.contains("dark") ? "dark" : "light";
       localStorage.setItem("tema", temaAtual);
       console.log(`🎯 Tema alterado para: ${temaAtual}`);
     });
