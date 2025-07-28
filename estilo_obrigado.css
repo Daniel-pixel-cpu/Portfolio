@@ -1,1 +1,111 @@
-v
+/* Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', sans-serif;
+  background-color: #f9f9f9;
+  color: #222;
+  padding: 20px;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+/* Tema escuro */
+html:not(.light) body {
+  background-color: #121212;
+  color: #eee;
+}
+
+/* Links */
+a {
+  color: #007acc;
+  text-decoration: none;
+}
+
+html:not(.light) a {
+  color: #66b2ff;
+}
+
+/* Botão */
+.btn {
+  background-color: #007acc;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.btn:hover {
+  background-color: #005fa3;
+}
+
+html:not(.light) .btn {
+  background-color: #1f1f1f;
+  color: white;
+}
+
+html:not(.light) .btn:hover {
+  background-color: #333;
+}
+
+/* Cabeçalho */
+header {
+  text-align: center;
+  padding: 20px 0;
+}
+
+header h1 {
+  font-size: 2.5em;
+  margin-bottom: 10px;
+}
+
+.subtitulo {
+  color: #555;
+}
+
+html:not(.light) .subtitulo {
+  color: #aaa;
+}
+
+/* Menu */
+.menu {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  margin-bottom: 10px;
+}
+
+.menu a {
+  font-weight: bold;
+}
+
+/* Seção */
+section#agradecimento {
+  text-align: center;
+  margin-top: 50px;
+}
+
+/* Rodapé */
+footer {
+  text-align: center;
+  margin-top: 80px;
+  font-size: 0.9em;
+  color: #888;
+}
+
+html:not(.light) footer {
+  color: #555;
+}
+
+/* Botão flutuante */
+.buttons {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+}
+
