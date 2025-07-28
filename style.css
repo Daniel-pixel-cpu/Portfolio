@@ -5,53 +5,49 @@
   box-sizing: border-box;
 }
 
-/* Corpo - modo escuro padrão */
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  color: #ddd;
-  min-height: 100vh;
-  padding-bottom: 120px;
-  transition: background-color 0.3s ease, color 0.3s ease;
-  background-color: #121212;
+  line-height: 1.6;
+  background-color: #0e0e11;
+  color: #e0e0e0;
+  transition: background-color 0.4s, color 0.4s;
+  padding-bottom: 100px;
 }
 
-/* Fundo com luzes (apenas no modo escuro) */
-body:not(.light) {
-  background: linear-gradient(135deg, #121212, #1c1c1c);
-}
-
-/* Modo claro */
+/* Modo Claro */
 body.light {
-  background-color: #f7f7f7;
-  color: #222;
+  background-color: #f3f3f3;
+  color: #1a1a1a;
 }
 
 /* Cabeçalho */
 header {
-  text-align: center;
   padding: 40px 20px 20px;
-  background: none;
+  text-align: center;
+  background: transparent;
+  position: relative;
 }
 
-h1 {
+header h1 {
   font-size: 3rem;
-  margin-bottom: 10px;
-  transition: color 0.3s ease, text-shadow 0.3s ease;
+  color: #aaccff;
+  text-shadow: 0 0 10px rgba(170, 200, 255, 0.4);
+  transition: color 0.3s, text-shadow 0.3s;
 }
 
-body:not(.light) h1 {
-  text-shadow: 0 0 15px #0ff, 0 0 30px #0ff;
-  color: #0ff;
-}
-
-body.light h1 {
+body.light header h1 {
+  color: #003366;
   text-shadow: none;
-  color: #222;
 }
 
 .subtitulo {
   font-size: 1.2rem;
-  opacity: 0.8;
+  margin-top: 8px;
+  opacity: 0.7;
 }
 
 /* Navegação */
@@ -66,121 +62,145 @@ nav.menu {
 nav.menu a {
   color: inherit;
   text-decoration: none;
-  font-weight: bold;
-  padding: 10px 15px;
-  border-radius: 8px;
-  transition: background 0.3s, transform 0.2s;
+  padding: 8px 14px;
+  border-radius: 6px;
+  transition: background 0.3s, color 0.3s;
 }
 
-nav.menu a:hover {
-  background-color: rgba(255, 255, 255, 0.1);
-  transform: scale(1.05);
+nav.menu a:hover,
+nav.menu a.active {
+  background: rgba(170, 200, 255, 0.1);
 }
 
-body.light nav.menu a:hover {
-  background-color: rgba(0, 0, 0, 0.05);
+body.light nav.menu a:hover,
+body.light nav.menu a.active {
+  background: rgba(0, 0, 0, 0.05);
 }
 
 /* Seções */
-section, .container {
-  max-width: 800px;
-  margin: 0 auto 40px;
-  padding: 0 20px;
+section {
+  padding: 40px 20px;
+  max-width: 900px;
+  margin: 0 auto;
+  animation: fadeInUp 0.7s ease both;
 }
 
-/* Títulos das seções */
-h2 {
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+section h2 {
+  margin-bottom: 20px;
   font-size: 2rem;
-  margin-bottom: 10px;
-  position: relative;
+  border-bottom: 2px solid #aaccff;
+  display: inline-block;
 }
 
-/* Efeito luminoso nos títulos no modo escuro */
-body:not(.light) h2::after {
-  content: '';
-  display: block;
-  height: 2px;
-  background: linear-gradient(90deg, #0ff, transparent);
-  margin-top: 5px;
-  border-radius: 2px;
+body.light section h2 {
+  border-color: #003366;
 }
 
-/* Linha do tempo */
-.container .ano {
+/* Lista de habilidades */
+.lista-habilidades {
+  list-style: none;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 12px;
   font-weight: bold;
-  font-size: 1.5rem;
-  margin-top: 20px;
+  padding-left: 0;
 }
 
-.container .evento {
-  margin-left: 20px;
-  padding-left: 10px;
-  border-left: 2px solid currentColor;
-  margin-bottom: 10px;
+.lista-habilidades li::before {
+  content: "✔️ ";
+  color: #aaccff;
 }
 
-/* Botões fixos */
-.buttons {
-  position: fixed;
-  bottom: 20px;
-  right: 20px;
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-  z-index: 999;
+body.light .lista-habilidades li::before {
+  color: #007acc;
 }
 
-.btn {
-  padding: 10px 16px;
-  font-size: 14px;
-  border: none;
-  border-radius: 6px;
-  background-color: #0ff;
-  color: #000;
-  font-weight: bold;
-  cursor: pointer;
-  transition: transform 0.2s, box-shadow 0.3s;
+/* Cartão de projeto */
+.card-projeto {
+  background: rgba(255, 255, 255, 0.04);
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 0 10px rgba(170, 200, 255, 0.15);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-.btn:hover {
-  transform: scale(1.05);
-  box-shadow: 0 0 10px #0ff;
+.card-projeto:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 0 20px rgba(170, 200, 255, 0.3);
 }
 
-body.light .btn {
-  background-color: #222;
-  color: #fff;
-}
-
-body.light .btn:hover {
-  box-shadow: 0 0 10px #999;
+body.light .card-projeto {
+  background-color: #ffffff;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.06);
 }
 
 /* Rodapé */
 footer {
   text-align: center;
-  padding: 20px;
-  font-size: 0.9rem;
+  padding: 30px 20px;
   opacity: 0.6;
+  font-size: 0.9rem;
+}
+
+/* Botões flutuantes */
+.buttons {
+  position: fixed;
+  bottom: 15px;
+  right: 15px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.btn {
+  background: #1e1e24;
+  color: #aaccff;
+  border: none;
+  padding: 10px 16px;
+  border-radius: 30px;
+  font-weight: bold;
+  cursor: pointer;
+  box-shadow: 0 0 10px rgba(170, 200, 255, 0.3);
+  transition: background 0.3s, color 0.3s;
+}
+
+.btn:hover {
+  background: #2a2a35;
+}
+
+body.light .btn {
+  background: #ffffff;
+  color: #007acc;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+}
+
+body.light .btn:hover {
+  background: #f0f0f0;
 }
 
 /* Responsividade */
 @media (max-width: 600px) {
-  h1 {
+  header h1 {
     font-size: 2.2rem;
   }
 
-  h2 {
-    font-size: 1.6rem;
+  .buttons {
+    right: 10px;
+    bottom: 10px;
   }
 
-  .btn {
-    font-size: 13px;
-    padding: 8px 12px;
-  }
-
-  nav.menu {
-    flex-direction: column;
-    align-items: center;
+  .lista-habilidades {
+    grid-template-columns: 1fr;
   }
 }
