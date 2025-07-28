@@ -249,3 +249,54 @@ footer {
     bottom: 1rem;
   }
 }
+#mensagemSucesso,
+#mensagemErro {
+  max-width: 800px;
+  margin: 1rem auto;
+  padding: 1rem 1.5rem;
+  border-radius: 12px;
+  font-weight: bold;
+  font-size: 1.1rem;
+  text-align: center;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.5s ease;
+}
+
+/* Mostrar as mensagens com fade-in */
+#mensagemSucesso.show,
+#mensagemErro.show {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+/* Estilo para mensagem de sucesso */
+#mensagemSucesso {
+  background-color: rgba(60, 180, 75, 0.85);
+  color: #e6ffe6;
+  box-shadow: 0 0 15px rgba(60, 180, 75, 0.7);
+  text-shadow: 0 0 8px #a6ffb0;
+}
+
+/* Estilo para mensagem de erro */
+#mensagemErro {
+  background-color: rgba(220, 50, 50, 0.85);
+  color: #ffd6d6;
+  box-shadow: 0 0 15px rgba(220, 50, 50, 0.7);
+  text-shadow: 0 0 8px #ff9999;
+}
+
+/* Ajustes para modo claro */
+.light #mensagemSucesso {
+  background-color: rgba(100, 190, 100, 0.9);
+  color: #1a3a1a;
+  box-shadow: 0 0 15px rgba(100, 190, 100, 0.6);
+  text-shadow: none;
+}
+
+.light #mensagemErro {
+  background-color: rgba(240, 100, 100, 0.9);
+  color: #4a1a1a;
+  box-shadow: 0 0 15px rgba(240, 100, 100, 0.6);
+  text-shadow: none;
+}
