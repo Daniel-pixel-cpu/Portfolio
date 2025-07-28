@@ -1,6 +1,15 @@
 <!DOCTYPE html>
 <html lang="pt-BR" class="">
 <head>
+    <script>
+    (function () {
+      const temaSalvo = localStorage.getItem("tema");
+      if (temaSalvo === "claro") {
+        document.documentElement.classList.add("light");
+      }
+    })();
+  </script>
+  
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Projeto Atual - Daniel</title>
@@ -39,43 +48,6 @@
     <button class="btn" id="botaoTema">🌗 Trocar Tema</button>
     <button class="btn" id="voltarTopo">🔝 Voltar ao Topo</button>
   </div>
-<script>
-  document.addEventListener("DOMContentLoaded", () => {
-  const html = document.documentElement;
-
-  // Aplica tema salvo
-  const temaSalvo = localStorage.getItem("tema");
-  if (temaSalvo === "escuro") {
-    html.classList.add("dark");
-  } else if (temaSalvo === "claro") {
-    html.classList.remove("dark");
-  }
-
-  // Função para alternar tema
-  function alternarTema() {
-    const temaEscuro = html.classList.toggle("dark");
-    localStorage.setItem("tema", temaEscuro ? "escuro" : "claro");
-  }
-
-  // Botão tema
-  const botaoTema = document.getElementById("botaoTema");
-  if (botaoTema) {
-    botaoTema.addEventListener("click", alternarTema);
-  } else {
-    console.warn("Botão de tema não encontrado na página.");
-  }
-
-  // Botão voltar ao topo
-  const btnTopo = document.getElementById("voltarTopo");
-  if (btnTopo) {
-    btnTopo.addEventListener("click", () => {
-      window.scrollTo({ top: 0, behavior: "smooth" });
-    });
-  } else {
-    console.warn("Botão voltar ao topo não encontrado na página.");
-  }
-});
-</script>
 </body>
   
 </html>
