@@ -1,68 +1,48 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Obrigado!</title>
-  <link rel="stylesheet" href="estilo_obrigado.css">
-  <link rel="icon" type="image/png" href="Favicon.png">
-  <script defer src="script.js"></script>
+  <script>
+    (function () {
+      const temaSalvo = localStorage.getItem("tema");
+      if (temaSalvo === "claro") {
+        document.documentElement.classList.add("light");
+      }
+    })();
+  </script>
+
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Obrigado - Daniel</title>
+  <link rel="stylesheet" href="estilo_obrigado.css" />
+  <link rel="icon" type="image/png" href="Favicon.png" />
+  <script src="script.js" defer></script>
 </head>
 
 <body>
   <header>
-    <!-- Opcional: botão de tema -->
-    <button id="botaoTema">🌗 Tema</button>
+    <nav class="menu">
+      <a href="index.html">Sobre mim</a>
+      <a href="projeto.html">Projeto Atual</a>
+      <a href="contato.html">Contato</a>
+    </nav>
+
+    <h1>Portfólio do Daniel</h1>
+    <p class="subtitulo">Desenvolvedor iniciante apaixonado por tecnologia e jogos</p>
   </header>
 
-  <main>
-    <h1>Obrigado pelo seu contato!</h1>
-    <p>Recebemos sua mensagem e responderemos em breve.</p>
-  </main>
+  <section id="agradecimento">
+    <h2>✅ Obrigado pelo contato!</h2>
+    <p>Recebi sua mensagem e responderei em breve.</p>
+    <p>Enquanto isso, você pode voltar à <a href="index.html">página inicial</a>.</p>
+  </section>
 
   <footer>
-    <!-- Opcional: botão de voltar ao topo -->
-    <button id="voltarTopo">🔝 Voltar ao topo</button>
+    &copy; 2025 desenvolvido por Daniel.
   </footer>
 
-  <script>
-    // Função global para usar no onclick (se necessário)
-    function alternarTema() {
-      const html = document.documentElement;
-      const temaClaro = html.classList.toggle("light");
-      localStorage.setItem("tema", temaClaro ? "claro" : "escuro");
-      console.log(`🎯 Tema alterado para: ${temaClaro ? "claro" : "escuro"}`);
-    }
-
-    document.addEventListener("DOMContentLoaded", () => {
-      const html = document.documentElement;
-
-      // Aplica o tema salvo
-      const temaSalvo = localStorage.getItem("tema");
-      if (temaSalvo === "claro") {
-        html.classList.add("light");
-        console.log("🎨 Tema claro aplicado (salvo).");
-      } else {
-        html.classList.remove("light");
-        console.log("🎨 Tema escuro aplicado (salvo).");
-      }
-
-      // Botão de tema
-      const botaoTema = document.getElementById("botaoTema");
-      if (botaoTema) {
-        botaoTema.addEventListener("click", alternarTema);
-      } else {
-        console.warn("❗ Botão de tema não encontrado na página.");
-      }
-
-      // Botão de voltar ao topo
-      const voltarTopo = document.getElementById("voltarTopo");
-      if (voltarTopo) {
-        voltarTopo.addEventListener("click", () => {
-          window.scrollTo({ top: 0, behavior: "smooth" });
-        });
-      } else {
-        console.warn("❗ Botão voltar ao topo não encontrado na página.");
-      }
-    });
-  </script>
+  <div class="buttons">
+    <button class="btn" id="botaoTema">🌗 Trocar Tema</button>
+    <button class="btn" id="voltarTopo">🔝 Voltar ao Topo</button>
+  </div>
 </body>
 </html>
