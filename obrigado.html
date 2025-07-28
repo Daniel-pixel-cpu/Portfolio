@@ -1,8 +1,12 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Obrigado - Daniel</title>
+
+  <!-- Ativa tema escuro ANTES do CSS carregar para evitar flash -->
   <script>
-    // Ativa tema escuro ANTES de carregar o CSS
     (function() {
       const temaSalvo = localStorage.getItem("tema");
       if (temaSalvo === "dark") {
@@ -10,10 +14,7 @@
       }
     })();
   </script>
-  
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Obrigado - Daniel</title>
+
   <link rel="stylesheet" href="estilo_obrigado.css" />
   <link rel="icon" type="image/png" href="Favicon.png" />
   <script src="script.js" defer></script>
@@ -47,17 +48,17 @@
   </div>
 
   <script>
-  const html = document.documentElement;
-  const botaoTema = document.getElementById("botaoTema");
+    document.addEventListener("DOMContentLoaded", () => {
+      const html = document.documentElement;
+      const botaoTema = document.getElementById("botaoTema");
+      if (!botaoTema) return;
 
-  if (botaoTema) {
-    botaoTema.addEventListener("click", () => {
-      html.classList.toggle("dark");
-      const temaAtual = html.classList.contains("dark") ? "dark" : "light";
-      localStorage.setItem("tema", temaAtual);
+      botaoTema.addEventListener("click", () => {
+        html.classList.toggle("dark");
+        const temaAtual = html.classList.contains("dark") ? "dark" : "light";
+        localStorage.setItem("tema", temaAtual);
       });
-    }
+    });
   </script>
 </body>
-  
 </html>
