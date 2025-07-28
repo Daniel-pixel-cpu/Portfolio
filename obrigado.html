@@ -1,48 +1,45 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Obrigado</title>
+  <link rel="stylesheet" href="estilos.css" />
   <script>
+    // Aplica o tema salvo o mais cedo possível (antes de exibir conteúdo)
     (function () {
       const temaSalvo = localStorage.getItem("tema");
-      if (temaSalvo === "claro") {
-        document.documentElement.classList.add("light");
+      if (temaSalvo === "escuro") {
+        document.documentElement.classList.add("dark");
       }
     })();
   </script>
-
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Obrigado - Daniel</title>
-  <link rel="stylesheet" href="estilo_obrigado.css" />
-  <link rel="icon" type="image/png" href="Favicon.png" />
-  <script src="script.js" defer></script>
 </head>
-
 <body>
   <header>
+    <h1>Obrigado!</h1>
+    <p class="subtitulo">Sua mensagem foi recebida com sucesso.</p>
     <nav class="menu">
-      <a href="index.html">Sobre mim</a>
-      <a href="projeto.html">Projeto Atual</a>
+      <a href="index.html">Início</a>
+      <a href="projetos.html">Projetos</a>
       <a href="contato.html">Contato</a>
     </nav>
-
-    <h1>Portfólio do Daniel</h1>
-    <p class="subtitulo">Desenvolvedor iniciante apaixonado por tecnologia e jogos</p>
   </header>
 
   <section id="agradecimento">
-    <h2>✅ Obrigado pelo contato!</h2>
-    <p>Recebi sua mensagem e responderei em breve.</p>
-    <p>Enquanto isso, você pode voltar à <a href="index.html">página inicial</a>.</p>
+    <h2>Mensagem enviada</h2>
+    <p>Agradecemos por entrar em contato. Em breve retornaremos!</p>
+    <p><a href="index.html">Voltar à página inicial</a></p>
   </section>
 
+  <div class="buttons">
+    <button class="btn" onclick="alternarTema()">🌓 Alternar Tema</button>
+  </div>
+
   <footer>
-    &copy; 2025 desenvolvido por Daniel.
+    &copy; 2025 - Daniel Oliveira Machado
   </footer>
 
-  <div class="buttons">
-    <button class="btn" id="botaoTema">🌗 Trocar Tema</button>
-    <button class="btn" id="voltarTopo">🔝 Voltar ao Topo</button>
-  </div>
+  <script src="script.js"></script>
 </body>
 </html>
