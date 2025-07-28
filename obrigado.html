@@ -36,5 +36,26 @@
     <button class="btn" id="voltarTopo">🔝 Voltar ao Topo</button>
   </div>
 </body>
+
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+  const botaoTema = document.getElementById("botaoTema");
+  const html = document.documentElement;
+
+  // Aplica o tema salvo (se existir)
+  const temaSalvo = localStorage.getItem("tema");
+  if (temaSalvo === "dark") {
+    html.classList.add("dark");
+  }
+
+  botaoTema.addEventListener("click", () => {
+    html.classList.toggle("dark");
+
+    // Atualiza o localStorage com o novo tema
+    const temaAtual = html.classList.contains("dark") ? "dark" : "light";
+    localStorage.setItem("tema", temaAtual);
+  });
+});
+</script>
   
 </html>
