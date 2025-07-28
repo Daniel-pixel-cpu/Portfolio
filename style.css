@@ -5,6 +5,11 @@
   box-sizing: border-box;
 }
 
+/* Linha temporária */
+body {
+  border: 5px solid red;
+}
+
 /* Corpo com fundo escuro neutro e gradiente suave */
 body {
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
