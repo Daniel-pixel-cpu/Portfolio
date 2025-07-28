@@ -6,13 +6,14 @@
   <title>Portfólio do Daniel</title>
   <link rel="stylesheet" href="style.css" />
   <link rel="icon" type="image/png" href="Favicon.png" />
-  <script defer src="script.js"></script>
+  <script src="script.js" defer></script>
+
   <script>
-    // Aplica tema salvo ANTES do CSS carregar para evitar flash
-    (function() {
+    // Aplica o tema salvo ANTES de carregar CSS para evitar piscar
+    (function () {
       const temaSalvo = localStorage.getItem("tema");
-      if (temaSalvo === "escuro") {
-        document.documentElement.classList.add("dark");
+      if (temaSalvo === "claro") {
+        document.documentElement.classList.add("light");
       }
     })();
   </script>
@@ -32,8 +33,8 @@
 
   <main>
     <section>
-      <h2>Bem-vindo!</h2>
-      <p>Este é o meu site portfolio com tema claro e escuro.</p>
+      <h2>Bem-vindo ao meu portfólio!</h2>
+      <p>Aqui você encontra meus projetos, habilidades e formas de contato.</p>
     </section>
   </main>
 
@@ -41,19 +42,9 @@
     &copy; 2025 desenvolvido por Daniel.
   </footer>
 
-  <!-- Botão Trocar Tema -->
   <div class="buttons">
-    <button class="btn" id="botaoTema" aria-label="Trocar tema">
-      <!-- Ícone Sol (claro) -->
-      <svg class="icon sol" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" width="24" height="24" aria-hidden="true">
-        <circle cx="12" cy="12" r="5" stroke-width="2"/>
-        <path stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="M12 1v2m0 18v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2m18 0h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/>
-      </svg>
-      <!-- Ícone Lua (escuro) -->
-      <svg class="icon lua" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" width="24" height="24" aria-hidden="true">
-        <path stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="M21 12.79A9 9 0 0112.21 3a7 7 0 109.79 9.79z"/>
-      </svg>
-    </button>
+    <button class="btn" id="botaoTema" aria-label="Trocar Tema">🌗</button>
+    <button class="btn" id="voltarTopo" aria-label="Voltar ao topo">🔝</button>
   </div>
 </body>
 </html>
