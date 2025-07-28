@@ -1,3 +1,4 @@
+
 // Aplica o tema salvo ao carregar
 document.addEventListener("DOMContentLoaded", () => {
   const html = document.documentElement;
@@ -29,4 +30,6 @@ document.addEventListener("DOMContentLoaded", () => {
   if (voltarTopo) {
     voltarTopo.addEventListener("click", () => {
       window.scrollTo({ top: 0, behavior: "smooth" });
-    });}
+    });
+  }
+});
