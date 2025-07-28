@@ -17,7 +17,7 @@ body {
 
 /* Tema claro */
 body.light {
-  background-color: #f4f4f4;
+  background-color: #f2f2f2;
   color: #1f1f1f;
 }
 
@@ -82,21 +82,14 @@ body.light nav.menu a:hover {
 }
 
 /* Títulos */
-h1 {
-  font-size: 3.2rem;
+h1, h2 {
   margin-bottom: 20px;
   font-weight: 900;
-  text-shadow: 0 0 8px #aaccff;
-}
-
-h2 {
   font-size: 2.5rem;
-  margin-bottom: 20px;
-  font-weight: 900;
   text-shadow: 0 0 6px #aaccff;
 }
 
-body.light h1,
+body.light h1, 
 body.light h2 {
   text-shadow: none;
   color: #1f1f1f;
@@ -124,13 +117,11 @@ section {
   box-shadow: 0 0 12px rgba(170, 200, 255, 0.2);
 }
 
-/* Tema escuro */
 body:not(.light) section {
   background-color: #1c1c1c;
   color: #cce0ff;
 }
 
-/* Tema claro */
 body.light section {
   background-color: #ffffff;
   color: #1f1f1f;
