@@ -1,57 +1,69 @@
-/* Reset básico */
+/* Reset */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
-html {
-  scroll-behavior: smooth;
-}
-
 body {
-  font-family: Arial, sans-serif;
-  background: #111;
-  color: #f0f0f0;
+  font-family: "Segoe UI", Roboto, sans-serif;
+  background-color: var(--bg);
+  color: var(--text);
   line-height: 1.6;
-  padding: 0 1rem;
-  transition: background 0.3s, color 0.3s;
+  transition: background-color 0.4s ease, color 0.4s ease;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
 }
 
-.light body {
-  background: #fdfdfd;
-  color: #111;
+/* Tema claro - padrão */
+:root {
+  --bg: #f0f9f1;
+  --text: #222;
+  --primary: #2d7a32;
+  --accent: #3bb34a;
+  --secondary: #1b5d20;
+  --section-bg: #ffffffcc;
+  --section-border: 1px solid #a0d6a0;
+  --section-shadow: 0 12px 24px rgba(59, 179, 74, 0.1);
+  --button-bg: #3bb34a;
+  --button-text: #fff;
+  --button-hover: #2d7a32;
 }
 
+/* Tema escuro */
+.dark {
+  --bg: #0b0f19;
+  --text: #cfd8e3;
+  --primary: #21f18b;
+  --accent: #30ffa2;
+  --secondary: #3be499;
+  --section-bg: rgba(20, 25, 40, 0.95);
+  --section-border: 1px solid rgba(72, 255, 190, 0.15);
+  --section-shadow: 0 12px 40px rgba(0, 255, 190, 0.1), inset 0 0 12px rgba(0, 255, 190, 0.05);
+  --button-bg: #21f18b;
+  --button-text: #0b0f19;
+  --button-hover: #2cff9d;
+}
+
+/* Cabeçalho */
 header {
+  background: linear-gradient(135deg, var(--primary), var(--secondary));
+  padding: 2rem;
   text-align: center;
-  padding: 2rem 1rem;
-  background: linear-gradient(135deg, #222, #333);
-  color: #fff;
+  color: white;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
 }
 
-.light header {
-  background: linear-gradient(135deg, #f0f0f0, #fff);
-  color: #111;
-}
-
-h1 {
+header h1 {
   font-size: 2.5rem;
-  margin-bottom: 0.5rem;
-  text-shadow: 0 0 10px rgba(255, 255, 255, 0.2);
-}
-
-.light h1 {
-  text-shadow: none;
+  margin-bottom: 0.3rem;
+  text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.3);
 }
 
 .subtitulo {
   font-size: 1.2rem;
-  color: #ccc;
-}
-
-.light .subtitulo {
-  color: #444;
+  opacity: 0.9;
 }
 
 .menu {
@@ -59,244 +71,89 @@ h1 {
   justify-content: center;
   gap: 2rem;
   margin-bottom: 1rem;
-  flex-wrap: wrap;
 }
 
 .menu a {
+  color: white;
   text-decoration: none;
-  color: inherit;
-  padding: 0.5rem 1rem;
-  border-radius: 10px;
-  transition: background 0.2s;
-}
-
-.menu a:hover,
-.menu .active {
-  background: rgba(255, 255, 255, 0.1);
-}
-
-.light .menu a:hover,
-.light .menu .active {
-  background: rgba(0, 0, 0, 0.05);
-}
-
-section {
-  background: rgba(255, 255, 255, 0.05);
-  border-radius: 20px;
-  backdrop-filter: blur(10px);
-  padding: 2rem;
-  margin: 2rem auto;
-  max-width: 800px;
-  box-shadow: 0 0 10px rgba(255, 255, 255, 0.1);
-  transition: all 0.3s;
-}
-
-.light section {
-  background: rgba(255, 255, 255, 0.85);
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.05);
-}
-
-.lista-habilidades {
-  list-style: none;
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
-  gap: 0.5rem;
-  padding-top: 1rem;
-}
-
-.lista-habilidades li {
-  background: rgba(255, 255, 255, 0.1);
-  padding: 0.75rem;
-  border-radius: 12px;
-  text-align: center;
   font-weight: bold;
+  position: relative;
+  transition: 0.3s;
 }
 
-.light .lista-habilidades li {
-  background: rgba(0, 0, 0, 0.05);
+.menu a::after {
+  content: "";
+  position: absolute;
+  bottom: -5px;
+  left: 0;
+  width: 0%;
+  height: 2px;
+  background-color: white;
+  transition: width 0.3s;
 }
 
-/* Estilo para a seção de projeto como botão */
-.clicavel {
-  cursor: pointer;
-  transition: transform 0.2s;
+.menu a:hover::after {
+  width: 100%;
 }
 
-.clicavel:hover {
-  transform: scale(1.02);
-  box-shadow: 0 0 12px rgba(255, 255, 255, 0.2);
+/* Main section */
+main {
+  flex: 1;
+  padding: 2rem;
+  max-width: 900px;
+  margin: auto;
+  background: var(--section-bg);
+  border-radius: 1rem;
+  box-shadow: var(--section-shadow);
+  border: var(--section-border);
 }
 
-.light .clicavel:hover {
-  box-shadow: 0 0 12px rgba(0, 0, 0, 0.1);
-}
-
-/* Formulário de contato */
-form {
-  display: flex;
-  flex-direction: column;
-  gap: 1rem;
-}
-
-form input,
-form textarea {
-  padding: 0.75rem;
-  border: none;
-  border-radius: 10px;
-  font-size: 1rem;
-  background: rgba(255, 255, 255, 0.1);
-  color: #fff;
-}
-
-form input:focus,
-form textarea:focus {
-  outline: 2px solid #888;
-}
-
-form button {
-  background: #444;
-  color: #fff;
-  border: none;
-  padding: 0.75rem;
-  border-radius: 10px;
-  cursor: pointer;
-  font-size: 1rem;
-  transition: background 0.3s;
-}
-
-form button:hover {
-  background: #666;
-}
-
-.light form input,
-.light form textarea {
-  background: rgba(0, 0, 0, 0.05);
-  color: #000;
-}
-
-.light form button {
-  background: #ddd;
-  color: #000;
-}
-
-.light form button:hover {
-  background: #bbb;
+/* Rodapé */
+footer {
+  padding: 1rem;
+  text-align: center;
+  background-color: var(--primary);
+  color: white;
+  font-weight: bold;
+  letter-spacing: 0.5px;
 }
 
 /* Botões flutuantes */
 .buttons {
   position: fixed;
-  bottom: 1.5rem;
-  right: 1.5rem;
-  display: flex;
-  flex-direction: column;
-  gap: 1rem;
-  z-index: 10;
+  bottom: 1rem;
+  right: 1rem;
+  z-index: 1000;
 }
 
 .btn {
-  padding: 0.75rem 1rem;
-  background: #222;
-  color: #fff;
+  background-color: var(--button-bg);
+  color: var(--button-text);
   border: none;
-  border-radius: 12px;
+  border-radius: 10px;
+  padding: 0.7rem 1rem;
   cursor: pointer;
-  font-weight: bold;
-  transition: background 0.2s, transform 0.2s;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background-color 0.3s ease;
 }
 
 .btn:hover {
-  background: #444;
-  transform: scale(1.05);
+  background-color: var(--button-hover);
 }
 
-.light .btn {
-  background: #ccc;
-  color: #000;
+/* Ícones do botão */
+.btn .icon {
+  display: none;
+  stroke: currentColor;
 }
 
-.light .btn:hover {
-  background: #aaa;
+:root:not(.dark) .btn .sol {
+  display: block;
 }
 
-footer {
-  text-align: center;
-  margin: 2rem 0;
-  color: #888;
-}
-
-/* Responsivo */
-@media (max-width: 600px) {
-  body {
-    padding: 0 0.5rem;
-  }
-
-  h1 {
-    font-size: 2rem;
-  }
-
-  section {
-    padding: 1.5rem 1rem;
-  }
-
-  .menu {
-    flex-direction: column;
-    gap: 0.5rem;
-  }
-
-  .buttons {
-    right: 1rem;
-    bottom: 1rem;
-  }
-}
-#mensagemSucesso,
-#mensagemErro {
-  max-width: 800px;
-  margin: 1rem auto;
-  padding: 1rem 1.5rem;
-  border-radius: 12px;
-  font-weight: bold;
-  font-size: 1.1rem;
-  text-align: center;
-  opacity: 0;
-  pointer-events: none;
-  transition: opacity 0.5s ease;
-}
-
-/* Mostrar as mensagens com fade-in */
-#mensagemSucesso.show,
-#mensagemErro.show {
-  opacity: 1;
-  pointer-events: auto;
-}
-
-/* Estilo para mensagem de sucesso */
-#mensagemSucesso {
-  background-color: rgba(60, 180, 75, 0.85);
-  color: #e6ffe6;
-  box-shadow: 0 0 15px rgba(60, 180, 75, 0.7);
-  text-shadow: 0 0 8px #a6ffb0;
-}
-
-/* Estilo para mensagem de erro */
-#mensagemErro {
-  background-color: rgba(220, 50, 50, 0.85);
-  color: #ffd6d6;
-  box-shadow: 0 0 15px rgba(220, 50, 50, 0.7);
-  text-shadow: 0 0 8px #ff9999;
-}
-
-/* Ajustes para modo claro */
-.light #mensagemSucesso {
-  background-color: rgba(100, 190, 100, 0.9);
-  color: #1a3a1a;
-  box-shadow: 0 0 15px rgba(100, 190, 100, 0.6);
-  text-shadow: none;
-}
-
-.light #mensagemErro {
-  background-color: rgba(240, 100, 100, 0.9);
-  color: #4a1a1a;
-  box-shadow: 0 0 15px rgba(240, 100, 100, 0.6);
-  text-shadow: none;
+.dark .btn .lua {
+  display: block;
 }
