@@ -16,15 +16,15 @@
   --cor-borda: #2e4e3a;
 }
 
-/* Tema claro */
+/* Tema claro com mais verde */
 .light {
-  --cor-fundo: #ffffff;
+  --cor-fundo: #f0fff5; /* fundo claro com toque esverdeado */
   --cor-texto: #222;
   --cor-destaque: #2e8b57;
-  --cor-secundaria: #f4f4f4;
+  --cor-secundaria: #e6f5e9;
   --cor-botao: #2e8b57;
   --cor-botao-hover: #276d48;
-  --cor-borda: #ccc;
+  --cor-borda: #b7dec5;
 }
 
 html {
@@ -89,7 +89,7 @@ nav.menu a:hover {
   background-color: var(--cor-secundaria);
   border-radius: 10px;
   border: 1px solid var(--cor-borda);
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.08);
 }
 
 #agradecimento h2 {
@@ -119,11 +119,11 @@ footer {
   font-size: 0.9rem;
 }
 
-/* Botão fixo no canto esquerdo */
+/* Botão fixo no canto inferior direito */
 .buttons {
   position: fixed;
   bottom: 20px;
-  left: 20px;
+  right: 20px;
   z-index: 1000;
 }
 
@@ -143,7 +143,7 @@ footer {
   transform: scale(1.05);
 }
 
-/* Responsividade básica */
+/* Responsividade */
 @media (max-width: 600px) {
   header h1 {
     font-size: 2rem;
