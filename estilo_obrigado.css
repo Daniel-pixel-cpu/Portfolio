@@ -18,12 +18,12 @@
 
 /* Tema claro com mais verde */
 .light {
-  --cor-fundo: #f0fff5; /* fundo claro com toque esverdeado */
-  --cor-texto: #222;
-  --cor-destaque: #2e8b57;
-  --cor-secundaria: #e6f5e9;
-  --cor-botao: #2e8b57;
-  --cor-botao-hover: #276d48;
+  --cor-fundo: #e9fbee;         /* fundo mais esverdeado */
+  --cor-texto: #1d3124;
+  --cor-destaque: #2e8b57;      /* verde escuro nos títulos e links */
+  --cor-secundaria: #dff4e4;    /* caixas e header mais claras */
+  --cor-botao: #3aa66a;
+  --cor-botao-hover: #2f8655;
   --cor-borda: #b7dec5;
 }
 
