@@ -22,9 +22,13 @@ body {
   --text: #222;
   --primary: #28a745;
   --accent: #24c78e;
+  --secondary: #1b8a5b;
   --section-bg: #ffffffcc;
   --section-border: 1px solid #b5fdd4;
   --section-shadow: 0 12px 24px rgba(0, 255, 190, 0.05);
+  --button-bg: #28a745;
+  --button-text: #fff;
+  --button-hover: #218838;
 }
 
 /* Tema escuro */
@@ -33,9 +37,13 @@ body {
   --text: #cfd8e3;
   --primary: #21f18b;
   --accent: #30ffa2;
+  --secondary: #3be499;
   --section-bg: rgba(20, 25, 40, 0.95);
   --section-border: 1px solid rgba(72, 255, 190, 0.15);
   --section-shadow: 0 12px 40px rgba(0, 255, 190, 0.1), inset 0 0 12px rgba(0, 255, 190, 0.05);
+  --button-bg: #21f18b;
+  --button-text: #0b0f19;
+  --button-hover: #2cff9d;
 }
 
 /* Cabeçalho */
@@ -130,6 +138,7 @@ section {
   display: flex;
   flex-direction: column;
   gap: 0.7rem;
+  z-index: 1000;
 }
 
 .btn {
