@@ -167,3 +167,47 @@ footer {
     padding: 8px 16px;
   }
 }
+.theme-icon {
+  width: 24px;
+  height: 24px;
+  transition: opacity 0.4s ease;
+  position: absolute;
+}
+
+#icon-sun {
+  opacity: 1;
+}
+
+#icon-moon {
+  opacity: 0;
+}
+
+.light #icon-sun {
+  opacity: 1;
+}
+
+.light #icon-moon {
+  opacity: 0;
+}
+
+:not(.light) #icon-sun {
+  opacity: 0;
+}
+
+:not(.light) #icon-moon {
+  opacity: 1;
+}
+
+#toggle-theme {
+  position: fixed;
+  top: 1rem;
+  right: 1rem;
+  background: rgba(255, 255, 255, 0.1);
+  border: none;
+  padding: 0.7rem;
+  border-radius: 100%;
+  cursor: pointer;
+  backdrop-filter: blur(8px);
+  box-shadow: 0 0 12px rgba(0, 0, 0, 0.1);
+  z-index: 1000;
+}
