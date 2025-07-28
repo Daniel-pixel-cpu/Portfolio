@@ -6,6 +6,7 @@
   <title>Obrigado</title>
   <link rel="stylesheet" href="estilo_obrigado.css" />
   <link rel="icon" type="image/png" href="Favicon.png" />
+  <script src="script.js"></script>
   <script>
     // Aplica o tema salvo o mais cedo possível (antes de exibir conteúdo)
     (function () {
@@ -41,7 +42,43 @@
   <footer>
     &copy; 2025 - Daniel Oliveira Machado
   </footer>
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+  const html = document.documentElement;
 
-  <script src="script.js"></script>
+  // Aplica tema salvo
+  const temaSalvo = localStorage.getItem("tema");
+  if (temaSalvo === "escuro") {
+    html.classList.add("dark");
+  } else if (temaSalvo === "claro") {
+    html.classList.remove("dark");
+  }
+
+  // Função para alternar tema
+  function alternarTema() {
+    const temaEscuro = html.classList.toggle("dark");
+    localStorage.setItem("tema", temaEscuro ? "escuro" : "claro");
+  }
+
+  // Botão tema
+  const botaoTema = document.getElementById("botaoTema");
+  if (botaoTema) {
+    botaoTema.addEventListener("click", alternarTema);
+  } else {
+    console.warn("Botão de tema não encontrado na página.");
+  }
+
+  // Botão voltar ao topo
+  const btnTopo = document.getElementById("voltarTopo");
+  if (btnTopo) {
+    btnTopo.addEventListener("click", () => {
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    });
+  } else {
+    console.warn("Botão voltar ao topo não encontrado na página.");
+  }
+});
+</script>
+  
 </body>
 </html>
