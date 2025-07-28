@@ -1,76 +1,83 @@
-/* ===============================
-   RESET BÁSICO E CONFIG INICIAL
-================================== */
+/* Reset básico */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
+/* Corpo com fundo escuro neutro e gradiente suave */
 body {
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  background-color: var(--bg-color);
-  color: var(--text-color);
+  background: linear-gradient(135deg, #121212, #1c1c1c);
+  color: #ddd;
   min-height: 100vh;
+  padding-bottom: 120px;
   transition: background-color 0.3s ease, color 0.3s ease;
-  padding-bottom: 100px;
 }
 
-/* ===============================
-   VARIÁVEIS DE TEMA
-================================== */
-:root {
-  --bg-color: #121212;
-  --header-bg: #1e1e1e;
-  --text-color: #f0f0f0;
-  --section-bg: #1a1a1a;
-  --box-bg: #2a2a2a;
-  --border-color: #333333;
-  --btn-bg: #2d2d2d;
-  --btn-text: #f0f0f0;
-  --btn-hover: #3a3a3a;
-  --accent-color: #aaccee;
-}
-
+/* Tema claro (ajustado para conforto visual) */
 body.light {
-  --bg-color: #f4f4f4;
-  --header-bg: #ffffffee;
-  --text-color: #1a1a1a;
-  --section-bg: #ffffff;
-  --box-bg: #f9f9f9;
-  --border-color: #cccccc;
-  --btn-bg: #e0e0e0;
-  --btn-text: #222222;
-  --btn-hover: #cccccc;
-  --accent-color: #005c99;
+  background-color: #e4e4e4;
+  color: #1f1f1f;
 }
 
-/* ===============================
-   CABEÇALHO E MENU
-================================== */
+body.light header {
+  background-color: #dddddd;
+  color: #1f1f1f;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+}
+
+body.light .menu a {
+  color: #222;
+}
+
+body.light .menu a:hover {
+  color: #005c99;
+}
+
+body.light .subtitulo {
+  color: #3a3a3a;
+}
+
+body.light footer {
+  background-color: #cccccc;
+  color: #1f1f1f;
+}
+
+body.light .btn {
+  background-color: #bbbbbb;
+  color: #1f1f1f;
+  border: 1px solid #999;
+}
+
+body.light .btn:hover {
+  background-color: #aaaaaa;
+}
+
+/* Header */
 header {
-  background-color: var(--header-bg);
   padding: 30px 20px 40px;
   text-align: center;
-  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.2);
-  border-bottom: 1px solid var(--border-color);
+  background-color: #181818;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.3);
+  border-bottom: 1px solid #333;
   position: relative;
   z-index: 10;
 }
 
 nav.menu {
-  margin-top: 20px;
+  margin-bottom: 20px;
   display: flex;
   justify-content: center;
   gap: 40px;
   flex-wrap: wrap;
   font-weight: 600;
   text-transform: uppercase;
-  letter-spacing: 1.2px;
+  letter-spacing: 1.5px;
 }
 
 nav.menu a {
-  color: var(--accent-color);
+  color: #aaccee;
   text-decoration: none;
   padding: 8px 15px;
   border-radius: 12px;
@@ -79,90 +86,82 @@ nav.menu a {
 
 nav.menu a:hover {
   color: #ddeeff;
-  text-shadow: 0 0 8px var(--accent-color);
+  text-shadow: 0 0 8px #aaccff;
 }
 
 nav.menu a.active,
 nav.menu a[aria-current="page"] {
   color: #eef7ff;
   font-weight: 700;
-  text-shadow: 0 0 10px var(--accent-color);
+  text-shadow: 0 0 10px #aaccff;
   pointer-events: none;
 }
 
-/* ===============================
-   TEXTOS E TÍTULOS
-================================== */
+/* Títulos com brilho apenas no modo escuro */
 h1, h2 {
-  text-shadow: 0 0 6px var(--accent-color);
   margin-bottom: 20px;
   font-weight: 900;
 }
 
+body:not(.light) h1,
+body:not(.light) h2 {
+  text-shadow: 0 0 6px #aaccff;
+}
+
+/* Título principal maior */
+h1 {
+  font-size: 2.8rem;
+}
+
+/* Subtítulo */
 .subtitulo {
   font-weight: 400;
   font-size: 1.15rem;
-  color: var(--accent-color);
+  color: #99bbcc;
   margin-bottom: 25px;
 }
 
-/* ===============================
-   SEÇÕES GERAIS
-================================== */
+/* Seções com fundo escuro translúcido */
 section {
   max-width: 800px;
   margin: 40px auto;
-  background: var(--section-bg);
+  background: rgba(20, 20, 20, 0.85);
   border-radius: 15px;
   padding: 30px 25px;
-  box-shadow: 0 0 12px rgba(170, 200, 255, 0.1);
-  border: 1px solid var(--border-color);
+  box-shadow: 0 0 12px rgba(170, 200, 255, 0.2);
+  color: #cce0ff;
+  transition: background-color 0.3s ease;
 }
 
-/* ===============================
-   BOTÕES
-================================== */
+body.light section {
+  background: rgba(255, 255, 255, 0.85);
+  color: #1f1f1f;
+}
+
+/* Botões simples com leve brilho */
 .btn {
   display: inline-block;
-  background-color: var(--btn-bg);
-  color: var(--btn-text);
+  background: #aaccee;
+  color: #121212;
   padding: 12px 25px;
   font-weight: 700;
-  font-size: 1.05rem;
+  font-size: 1.1rem;
   border: none;
   border-radius: 15px;
   cursor: pointer;
-  box-shadow: 0 0 8px rgba(0, 0, 0, 0.15);
-  transition: background-color 0.3s, box-shadow 0.3s;
+  box-shadow: 0 0 8px #aaccee;
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+  user-select: none;
   text-decoration: none;
   text-align: center;
-  user-select: none;
 }
 
 .btn:hover {
-  background-color: var(--btn-hover);
-  box-shadow: 0 0 15px rgba(170, 200, 255, 0.2);
+  background: #ddeeff;
+  box-shadow: 0 0 15px #ddeeff;
 }
 
-/* Botões flutuantes */
-.buttons {
-  position: fixed;
-  bottom: 25px;
-  right: 25px;
-  display: flex;
-  flex-direction: column;
-  gap: 14px;
-  z-index: 1500;
-}
-
-.buttons .btn {
-  font-size: 1.2rem;
-  padding: 10px 18px;
-}
-
-/* ===============================
-   FORMULÁRIO DE CONTATO
-================================== */
+/* Formulário */
 .formulario-contato form {
   display: flex;
   flex-direction: column;
@@ -171,15 +170,15 @@ section {
 
 .formulario-contato label {
   font-weight: 600;
-  color: var(--accent-color);
+  color: #aaccff;
 }
 
 .formulario-contato input,
 .formulario-contato textarea {
-  background: var(--box-bg);
-  border: 1.5px solid var(--accent-color);
+  background: rgba(40, 40, 40, 0.8);
+  border: 1.5px solid #aaccee;
   border-radius: 10px;
-  color: var(--text-color);
+  color: #ddeeff;
   padding: 12px 16px;
   font-size: 1rem;
   transition: border-color 0.3s ease, box-shadow 0.3s ease;
@@ -191,23 +190,36 @@ section {
 .formulario-contato textarea:focus {
   border-color: #ddeeff;
   box-shadow: 0 0 10px #ddeeff;
+  background: rgba(60, 60, 60, 0.85);
+  color: #fff;
 }
 
-/* ===============================
-   RODAPÉ
-================================== */
+/* Rodapé */
 footer {
   text-align: center;
   padding: 30px 10px 50px;
-  color: var(--accent-color);
+  color: #aaccee;
   font-weight: 500;
-  background-color: var(--header-bg);
   user-select: none;
 }
 
-/* ===============================
-   RESPONSIVIDADE
-================================== */
+/* Botões fixos */
+.buttons {
+  position: fixed;
+  bottom: 25px;
+  right: 25px;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  z-index: 1500;
+}
+
+.buttons .btn {
+  font-size: 1.3rem;
+  padding: 12px 18px;
+}
+
+/* Responsividade */
 @media (max-width: 768px) {
   nav.menu {
     gap: 20px;
@@ -225,7 +237,11 @@ footer {
   }
 
   .buttons .btn {
-    font-size: 1rem;
+    font-size: 1.1rem;
     padding: 10px 14px;
+  }
+
+  h1 {
+    font-size: 2.2rem;
   }
 }
