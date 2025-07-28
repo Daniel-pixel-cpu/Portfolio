@@ -1,197 +1,137 @@
-/* Reset básico */
+/* ===== Reset básico ===== */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
-/* Fonte base */
+/* ===== Tema escuro padrão ===== */
 body {
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  background-color: #121212; /* Modo escuro padrão */
-  color: #f0f0f0;
-  transition: background-color 0.4s, color 0.4s;
+  background-color: #121212;
+  color: #eee;
+  font-family: Arial, sans-serif;
+  line-height: 1.6;
+  padding: 20px;
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
 
-/* Tema claro */
-body.light {
-  background-color: #f7f7f7;
-  color: #1a1a1a;
+a {
+  color: #7fffd4;
+  text-decoration: none;
 }
 
-/* Header */
-header {
-  text-align: center;
-  padding: 2rem;
-  background: linear-gradient(180deg, rgba(0,0,0,0.6), transparent);
+a:hover {
+  text-decoration: underline;
 }
 
-body.light header {
-  background: linear-gradient(180deg, #ffffff, transparent);
+/* Brilho nos títulos no modo escuro */
+body:not(.light) h1,
+body:not(.light) h2 {
+  text-shadow: 0 0 8px #7fffd4, 0 0 15px #40e0d0;
 }
 
-h1 {
-  font-size: 3rem;
-  margin-bottom: 0.5rem;
-  color: #ffffff;
-  text-shadow: 0 0 8px rgba(255, 255, 255, 0.4);
+/* ===== Tema claro quando <html class="light"> ===== */
+html.light body {
+  background-color: #f5f5f5;
+  color: #111;
 }
 
-body.light h1 {
-  color: #1a1a1a;
+html.light a {
+  color: #007acc;
+}
+
+html.light h1,
+html.light h2 {
   text-shadow: none;
 }
 
-.subtitulo {
-  font-size: 1.2rem;
-  opacity: 0.8;
+/* ===== Cabeçalho e navegação ===== */
+header {
+  text-align: center;
+  margin-bottom: 40px;
 }
 
-/* Menu */
-.menu {
+nav.menu {
+  margin-bottom: 20px;
   display: flex;
   justify-content: center;
-  gap: 2rem;
-  margin-bottom: 1rem;
+  gap: 15px;
+  flex-wrap: wrap;
 }
 
-.menu a {
-  text-decoration: none;
-  font-weight: bold;
-  padding: 0.5rem 1rem;
-  color: inherit;
-  transition: all 0.3s ease;
-  border-bottom: 2px solid transparent;
+nav.menu a {
+  padding: 8px 16px;
+  border-radius: 5px;
+  background-color: #222;
+  color: #eee;
+  transition: background-color 0.3s ease;
 }
 
-.menu a:hover,
-.menu a.active {
-  border-color: #0ff;
+nav.menu a.active {
+  background-color: #444;
 }
 
-/* Seções */
-section {
-  padding: 2rem;
-  max-width: 900px;
-  margin: auto;
-}
-
-/* Botões */
-.buttons {
-  position: fixed;
-  bottom: 20px;
-  right: 20px;
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-}
-
-.btn {
-  padding: 10px 16px;
-  border: none;
-  border-radius: 6px;
-  cursor: pointer;
-  font-weight: bold;
-  background-color: #333;
-  color: white;
-  box-shadow: 0 0 10px rgba(0, 255, 255, 0.3);
-  transition: background-color 0.3s, transform 0.2s;
-}
-
-.btn:hover {
-  background-color: #555;
-  transform: scale(1.05);
-}
-
-body.light .btn {
+html.light nav.menu a {
   background-color: #ddd;
-  color: #000;
-  box-shadow: none;
+  color: #111;
 }
 
-body.light .btn:hover {
+html.light nav.menu a.active {
   background-color: #bbb;
 }
 
-/* Projeto Atual - Card Interativo */
-.projeto-atual {
-  margin-top: 2rem;
-  padding: 2rem;
+/* ===== Seções ===== */
+section {
+  margin-bottom: 40px;
+  padding: 20px;
   border-radius: 10px;
-  background: rgba(255, 255, 255, 0.05);
-  border: 1px solid rgba(0, 255, 255, 0.2);
-  box-shadow: 0 0 15px rgba(0, 255, 255, 0.1);
-  transition: transform 0.3s, box-shadow 0.3s;
-  cursor: pointer;
+  background-color: rgba(255, 255, 255, 0.05);
+  transition: background-color 0.3s ease;
 }
 
-body.light .projeto-atual {
-  background: #ffffff;
-  border: 1px solid #ccc;
-  box-shadow: 0 0 10px rgba(0,0,0,0.05);
+html.light section {
+  background-color: rgba(0, 0, 0, 0.03);
 }
 
-/* Texto da seção projeto */
-.projeto-atual h2,
-.projeto-atual p {
-  text-align: left;
-}
-
-.projeto-atual:hover {
-  transform: scale(1.02);
-  box-shadow: 0 0 25px rgba(0, 255, 255, 0.4);
-}
-
-body.light .projeto-atual:hover {
-  box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
-}
-
-/* Lista de habilidades */
+/* ===== Lista de habilidades ===== */
 .lista-habilidades {
-  list-style: none;
+  list-style: disc;
+  padding-left: 20px;
+}
+
+/* ===== Botões fixos ===== */
+.buttons {
   display: flex;
-  flex-wrap: wrap;
-  gap: 1rem;
   justify-content: center;
-  margin-top: 1rem;
+  gap: 10px;
+  margin: 30px auto;
+  flex-wrap: wrap;
 }
 
-.lista-habilidades li {
-  padding: 0.5rem 1rem;
-  background-color: #222;
-  border-radius: 6px;
-  color: #0ff;
-  font-weight: bold;
-  box-shadow: 0 0 10px rgba(0,255,255,0.3);
+button.btn {
+  padding: 10px 20px;
+  font-size: 1rem;
+  background-color: #333;
+  color: #eee;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
 
-body.light .lista-habilidades li {
-  background-color: #e4e4e4;
-  color: #0077aa;
-  box-shadow: none;
+button.btn:hover {
+  filter: brightness(1.2);
 }
 
-/* Footer */
+html.light button.btn {
+  background-color: #ddd;
+  color: #111;
+}
+
+/* ===== Rodapé ===== */
 footer {
   text-align: center;
-  padding: 1rem;
+  margin-top: 40px;
   font-size: 0.9rem;
-  opacity: 0.6;
-}
-
-/* Responsivo */
-@media (max-width: 600px) {
-  h1 {
-    font-size: 2rem;
-  }
-
-  .menu {
-    flex-direction: column;
-    gap: 1rem;
-  }
-
-  .lista-habilidades {
-    flex-direction: column;
-    align-items: center;
-  }
+  opacity: 0.7;
 }
