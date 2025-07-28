@@ -154,3 +154,13 @@ body.light footer {
     gap: 15px;
   }
 }
+
+/* Botões fixos no canto inferior direito */
+.buttons {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  display: flex;
+  flex-direction: column;
+
+}
