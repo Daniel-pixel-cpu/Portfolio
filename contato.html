@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Contato - Portfólio do Daniel</title>
+  <title>Contato - Daniel</title>
   <link rel="stylesheet" href="style.css" />
   <link rel="icon" type="image/png" href="Favicon.png" />
   <script src="script.js" defer></script>
@@ -14,30 +14,21 @@
     <nav class="menu">
       <a href="index.html">Sobre mim</a>
       <a href="projeto.html">Projeto Atual</a>
-      <a href="contato.html" aria-current="page" class="active">Contato</a>
+      <a href="contato.html" class="active">Contato</a>
     </nav>
-
-    <h1>Entre em Contato</h1>
-    <p class="subtitulo">Ficarei feliz em receber sua mensagem!</p>
+    <h1>Contato</h1>
+    <p class="subtitulo">Entre em contato comigo!</p>
   </header>
 
-  <section id="contato-form">
-    <h2>📬 Enviar uma Mensagem</h2>
-    <form action="https://formsubmit.co/SEU_EMAIL_AQUI" method="POST">
-      <input type="hidden" name="_captcha" value="false">
-      <input type="hidden" name="_template" value="box">
-
-      <label for="nome">Nome:</label>
-      <input type="text" id="nome" name="nome" required>
-
-      <label for="email">Email:</label>
-      <input type="email" id="email" name="email" required>
-
-      <label for="mensagem">Mensagem:</label>
-      <textarea id="mensagem" name="mensagem" rows="5" required></textarea>
-
-      <button type="submit" class="btn">Enviar</button>
+  <section id="contato" class="formulario-contato">
+    <h2>📨 Me envie uma mensagem</h2>
+    <form action="https://formspree.io/f/SEU_ID_AQUI" method="POST">
+      <input type="text" name="nome" placeholder="Seu nome" required />
+      <input type="email" name="email" placeholder="Seu e-mail" required />
+      <textarea name="mensagem" placeholder="Digite sua mensagem..." required></textarea>
+      <button type="submit">Enviar Mensagem</button>
     </form>
+    <p id="mensagemSucesso" style="display:none; color:lime;">✅ Mensagem enviada com sucesso!</p>
   </section>
 
   <footer>
@@ -48,5 +39,15 @@
     <button class="btn" id="botaoTema">🌗 Trocar Tema</button>
     <button class="btn" id="voltarTopo">🔝 Voltar ao Topo</button>
   </div>
+
+  <script>
+    // Mensagem de sucesso após envio (opcional e visual)
+    const form = document.querySelector("form");
+    const sucesso = document.getElementById("mensagemSucesso");
+
+    form.addEventListener("submit", () => {
+      sucesso.style.display = "block";
+    });
+  </script>
 </body>
 </html>
