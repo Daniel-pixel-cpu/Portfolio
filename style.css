@@ -123,14 +123,19 @@ body.light .subtitulo {
 section {
   max-width: 800px;
   margin: 40px auto;
-  background: rgba(20, 20, 20, 0.85);
   border-radius: 15px;
   padding: 30px 25px;
-  box-shadow: 0 0 12px rgba(170, 200, 255, 0.2);
-  color: #cce0ff;
   transition: background-color 0.3s ease, color 0.3s ease;
+  box-shadow: 0 0 12px rgba(170, 200, 255, 0.2);
 }
 
+/* Tema escuro */
+body:not(.light) section {
+  background-color: #1c1c1c;
+  color: #cce0ff;
+}
+
+/* Tema claro */
 body.light section {
   background-color: #ffffff;
   color: #1f1f1f;
