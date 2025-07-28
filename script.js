@@ -1,28 +1,38 @@
 document.addEventListener("DOMContentLoaded", () => {
   const html = document.documentElement;
 
-  // Aplicar tema salvo (dark/clear)
+  // Pega tema salvo do localStorage
   const temaSalvo = localStorage.getItem("tema");
   if (temaSalvo === "escuro") {
     html.classList.add("dark");
-  } else if (temaSalvo === "claro") {
+    console.log("Tema escuro aplicado (salvo)");
+  } else {
     html.classList.remove("dark");
+    console.log("Tema claro aplicado (padrão ou salvo)");
   }
 
-  // Botão trocar tema
-  const botaoTema = document.getElementById("botaoTema") || document.getElementById("trocar-tema");
+  // Função para alternar tema
+  function alternarTema() {
+    const temaEscuro = html.classList.toggle("dark");
+    localStorage.setItem("tema", temaEscuro ? "escuro" : "claro");
+    console.log(`Tema alterado para: ${temaEscuro ? "escuro" : "claro"}`);
+  }
+
+  // Botão para trocar tema
+  const botaoTema = document.getElementById("botaoTema");
   if (botaoTema) {
-    botaoTema.addEventListener("click", () => {
-      const darkAtivo = html.classList.toggle("dark");
-      localStorage.setItem("tema", darkAtivo ? "escuro" : "claro");
-    });
+    botaoTema.addEventListener("click", alternarTema);
+  } else {
+    console.warn("Botão de tema não encontrado");
   }
 
-  // Botão voltar ao topo
-  const btnTopo = document.getElementById("voltarTopo");
-  if (btnTopo) {
-    btnTopo.addEventListener("click", () => {
+  // Botão para voltar ao topo
+  const voltarTopo = document.getElementById("voltarTopo");
+  if (voltarTopo) {
+    voltarTopo.addEventListener("click", () => {
       window.scrollTo({ top: 0, behavior: "smooth" });
     });
+  } else {
+    console.warn("Botão voltar ao topo não encontrado");
   }
 });
