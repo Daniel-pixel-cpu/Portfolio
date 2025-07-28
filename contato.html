@@ -22,16 +22,15 @@
 
   <section id="contato" class="formulario-contato">
     <h2>📨 Me envie uma mensagem</h2>
-  <form action="https://formspree.io/f/mjkowdkn" method="POST">
-    <input type="hidden" name="_next" value="obrigado.html" />
-    <input type="hidden" name="_captcha" value="false" />
-    <input type="text" name="nome" placeholder="Seu nome" required />
-    <input type="email" name="email" placeholder="Seu e-mail" required />
-    <textarea name="mensagem" placeholder="Digite sua mensagem..." required></textarea>
-    <button type="submit">Enviar Mensagem</button>
-  </form>
+    <form id="formContato" action="https://formspree.io/f/mjkowdkn" method="POST">
+      <input type="text" name="nome" placeholder="Seu nome" required />
+      <input type="email" name="email" placeholder="Seu e-mail" required />
+      <textarea name="mensagem" placeholder="Digite sua mensagem..." required></textarea>
+      <button type="submit">Enviar Mensagem</button>
+    </form>
 
     <p id="mensagemSucesso" style="display:none; color:lime;">✅ Mensagem enviada com sucesso!</p>
+    <p id="mensagemErro" style="display:none; color:#f66;">❌ Erro ao enviar, tente novamente.</p>
   </section>
 
   <footer>
@@ -44,12 +43,40 @@
   </div>
 
   <script>
-    // Mensagem de sucesso após envio (opcional e visual)
-    const form = document.querySelector("form");
+    const form = document.getElementById("formContato");
     const sucesso = document.getElementById("mensagemSucesso");
+    const erro = document.getElementById("mensagemErro");
 
-    form.addEventListener("submit", () => {
-      sucesso.style.display = "block";
+    form.addEventListener("submit", async (event) => {
+      event.preventDefault();
+      sucesso.style.display = "none";
+      erro.style.display = "none";
+
+      const data = new FormData(form);
+
+      try {
+        const response = await fetch(form.action, {
+          method: form.method,
+          body: data,
+          headers: {
+            'Accept': 'application/json'
+          }
+        });
+
+        if (response.ok) {
+          sucesso.style.display = "block";
+          form.reset();
+
+          // Redireciona para obrigado.html após 2 segundos
+          setTimeout(() => {
+            window.location.href = "obrigado.html";
+          }, 2000);
+        } else {
+          throw new Error("Erro no envio");
+        }
+      } catch (e) {
+        erro.style.display = "block";
+      }
     });
   </script>
 </body>
