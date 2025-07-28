@@ -32,17 +32,17 @@ body {
 }
 
 .dark {
-  --bg: #0d1117;
-  --text: #e6edf3;
-  --primary: #90ee90;
-  --secondary: #00ffbf;
-  --accent: #00ffaa;
-  --button-bg: #1a1a1a;
-  --button-hover: #2c2c2c;
-  --button-text: #00ffbf;
-  --section-bg: rgba(0, 0, 0, 0.35);
-  --section-border: 1px solid rgba(255, 255, 255, 0.1);
-  --section-shadow: 0 8px 32px rgba(0, 0, 0, 0.6);
+  --bg: #0b0f19;
+  --text: #cfd8e3;
+  --primary: #21f18b;
+  --secondary: #00ffd5;
+  --accent: #30ffa2;
+  --button-bg: #1a1f2b;
+  --button-hover: #2c3240;
+  --button-text: #a4ffe2;
+  --section-bg: rgba(20, 25, 40, 0.55);
+  --section-border: 1px solid rgba(72, 255, 190, 0.15);
+  --section-shadow: 0 12px 40px rgba(0, 255, 190, 0.1), inset 0 0 12px rgba(0, 255, 190, 0.05);
 }
 
 /* Cabeçalho */
