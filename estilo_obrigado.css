@@ -40,7 +40,7 @@ body {
   --button-bg: #1a1f2b;
   --button-hover: #2c3240;
   --button-text: #a4ffe2;
-  --section-bg: rgba(20, 25, 40, 0.80); /* opacidade aumentada */
+  --section-bg: rgba(20, 25, 40, 0.95);
   --section-border: 1px solid rgba(72, 255, 190, 0.15);
   --section-shadow: 0 12px 40px rgba(0, 255, 190, 0.1), inset 0 0 12px rgba(0, 255, 190, 0.05);
 }
