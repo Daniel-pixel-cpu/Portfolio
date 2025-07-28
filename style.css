@@ -208,6 +208,29 @@ body.light .btn {
   box-shadow: none;
 }
 
+body.light section {
+  background-color: #ffffff;
+  color: var(--cor-texto-claro);
+}
+
+body.light .evento {
+  border-left: 3px solid #0077cc;
+  color: var(--cor-texto-claro);
+}
+
+body.light .menu a {
+  color: #0077cc;
+}
+
+body.light .menu a:hover {
+  background-color: rgba(0, 119, 204, 0.1);
+}
+
+body.light footer {
+  background-color: #eaeaea;
+  color: var(--cor-texto-claro);
+}
+
 body.light .btn::before,
 body.light .btn:hover,
 body.light section:hover,
@@ -217,3 +240,4 @@ body.light h2:hover {
   text-shadow: none !important;
   opacity: 0 !important;
 }
+
