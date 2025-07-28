@@ -43,40 +43,41 @@
   </div>
 
   <script>
-const form = document.getElementById("formContato");
-const sucesso = document.getElementById("mensagemSucesso");
-const erro = document.getElementById("mensagemErro");
+document.addEventListener("DOMContentLoaded", () => {
+  const html = document.documentElement;
 
-form.addEventListener("submit", async (event) => {
-  event.preventDefault();
-  sucesso.classList.remove("show");
-  erro.classList.remove("show");
+  // Aplica tema salvo
+  const temaSalvo = localStorage.getItem("tema");
+  if (temaSalvo === "escuro") {
+    html.classList.add("dark");
+  } else if (temaSalvo === "claro") {
+    html.classList.remove("dark");
+  }
 
-  const data = new FormData(form);
+  // Função para alternar tema
+  function alternarTema() {
+    const temaEscuro = html.classList.toggle("dark");
+    localStorage.setItem("tema", temaEscuro ? "escuro" : "claro");
+  }
 
-  try {
-    const response = await fetch(form.action, {
-      method: form.method,
-      body: data,
-      headers: {
-        'Accept': 'application/json'
-      }
+  // Botão tema
+  const botaoTema = document.getElementById("botaoTema");
+  if (botaoTema) {
+    botaoTema.addEventListener("click", alternarTema);
+  } else {
+    console.warn("Botão de tema não encontrado na página.");
+  }
+
+  // Botão voltar ao topo
+  const btnTopo = document.getElementById("voltarTopo");
+  if (btnTopo) {
+    btnTopo.addEventListener("click", () => {
+      window.scrollTo({ top: 0, behavior: "smooth" });
     });
-
-    if (response.ok) {
-      sucesso.classList.add("show");
-      form.reset();
-
-      setTimeout(() => {
-        window.location.href = "obrigado.html";
-      }, 2000);
-    } else {
-      throw new Error("Erro no envio");
-    }
-  } catch (e) {
-    erro.classList.add("show");
+  } else {
+    console.warn("Botão voltar ao topo não encontrado na página.");
   }
 });
-  </script>
+
 </body>
 </html>
