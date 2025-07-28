@@ -14,17 +14,21 @@
   --cor-botao: #28a745;
   --cor-botao-hover: #218838;
   --cor-borda: #2e4e3a;
+  --gradiente-header: linear-gradient(135deg, #1c2b20, #0f1a14);
+  --gradiente-footer: linear-gradient(135deg, #1c2b20, #0f1a14);
 }
 
-/* Tema claro com mais verde */
+/* Tema claro com mais verde e degradês */
 .light {
-  --cor-fundo: #e9fbee;         /* fundo mais esverdeado */
+  --cor-fundo: #e9fbee;
   --cor-texto: #1d3124;
-  --cor-destaque: #2e8b57;      /* verde escuro nos títulos e links */
-  --cor-secundaria: #dff4e4;    /* caixas e header mais claras */
+  --cor-destaque: #2e8b57;
+  --cor-secundaria: #dff4e4;
   --cor-botao: #3aa66a;
   --cor-botao-hover: #2f8655;
   --cor-borda: #b7dec5;
+  --gradiente-header: linear-gradient(135deg, #d0f5d6, #e9fbee);
+  --gradiente-footer: linear-gradient(135deg, #d0f5d6, #e9fbee);
 }
 
 html {
@@ -44,11 +48,11 @@ body {
   justify-content: space-between;
 }
 
-/* Cabeçalho */
+/* Cabeçalho com degradê */
 header {
   text-align: center;
   padding: 2rem 1rem;
-  background-color: var(--cor-secundaria);
+  background: var(--gradiente-header);
   border-bottom: 2px solid var(--cor-borda);
   border-radius: 10px;
   margin-bottom: 2rem;
@@ -108,11 +112,11 @@ nav.menu a:hover {
   text-decoration: underline;
 }
 
-/* Rodapé */
+/* Rodapé com degradê */
 footer {
   text-align: center;
   padding: 1rem;
-  background-color: var(--cor-secundaria);
+  background: var(--gradiente-footer);
   border-top: 2px solid var(--cor-borda);
   margin-top: 2rem;
   border-radius: 10px;
@@ -143,7 +147,7 @@ footer {
   transform: scale(1.05);
 }
 
-/* Responsividade */
+/* Responsivo */
 @media (max-width: 600px) {
   header h1 {
     font-size: 2rem;
