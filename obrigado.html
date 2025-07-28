@@ -1,6 +1,16 @@
 <!DOCTYPE html>
-<html lang="pt-BR" class="">
+<html lang="pt-BR">
 <head>
+<script>
+  // Tema é aplicado logo no início, antes do carregamento do CSS
+  (function () {
+    const temaSalvo = localStorage.getItem("tema");
+    if (temaSalvo === "dark") {
+      document.documentElement.classList.add("dark");
+    }
+  })();
+</script>
+  
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Obrigado - Daniel</title>
