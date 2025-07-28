@@ -13,21 +13,21 @@ body, html {
 }
 
 /* --- Temas no <html> --- */
-html.light {
-  --bg-color: #fefefe;
-  --text-color: #222;
-  --header-footer-bg: #27ae60;
-  --header-footer-text: #fff;
-  --link-bg: #27ae60;
-  --link-hover-bg: #1e8746;
-  --button-bg: #27ae60;
-  --button-text: #fff;
-  --button-hover-bg: #1e8746;
-  --card-bg: rgba(255, 255, 255, 0.95);
-  --card-shadow: rgba(0, 0, 0, 0.1);
-  --success-color: #27ae60;
-  --success-glow: #7ade91;
-  --success-text: #333;
+html.dark {
+  --bg-color: #0e1610;
+  --text-color: #d6f1d8;
+  --header-footer-bg: #1e3821;
+  --header-footer-text: #c2f5c9;
+  --link-bg: #2e6042;
+  --link-hover-bg: #3ea25e;
+  --button-bg: #3ea25e;
+  --button-text: #f4fef4;
+  --button-hover-bg: #4fd973;
+  --card-bg: rgba(30, 50, 30, 0.95);
+  --card-shadow: rgba(0, 0, 0, 0.8);
+  --success-color: #76f3a2;
+  --success-glow: #3ef67b;
+  --success-text: #c7e9cc;
 }
 
 html.dark {
