@@ -1,27 +1,27 @@
 <!DOCTYPE html>
-<html lang="pt-BR" class="">
+<html lang="pt-BR">
 <head>
-    <script>
-    (function () {
-      const temaSalvo = localStorage.getItem("tema");
-      if (temaSalvo === "claro") {
-        document.documentElement.classList.add("light");
-      }
-    })();
-  </script>
-  
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Portfólio do Daniel</title>
-  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="estilo.css" />
   <link rel="icon" type="image/png" href="Favicon.png" />
-  <script src="script.js" defer></script>
+  <script defer src="script.js"></script>
+  <script>
+    // Aplica tema salvo ANTES do CSS carregar para evitar flash
+    (function() {
+      const temaSalvo = localStorage.getItem("tema");
+      if (temaSalvo === "escuro") {
+        document.documentElement.classList.add("dark");
+      }
+    })();
+  </script>
 </head>
-  
+
 <body>
   <header>
     <nav class="menu">
-      <a href="index.html" aria-current="page" class="active">Sobre mim</a>
+      <a href="index.html">Sobre mim</a>
       <a href="projeto.html">Projeto Atual</a>
       <a href="contato.html">Contato</a>
     </nav>
@@ -30,47 +30,30 @@
     <p class="subtitulo">Desenvolvedor iniciante apaixonado por tecnologia e jogos</p>
   </header>
 
-  <section id="sobre">
-    <h2>🧠 Sobre Mim</h2>
-    <p>
-      Olá! Sou o Daniel, um jovem desenvolvedor com paixão por criar jogos e aprender novas tecnologias. Atualmente estou focado em Python e Pygame, mas sempre em busca de explorar novas linguagens e ferramentas.
-    </p>
-    <p>
-      Meu objetivo é evoluir como programador, criar projetos interessantes e, quem sabe, inspirar outras pessoas no caminho da programação.
-    </p>
-  </section>
+  <main>
+    <section>
+      <h2>Bem-vindo!</h2>
+      <p>Este é o meu site portfolio com tema claro e escuro.</p>
+    </section>
+  </main>
 
-  <!-- Seção Habilidades -->
-<section id="habilidades">
-  <h2>🛠️ Habilidades</h2>
-  <ul class="lista-habilidades">
-    <li>Python / Pygame</li>
-    <li>HTML / CSS / JavaScript</li>
-    <li>Criação de jogos</li>
-    <li>Git e GitHub</li>
-  </ul>
-</section>
-
-<!-- Seção Projetos -->
-<section class="projeto-atual clicavel" id="projeto" data-link="projeto.html">
-  <h2>🎮 Projeto Atual: Survival Game</h2>
-  <p>
-    Estou desenvolvendo um jogo em Python usando Pygame, com uma temática de sobrevivência em um mundo tomado por zumbis. 
-    O jogador pode explorar o mapa, coletar armas e itens de cura, e enfrentar inimigos enquanto o sistema de câmera acompanha a ação.
-  </p>
-  <p>
-    O projeto está em constante evolução e conta com sistema de colisão, HUD, estados de jogo e muito mais. Planejo concluir uma boa parte até o final de julho de 2025.
-  </p>
-</section>
-
-  <footer id="contato">
+  <footer>
     &copy; 2025 desenvolvido por Daniel.
   </footer>
 
+  <!-- Botão Trocar Tema -->
   <div class="buttons">
-    <button class="btn" id="botaoTema">🌗 Trocar Tema</button>
-    <button class="btn" id="voltarTopo">🔝 Voltar ao Topo</button>
+    <button class="btn" id="botaoTema" aria-label="Trocar tema">
+      <!-- Ícone Sol (claro) -->
+      <svg class="icon sol" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" width="24" height="24" aria-hidden="true">
+        <circle cx="12" cy="12" r="5" stroke-width="2"/>
+        <path stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="M12 1v2m0 18v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2m18 0h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/>
+      </svg>
+      <!-- Ícone Lua (escuro) -->
+      <svg class="icon lua" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" width="24" height="24" aria-hidden="true">
+        <path stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="M21 12.79A9 9 0 0112.21 3a7 7 0 109.79 9.79z"/>
+      </svg>
+    </button>
   </div>
 </body>
-  
 </html>
