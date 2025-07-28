@@ -1,62 +1,156 @@
-/* Estilo base (modo escuro por padrão) */
-body {
+/* Reset básico */
+* {
   margin: 0;
-  font-family: 'Segoe UI', sans-serif;
-  background-color: #121212;
-  color: #f0f0f0;
-  transition: background 0.4s, color 0.4s;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-header, footer {
-  background-color: #1e402f; /* tom de verde escuro */
-  color: #e0ffe0;
-  padding: 1em;
+/* Tema escuro padrão */
+:root {
+  --cor-fundo: #0f1a14;
+  --cor-texto: #e6f0e6;
+  --cor-destaque: #34c759;
+  --cor-secundaria: #1f2f25;
+  --cor-botao: #28a745;
+  --cor-botao-hover: #218838;
+  --cor-borda: #2e4e3a;
+}
+
+/* Tema claro */
+.light {
+  --cor-fundo: #ffffff;
+  --cor-texto: #222;
+  --cor-destaque: #2e8b57;
+  --cor-secundaria: #f4f4f4;
+  --cor-botao: #2e8b57;
+  --cor-botao-hover: #276d48;
+  --cor-borda: #ccc;
+}
+
+html {
+  scroll-behavior: smooth;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background-color: var(--cor-fundo);
+  color: var(--cor-texto);
+  padding: 2rem;
+  transition: background-color 0.3s ease, color 0.3s ease;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+/* Cabeçalho */
+header {
   text-align: center;
-  transition: background 0.4s, color 0.4s;
+  padding: 2rem 1rem;
+  background-color: var(--cor-secundaria);
+  border-bottom: 2px solid var(--cor-borda);
+  border-radius: 10px;
+  margin-bottom: 2rem;
 }
 
-/* Botão */
+header h1 {
+  font-size: 2.5rem;
+  margin-bottom: 0.5rem;
+  color: var(--cor-destaque);
+}
+
+.subtitulo {
+  font-size: 1.2rem;
+  opacity: 0.9;
+}
+
+/* Navegação */
+nav.menu {
+  margin-bottom: 1rem;
+}
+
+nav.menu a {
+  margin: 0 1rem;
+  text-decoration: none;
+  color: var(--cor-destaque);
+  font-weight: bold;
+  transition: color 0.3s;
+}
+
+nav.menu a:hover {
+  text-decoration: underline;
+}
+
+/* Seção de agradecimento */
+#agradecimento {
+  text-align: center;
+  padding: 2rem;
+  background-color: var(--cor-secundaria);
+  border-radius: 10px;
+  border: 1px solid var(--cor-borda);
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+#agradecimento h2 {
+  font-size: 2rem;
+  color: var(--cor-destaque);
+  margin-bottom: 1rem;
+}
+
+#agradecimento a {
+  color: var(--cor-destaque);
+  text-decoration: none;
+  font-weight: bold;
+}
+
+#agradecimento a:hover {
+  text-decoration: underline;
+}
+
+/* Rodapé */
+footer {
+  text-align: center;
+  padding: 1rem;
+  background-color: var(--cor-secundaria);
+  border-top: 2px solid var(--cor-borda);
+  margin-top: 2rem;
+  border-radius: 10px;
+  font-size: 0.9rem;
+}
+
+/* Botão fixo no canto esquerdo */
 .buttons {
-  text-align: center;
-  margin: 2em 0;
+  position: fixed;
+  bottom: 20px;
+  left: 20px;
+  z-index: 1000;
 }
 
 .btn {
-  background-color: #2e7d32; /* verde médio */
+  padding: 10px 20px;
+  background-color: var(--cor-botao);
+  color: #fff;
   border: none;
-  color: white;
-  padding: 0.6em 1.2em;
-  font-size: 1em;
   border-radius: 8px;
+  font-size: 1rem;
   cursor: pointer;
-  transition: background 0.3s;
+  transition: background-color 0.3s ease, transform 0.2s ease;
 }
+
 .btn:hover {
-  background-color: #388e3c; /* verde mais claro no hover */
+  background-color: var(--cor-botao-hover);
+  transform: scale(1.05);
 }
 
-/* Agradecimento */
-#agradecimento {
-  text-align: center;
-  margin-top: 50px;
-}
+/* Responsividade básica */
+@media (max-width: 600px) {
+  header h1 {
+    font-size: 2rem;
+  }
 
-/* Tema claro (classe light aplicada no <html>) */
-html.light body {
-  background-color: #ffffff;
-  color: #222222;
-}
-
-html.light header,
-html.light footer {
-  background-color: #e0f5e9; /* tom de verde claro */
-  color: #114d35;
-}
-
-html.light .btn {
-  background-color: #81c784;
-  color: #083a2d;
-}
-html.light .btn:hover {
-  background-color: #66bb6a;
+  .btn {
+    font-size: 0.9rem;
+    padding: 8px 16px;
+  }
 }
