@@ -5,71 +5,67 @@
   box-sizing: border-box;
 }
 
-/* Corpo com fundo escuro neutro e gradiente suave */
+/* Corpo geral */
 body {
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  background: linear-gradient(135deg, #121212, #1c1c1c);
+  background-color: #121212;
   color: #ddd;
-  min-height: 100vh;
-  padding-bottom: 120px;
-  transition: background-color 0.3s ease, color 0.3s ease;
+  transition: background-color 0.3s, color 0.3s;
 }
 
-/* Tema claro */
+/* Modo claro */
 body.light {
-  background-color: #f2f2f2;
-  color: #1f1f1f;
+  background-color: #f4f4f4;
+  color: #1c1c1c;
 }
 
 /* Cabeçalho */
 header {
-  padding: 30px 20px 40px;
+  padding: 30px 20px;
   text-align: center;
   background-color: #181818;
-  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.3);
-  border-bottom: 1px solid #333;
-  position: relative;
-  z-index: 10;
-  transition: background-color 0.3s ease, color 0.3s ease;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+  transition: background-color 0.3s, color 0.3s;
 }
 
 body.light header {
   background-color: #ffffff;
-  color: #1f1f1f;
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+  color: #1c1c1c;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
 }
 
-/* Menu de navegação */
+/* Título principal */
+h1 {
+  font-size: 2.8rem;
+  margin-bottom: 15px;
+  text-shadow: 0 0 10px #88ccff;
+}
+
+body.light h1 {
+  text-shadow: none;
+  color: #1c1c1c;
+}
+
+/* Navegação */
 nav.menu {
-  margin-bottom: 20px;
   display: flex;
   justify-content: center;
-  gap: 40px;
   flex-wrap: wrap;
-  font-weight: 600;
-  text-transform: uppercase;
-  letter-spacing: 1.5px;
+  gap: 30px;
+  margin-top: 15px;
 }
 
 nav.menu a {
-  color: #aaccee;
+  color: #aaccff;
   text-decoration: none;
-  padding: 8px 15px;
-  border-radius: 12px;
-  transition: color 0.3s ease, text-shadow 0.3s ease;
+  font-weight: 600;
+  padding: 8px 16px;
+  transition: color 0.3s;
 }
 
 nav.menu a:hover {
-  color: #ddeeff;
-  text-shadow: 0 0 8px #aaccff;
-}
-
-nav.menu a.active,
-nav.menu a[aria-current="page"] {
-  color: #eef7ff;
-  font-weight: 700;
-  text-shadow: 0 0 10px #aaccff;
-  pointer-events: none;
+  color: #fff;
+  text-shadow: 0 0 6px #aaccff;
 }
 
 body.light nav.menu a {
@@ -81,79 +77,47 @@ body.light nav.menu a:hover {
   text-shadow: none;
 }
 
-/* Títulos */
-h1, h2 {
-  margin-bottom: 20px;
-  font-weight: 900;
-  font-size: 2.5rem;
-  text-shadow: 0 0 6px #aaccff;
-}
-
-body.light h1, 
-body.light h2 {
-  text-shadow: none;
-  color: #1f1f1f;
-}
-
-/* Subtítulo */
-.subtitulo {
-  font-weight: 400;
-  font-size: 1.15rem;
-  color: #99bbcc;
-  margin-bottom: 25px;
-}
-
-body.light .subtitulo {
-  color: #555;
-}
-
 /* Seções */
 section {
-  max-width: 800px;
+  max-width: 900px;
   margin: 40px auto;
-  border-radius: 15px;
-  padding: 30px 25px;
-  transition: background-color 0.3s ease, color 0.3s ease;
-  box-shadow: 0 0 12px rgba(170, 200, 255, 0.2);
-}
-
-body:not(.light) section {
+  padding: 30px;
   background-color: #1c1c1c;
-  color: #cce0ff;
+  border-radius: 15px;
+  box-shadow: 0 0 15px rgba(170, 200, 255, 0.2);
+  transition: background-color 0.3s, color 0.3s;
 }
 
 body.light section {
   background-color: #ffffff;
-  color: #1f1f1f;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.06);
+  color: #222;
 }
 
 /* Botões */
 .btn {
   display: inline-block;
-  background: #aaccee;
-  color: #121212;
-  padding: 12px 25px;
-  font-weight: 700;
+  padding: 12px 24px;
   font-size: 1.1rem;
+  font-weight: bold;
   border: none;
-  border-radius: 15px;
+  border-radius: 12px;
   cursor: pointer;
-  box-shadow: 0 0 8px #aaccee;
-  transition: background-color 0.3s ease, box-shadow 0.3s ease;
-  user-select: none;
-  text-align: center;
+  background-color: #aaccff;
+  color: #121212;
+  box-shadow: 0 0 8px #aaccff;
+  transition: background-color 0.3s, box-shadow 0.3s;
   text-decoration: none;
 }
 
 .btn:hover {
-  background: #ddeeff;
-  box-shadow: 0 0 15px #ddeeff;
+  background-color: #ddeeff;
+  box-shadow: 0 0 12px #ddeeff;
 }
 
 body.light .btn {
   background-color: #cccccc;
-  color: #1f1f1f;
+  color: #1c1c1c;
   box-shadow: none;
 }
 
@@ -161,64 +125,13 @@ body.light .btn:hover {
   background-color: #bbbbbb;
 }
 
-/* Formulário */
-.formulario-contato form {
-  display: flex;
-  flex-direction: column;
-  gap: 20px;
-}
-
-.formulario-contato label {
-  font-weight: 600;
-  color: #aaccff;
-}
-
-body.light .formulario-contato label {
-  color: #333;
-}
-
-.formulario-contato input,
-.formulario-contato textarea {
-  background: rgba(40, 40, 40, 0.8);
-  border: 1.5px solid #aaccee;
-  border-radius: 10px;
-  color: #ddeeff;
-  padding: 12px 16px;
-  font-size: 1rem;
-  transition: border-color 0.3s ease, box-shadow 0.3s ease;
-  resize: vertical;
-  outline: none;
-}
-
-.formulario-contato input:focus,
-.formulario-contato textarea:focus {
-  border-color: #ddeeff;
-  box-shadow: 0 0 10px #ddeeff;
-  background: rgba(60, 60, 60, 0.85);
-  color: #fff;
-}
-
-body.light .formulario-contato input,
-body.light .formulario-contato textarea {
-  background-color: #f5f5f5;
-  color: #222;
-  border: 1px solid #ccc;
-}
-
-body.light .formulario-contato input:focus,
-body.light .formulario-contato textarea:focus {
-  border-color: #888;
-  box-shadow: 0 0 6px rgba(0,0,0,0.1);
-}
-
 /* Rodapé */
 footer {
   text-align: center;
-  padding: 30px 10px 50px;
+  padding: 30px 10px;
   color: #aaccee;
-  font-weight: 500;
-  user-select: none;
   background: transparent;
+  font-size: 0.95rem;
 }
 
 body.light footer {
@@ -226,27 +139,10 @@ body.light footer {
   background-color: #eaeaea;
 }
 
-/* Botões flutuantes */
-.buttons {
-  position: fixed;
-  bottom: 25px;
-  right: 25px;
-  display: flex;
-  flex-direction: column;
-  gap: 14px;
-  z-index: 1500;
-}
-
-.buttons .btn {
-  font-size: 1.3rem;
-  padding: 12px 18px;
-}
-
 /* Responsividade */
 @media (max-width: 768px) {
-  nav.menu {
-    gap: 20px;
-    font-size: 0.95rem;
+  h1 {
+    font-size: 2.2rem;
   }
 
   section {
@@ -254,13 +150,7 @@ body.light footer {
     padding: 25px 20px;
   }
 
-  .buttons {
-    bottom: 15px;
-    right: 15px;
-  }
-
-  .buttons .btn {
-    font-size: 1.1rem;
-    padding: 10px 14px;
+  nav.menu {
+    gap: 15px;
   }
 }
