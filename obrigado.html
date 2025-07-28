@@ -1,24 +1,23 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Obrigado - Daniel</title>
-
-  <!-- Script para ativar tema escuro antes do CSS carregar -->
   <script>
-    (function() {
+    (function () {
       const temaSalvo = localStorage.getItem("tema");
-      if (temaSalvo === "dark") {
-        document.documentElement.classList.add("dark");
+      if (temaSalvo === "claro") {
+        document.documentElement.classList.add("light");
       }
     })();
   </script>
 
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Obrigado - Daniel</title>
   <link rel="stylesheet" href="estilo_obrigado.css" />
   <link rel="icon" type="image/png" href="Favicon.png" />
   <script src="script.js" defer></script>
 </head>
+
 <body>
   <header>
     <nav class="menu">
