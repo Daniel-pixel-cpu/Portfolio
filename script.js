@@ -1,9 +1,7 @@
-
-// Aplica o tema salvo ao carregar
 document.addEventListener("DOMContentLoaded", () => {
   const html = document.documentElement;
 
-  // Verifica e aplica o tema salvo
+  // Aplica o tema salvo
   const temaSalvo = localStorage.getItem("tema");
   if (temaSalvo === "claro") {
     html.classList.add("light");
@@ -21,8 +19,6 @@ document.addEventListener("DOMContentLoaded", () => {
       localStorage.setItem("tema", temaClaro ? "claro" : "escuro");
       console.log(`🎯 Tema alterado para: ${temaClaro ? "claro" : "escuro"}`);
     });
-  } else {
-    console.warn("❗ Botão de tema não encontrado na página.");
   }
 
   // Botão de voltar ao topo
