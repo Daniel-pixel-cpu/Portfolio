@@ -16,9 +16,10 @@
   --cor-borda: #2e4e3a;
   --gradiente-header: linear-gradient(135deg, #1c2b20, #0f1a14);
   --gradiente-footer: linear-gradient(135deg, #1c2b20, #0f1a14);
+  --sombra-dinamica: 0 0 20px rgba(52, 199, 89, 0.2);
 }
 
-/* Tema claro com mais verde e degradês */
+/* Tema claro com mais verde e brilho suave */
 .light {
   --cor-fundo: #e9fbee;
   --cor-texto: #1d3124;
@@ -29,6 +30,7 @@
   --cor-borda: #b7dec5;
   --gradiente-header: linear-gradient(135deg, #d0f5d6, #e9fbee);
   --gradiente-footer: linear-gradient(135deg, #d0f5d6, #e9fbee);
+  --sombra-dinamica: 0 0 12px rgba(46, 139, 87, 0.3);
 }
 
 html {
@@ -48,7 +50,7 @@ body {
   justify-content: space-between;
 }
 
-/* Cabeçalho com degradê */
+/* Cabeçalho com sombra leve */
 header {
   text-align: center;
   padding: 2rem 1rem;
@@ -56,12 +58,15 @@ header {
   border-bottom: 2px solid var(--cor-borda);
   border-radius: 10px;
   margin-bottom: 2rem;
+  box-shadow: var(--sombra-dinamica);
+  transition: background 0.4s ease, box-shadow 0.4s ease;
 }
 
 header h1 {
   font-size: 2.5rem;
   margin-bottom: 0.5rem;
   color: var(--cor-destaque);
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
 }
 
 .subtitulo {
@@ -94,6 +99,7 @@ nav.menu a:hover {
   border-radius: 10px;
   border: 1px solid var(--cor-borda);
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.08);
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
 }
 
 #agradecimento h2 {
@@ -112,7 +118,7 @@ nav.menu a:hover {
   text-decoration: underline;
 }
 
-/* Rodapé com degradê */
+/* Rodapé com degradê e sombra */
 footer {
   text-align: center;
   padding: 1rem;
@@ -121,6 +127,8 @@ footer {
   margin-top: 2rem;
   border-radius: 10px;
   font-size: 0.9rem;
+  box-shadow: var(--sombra-dinamica);
+  transition: background 0.4s ease, box-shadow 0.4s ease;
 }
 
 /* Botão fixo no canto inferior direito */
@@ -140,6 +148,7 @@ footer {
   font-size: 1rem;
   cursor: pointer;
   transition: background-color 0.3s ease, transform 0.2s ease;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
 }
 
 .btn:hover {
