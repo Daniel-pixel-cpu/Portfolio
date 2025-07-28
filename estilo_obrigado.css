@@ -16,31 +16,24 @@ body {
   flex-direction: column;
 }
 
-/* Paleta padrão (claro) e dark */
+/* Tema claro - padrão */
 :root {
-  --bg: #f9fffa;
-  --text: #1a202c;
-  --primary: #2f855a;
-  --secondary: #38b2ac;
-  --accent: #48bb78;
-  --button-bg: #2f855a;
-  --button-hover: #276749;
-  --button-text: #fff;
-  --section-bg: rgba(255, 255, 255, 0.9);
-  --section-border: 1px solid #c6f6d5;
-  --section-shadow: 0 8px 24px rgba(0, 0, 0, 0.06);
+  --bg: #f8f8f8;
+  --text: #222;
+  --primary: #28a745;
+  --accent: #24c78e;
+  --section-bg: #ffffffcc;
+  --section-border: 1px solid #b5fdd4;
+  --section-shadow: 0 12px 24px rgba(0, 255, 190, 0.05);
 }
 
+/* Tema escuro */
 .dark {
   --bg: #0b0f19;
   --text: #cfd8e3;
   --primary: #21f18b;
-  --secondary: #00ffd5;
   --accent: #30ffa2;
-  --button-bg: #1a1f2b;
-  --button-hover: #2c3240;
-  --button-text: #a4ffe2;
-  --section-bg: rgba(20, 25, 40, 1);
+  --section-bg: rgba(20, 25, 40, 0.95);
   --section-border: 1px solid rgba(72, 255, 190, 0.15);
   --section-shadow: 0 12px 40px rgba(0, 255, 190, 0.1), inset 0 0 12px rgba(0, 255, 190, 0.05);
 }
