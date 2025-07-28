@@ -6,7 +6,9 @@
   <title>Projeto Atual - Daniel</title>
   <link rel="stylesheet" href="style.css" />
   <link rel="icon" type="image/png" href="Favicon.png" />
+  <script src="script.js" defer></script>
 </head>
+  
 <body>
   <header>
     <nav class="menu">
@@ -37,27 +39,6 @@
     <button class="btn" id="botaoTema">🌗 Trocar Tema</button>
     <button class="btn" id="voltarTopo">🔝 Voltar ao Topo</button>
   </div>
-
-  <script>
-    // Verifica se o tema foi salvo antes
-    const temaSalvo = localStorage.getItem("tema");
-    if (temaSalvo === "light") {
-      document.documentElement.classList.add("light");
-    }
-
-    const botaoTema = document.getElementById("botaoTema");
-    botaoTema.addEventListener("click", () => {
-      document.documentElement.classList.toggle("light");
-
-      // Salva o novo tema
-      const temaAtual = document.documentElement.classList.contains("light") ? "light" : "dark";
-      localStorage.setItem("tema", temaAtual);
-    });
-
-    const voltarTopo = document.getElementById("voltarTopo");
-    voltarTopo.addEventListener("click", () => {
-      window.scrollTo({ top: 0, behavior: "smooth" });
-    });
-  </script>
 </body>
+  
 </html>
