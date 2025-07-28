@@ -166,6 +166,12 @@ footer {
   background-color: var(--cor-secundaria-escuro);
 }
 
+.clicavel {
+  max-width: 900px;
+  margin: 30px auto;
+  text-align: center;
+}
+
 .clicavel:hover {
   transform: scale(1.02);
   box-shadow: 0 0 15px rgba(150, 200, 255, 0.4);
