@@ -10,20 +10,11 @@ html {
 }
 
 body {
-  font-family: Arial, sans-serif;
-  background: #111;
-  color: #f0f0f0;
-  font-family: "Segoe UI", Roboto, sans-serif;
+  font-family: "Segoe UI", Roboto, sans-serif, Arial, sans-serif;
   background-color: var(--bg);
   color: var(--text);
   line-height: 1.6;
   padding: 0 1rem;
-  transition: background 0.3s, color 0.3s;
-}
-
-.light body {
-  background: #fdfdfd;
-  color: #111;
   transition: background-color 0.4s ease, color 0.4s ease;
   min-height: 100vh;
   display: flex;
@@ -32,11 +23,11 @@ body {
 
 /* Tema claro - padrão */
 :root {
-  --bg: #f0f9f1;
+  --bg: #f0f9f1; /* verde suave */
   --text: #222;
-  --primary: #2d7a32;
-  --accent: #3bb34a;
-  --secondary: #1b5d20;
+  --primary: #2d7a32; /* verde escuro */
+  --accent: #3bb34a; /* verde médio */
+  --secondary: #1b5d20; /* verde escuro */
   --section-bg: #ffffffcc;
   --section-border: 1px solid #a0d6a0;
   --section-shadow: 0 12px 24px rgba(59, 179, 74, 0.1);
@@ -63,41 +54,27 @@ body {
 /* Cabeçalho */
 header {
   background: linear-gradient(135deg, var(--primary), var(--secondary));
-  padding: 2rem;
-  text-align: center;
   padding: 2rem 1rem;
-  background: linear-gradient(135deg, #222, #333);
-  color: #fff;
-  color: white;
+  text-align: center;
+  color: var(--button-text);
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
 }
 
 .light header {
-  background: linear-gradient(135deg, #f0f0f0, #fff);
-  color: #111;
+  background: linear-gradient(135deg, var(--primary), var(--secondary));
+  color: var(--button-text);
 }
 
-h1 {
 header h1 {
   font-size: 2.5rem;
-  margin-bottom: 0.5rem;
-  text-shadow: 0 0 10px rgba(255, 255, 255, 0.2);
-}
-
-.light h1 {
-  text-shadow: none;
   margin-bottom: 0.3rem;
   text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.3);
 }
 
 .subtitulo {
   font-size: 1.2rem;
-  color: #ccc;
-}
-
-.light .subtitulo {
-  color: #444;
   opacity: 0.9;
+  color: var(--text);
 }
 
 .menu {
@@ -109,20 +86,21 @@ header h1 {
 }
 
 .menu a {
-  color: white;
+  color: var(--button-text);
   text-decoration: none;
-  color: inherit;
+  font-weight: bold;
   padding: 0.5rem 1rem;
   border-radius: 10px;
-  transition: background 0.2s;
-  font-weight: bold;
   position: relative;
-  transition: 0.3s;
+  transition: background 0.3s, color 0.3s;
 }
 
 .menu a:hover,
 .menu .active {
-  background: rgba(255, 255, 255, 0.1);
+  background: rgba(255, 255, 255, 0.15);
+  color: var(--button-text);
+}
+
 .menu a::after {
   content: "";
   position: absolute;
@@ -130,47 +108,33 @@ header h1 {
   left: 0;
   width: 0%;
   height: 2px;
-  background-color: white;
+  background-color: var(--button-text);
   transition: width 0.3s;
 }
 
-.light .menu a:hover,
-.light .menu .active {
-  background: rgba(0, 0, 0, 0.05);
 .menu a:hover::after {
   width: 100%;
 }
 
 section {
-  background: rgba(255, 255, 255, 0.05);
-  border-radius: 20px;
-  backdrop-filter: blur(10px);
-/* Main section */
-main {
-  flex: 1;
-  padding: 2rem;
-  margin: 2rem auto;
-  max-width: 800px;
-  box-shadow: 0 0 10px rgba(255, 255, 255, 0.1);
-  transition: all 0.3s;
-  max-width: 900px;
-  margin: auto;
   background: var(--section-bg);
+  backdrop-filter: blur(10px);
   border-radius: 1rem;
   box-shadow: var(--section-shadow);
   border: var(--section-border);
+  padding: 2rem;
+  margin: 2rem auto;
+  max-width: 900px;
+  transition: background-color 0.4s ease, box-shadow 0.4s ease;
+  color: var(--text);
 }
 
-.light section {
-  background: rgba(255, 255, 255, 0.85);
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.05);
-}
-
+/* Lista de habilidades */
 .lista-habilidades {
   list-style: none;
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
-  gap: 0.5rem;
+  gap: 1rem;
   padding-top: 1rem;
 }
 
@@ -178,139 +142,88 @@ main {
   background: rgba(255, 255, 255, 0.1);
   padding: 0.75rem;
   border-radius: 12px;
-/* Rodapé */
-footer {
-  padding: 1rem;
-  text-align: center;
-  background-color: var(--primary);
-  color: white;
-  font-weight: bold;
+  color: var(--text);
+  transition: background-color 0.3s ease;
 }
 
 .light .lista-habilidades li {
   background: rgba(0, 0, 0, 0.05);
 }
 
-/* Estilo para a seção de projeto como botão */
-.clicavel {
-  cursor: pointer;
-  transition: transform 0.2s;
-}
-
-.clicavel:hover {
-  transform: scale(1.02);
-  box-shadow: 0 0 12px rgba(255, 255, 255, 0.2);
-}
-
-.light .clicavel:hover {
-  box-shadow: 0 0 12px rgba(0, 0, 0, 0.1);
-}
-
-/* Formulário de contato */
-form {
-  display: flex;
-  flex-direction: column;
-  gap: 1rem;
-}
-
-form input,
-form textarea {
-  padding: 0.75rem;
-  border: none;
-  border-radius: 10px;
-  font-size: 1rem;
-  background: rgba(255, 255, 255, 0.1);
-  color: #fff;
-}
-
-form input:focus,
-form textarea:focus {
-  outline: 2px solid #888;
-}
-
-form button {
-  background: #444;
-  color: #fff;
-  border: none;
-  padding: 0.75rem;
-  border-radius: 10px;
-  cursor: pointer;
-  font-size: 1rem;
-  transition: background 0.3s;
-}
-
-form button:hover {
-  background: #666;
-}
-
-.light form input,
-.light form textarea {
-  background: rgba(0, 0, 0, 0.05);
-  color: #000;
-}
-
-.light form button {
-  background: #ddd;
-  color: #000;
-}
-
-.light form button:hover {
-  background: #bbb;
-  letter-spacing: 0.5px;
+/* Rodapé */
+footer {
+  padding: 1rem;
+  text-align: center;
+  background-color: var(--primary);
+  color: var(--button-text);
+  font-weight: bold;
+  transition: background-color 0.4s ease;
 }
 
 /* Botões flutuantes */
 .buttons {
   position: fixed;
-  bottom: 1.5rem;
-  right: 1.5rem;
-  display: flex;
-  flex-direction: column;
-  gap: 1rem;
-  z-index: 10;
   bottom: 1rem;
   right: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.7rem;
   z-index: 1000;
 }
 
 .btn {
-  padding: 0.75rem 1rem;
-  background: #222;
-  color: #fff;
+  padding: 0.7rem 1.2rem;
+  font-size: 1rem;
   background-color: var(--button-bg);
   color: var(--button-text);
   border: none;
-  border-radius: 12px;
   border-radius: 10px;
-  padding: 0.7rem 1rem;
   cursor: pointer;
-  font-weight: bold;
-  transition: background 0.2s, transform 0.2s;
+  font-weight: 600;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
   display: flex;
   align-items: center;
   justify-content: center;
-  transition: background-color 0.3s ease;
+  transition: background-color 0.3s ease, transform 0.2s ease;
 }
 
 .btn:hover {
-  background: #444;
+  background-color: var(--button-hover);
   transform: scale(1.05);
 }
 
-.light .btn {
-  background: #ccc;
-  color: #000;
+/* Ícones no botão */
+.btn .sol {
+  display: none;
+  width: 20px;
+  height: 20px;
+  margin-right: 6px;
+  stroke: currentColor;
+  stroke-width: 2;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  fill: none;
 }
 
-.light .btn:hover {
-  background: #aaa;
+.btn .lua {
+  display: none;
+  width: 20px;
+  height: 20px;
+  margin-right: 6px;
+  stroke: currentColor;
+  stroke-width: 2;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  fill: none;
 }
 
-footer {
-  text-align: center;
-  margin: 2rem 0;
-  color: #888;
+/* Mostrar o ícone certo conforme tema */
+:root:not(.light) .btn .lua {
+  display: block;
+}
+
+.light .btn .sol {
+  display: block;
 }
 
 /* Responsivo */
@@ -337,64 +250,3 @@ footer {
     bottom: 1rem;
   }
 }
-#mensagemSucesso,
-#mensagemErro {
-  max-width: 800px;
-  margin: 1rem auto;
-  padding: 1rem 1.5rem;
-  border-radius: 12px;
-  font-weight: bold;
-  font-size: 1.1rem;
-  text-align: center;
-  opacity: 0;
-  pointer-events: none;
-  transition: opacity 0.5s ease;
-}
-
-/* Mostrar as mensagens com fade-in */
-#mensagemSucesso.show,
-#mensagemErro.show {
-  opacity: 1;
-  pointer-events: auto;
-}
-
-/* Estilo para mensagem de sucesso */
-#mensagemSucesso {
-  background-color: rgba(60, 180, 75, 0.85);
-  color: #e6ffe6;
-  box-shadow: 0 0 15px rgba(60, 180, 75, 0.7);
-  text-shadow: 0 0 8px #a6ffb0;
-  background-color: var(--button-hover);
-}
-
-/* Estilo para mensagem de erro */
-#mensagemErro {
-  background-color: rgba(220, 50, 50, 0.85);
-  color: #ffd6d6;
-  box-shadow: 0 0 15px rgba(220, 50, 50, 0.7);
-  text-shadow: 0 0 8px #ff9999;
-/* Ícones do botão */
-.btn .icon {
-  display: none;
-  stroke: currentColor;
-}
-
-/* Ajustes para modo claro */
-.light #mensagemSucesso {
-  background-color: rgba(100, 190, 100, 0.9);
-  color: #1a3a1a;
-  box-shadow: 0 0 15px rgba(100, 190, 100, 0.6);
-  text-shadow: none;
-:root:not(.dark) .btn .sol {
-  display: block;
-}
-
-.light #mensagemErro {
-  background-color: rgba(240, 100, 100, 0.9);
-  color: #4a1a1a;
-  box-shadow: 0 0 15px rgba(240, 100, 100, 0.6);
-  text-shadow: none;
-.dark .btn .lua {
-  display: block;
-}
-  
