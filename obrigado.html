@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Obrigado - Daniel</title>
 
-  <!-- Ativa tema escuro ANTES do CSS carregar para evitar flash -->
+  <!-- Script para ativar tema escuro antes do CSS carregar -->
   <script>
     (function() {
       const temaSalvo = localStorage.getItem("tema");
@@ -19,7 +19,6 @@
   <link rel="icon" type="image/png" href="Favicon.png" />
   <script src="script.js" defer></script>
 </head>
-  
 <body>
   <header>
     <nav class="menu">
@@ -46,19 +45,5 @@
     <button class="btn" id="botaoTema">🌗 Trocar Tema</button>
     <button class="btn" id="voltarTopo">🔝 Voltar ao Topo</button>
   </div>
-
-  <script>
-    document.addEventListener("DOMContentLoaded", () => {
-      const html = document.documentElement;
-      const botaoTema = document.getElementById("botaoTema");
-      if (!botaoTema) return;
-
-      botaoTema.addEventListener("click", () => {
-        html.classList.toggle("dark");
-        const temaAtual = html.classList.contains("dark") ? "dark" : "light";
-        localStorage.setItem("tema", temaAtual);
-      });
-    });
-  </script>
 </body>
 </html>
