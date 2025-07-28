@@ -3,12 +3,12 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Contato - Daniel</title>
+  <title>Contato - Portfólio do Daniel</title>
   <link rel="stylesheet" href="style.css" />
   <link rel="icon" type="image/png" href="Favicon.png" />
   <script src="script.js" defer></script>
 </head>
-  
+
 <body>
   <header>
     <nav class="menu">
@@ -17,15 +17,27 @@
       <a href="contato.html" aria-current="page" class="active">Contato</a>
     </nav>
 
-    <h1>Portfólio do Daniel</h1>
-    <p class="subtitulo">Desenvolvedor iniciante apaixonado por tecnologia e jogos</p>
+    <h1>Entre em Contato</h1>
+    <p class="subtitulo">Ficarei feliz em receber sua mensagem!</p>
   </header>
 
-  <section id="contato">
-    <h2>📬 Contato</h2>
-    <p>Entre em contato comigo pelo e-mail:</p>
-    <p><strong>daniel@email.com</strong></p>
-    <p>Ou me chame no GitHub: <a href="https://github.com/Daniel-pixel-cpu" target="_blank">Daniel-pixel-cpu</a></p>
+  <section id="contato-form">
+    <h2>📬 Enviar uma Mensagem</h2>
+    <form action="https://formsubmit.co/SEU_EMAIL_AQUI" method="POST">
+      <input type="hidden" name="_captcha" value="false">
+      <input type="hidden" name="_template" value="box">
+
+      <label for="nome">Nome:</label>
+      <input type="text" id="nome" name="nome" required>
+
+      <label for="email">Email:</label>
+      <input type="email" id="email" name="email" required>
+
+      <label for="mensagem">Mensagem:</label>
+      <textarea id="mensagem" name="mensagem" rows="5" required></textarea>
+
+      <button type="submit" class="btn">Enviar</button>
+    </form>
   </section>
 
   <footer>
@@ -37,5 +49,4 @@
     <button class="btn" id="voltarTopo">🔝 Voltar ao Topo</button>
   </div>
 </body>
-  
 </html>
