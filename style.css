@@ -169,13 +169,15 @@ footer {
 .clicavel {
   max-width: 900px;
   margin: 30px auto;
-  text-align: center;
+  text-align: left; /* Alinha o conteúdo textual à esquerda */
+  padding: 20px;
+  border-radius: 12px;
+  transition: transform 0.2s, box-shadow 0.2s;
 }
 
 .clicavel:hover {
   transform: scale(1.02);
-  box-shadow: 0 0 15px rgba(150, 200, 255, 0.4);
-  border-color: rgba(100, 150, 255, 0.3);
+  box-shadow: 0 0 20px rgba(0, 170, 255, 0.4);
 }
 
 .tema-claro .clicavel {
