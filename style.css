@@ -165,3 +165,20 @@ body.light footer {
   gap: 10px;
   z-index: 1000;
 }
+
+/* Botão com efeito ao passar o mouse */
+.btn {
+  transition: transform 0.2s ease, box-shadow 0.3s ease;
+}
+
+.btn:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 15px #ddeeff;
+}
+
+/* Efeito ao clicar */
+.btn:active {
+  transform: scale(0.97);
+  box-shadow: 0 0 5px #aaccee;
+}
+
