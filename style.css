@@ -116,11 +116,11 @@ html.light .subtitulo {
 
 /* Seções */
 section {
-  max-width: 600px; /* menor largura */
-  margin: 30px auto; /* margens menores */
+  max-width: 800px;
+  margin: 40px auto;
   background: rgba(20, 20, 20, 0.85);
   border-radius: 15px;
-  padding: 25px 20px;
+  padding: 30px 25px;
   box-shadow: 0 0 12px rgba(170, 200, 255, 0.2);
   color: #cce0ff;
   transition: background-color 0.3s ease, color 0.3s ease;
@@ -132,18 +132,26 @@ html.light section {
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.06);
 }
 
-/* Formulário de contato - organização vertical */
+/* Formulário contato */
+/* Centraliza o título do formulário */
+.formulario-contato h2 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+/* Formulário apertado e centralizado */
 .formulario-contato form {
   display: flex;
   flex-direction: column;
   gap: 16px;
-  max-width: 350px; /* menor largura do form */
+  max-width: 400px; /* Limita a largura para apertar */
   margin: 0 auto;
 }
 
-/* Inputs e textarea */
+/* Inputs e textarea - largura cheia do formulário */
 .formulario-contato input,
 .formulario-contato textarea {
+  width: 100%;
   background: rgba(40, 40, 40, 0.8);
   border: 1.5px solid #aaccee;
   border-radius: 10px;
@@ -155,6 +163,7 @@ html.light section {
   outline: none;
 }
 
+/* Foco */
 .formulario-contato input:focus,
 .formulario-contato textarea:focus {
   border-color: #ddeeff;
@@ -163,6 +172,7 @@ html.light section {
   color: #fff;
 }
 
+/* Tema claro */
 html.light .formulario-contato input,
 html.light .formulario-contato textarea {
   background-color: #f5f5f5;
@@ -176,50 +186,37 @@ html.light .formulario-contato textarea:focus {
   box-shadow: 0 0 6px rgba(0,0,0,0.1);
 }
 
-/* Botão enviar */
-.formulario-contato button[type="submit"] {
+/* Botões */
+.btn {
+  display: inline-block;
   background: #aaccee;
   color: #121212;
+  padding: 12px 25px;
   font-weight: 700;
   font-size: 1.1rem;
-  padding: 12px 25px;
   border: none;
   border-radius: 15px;
   cursor: pointer;
   box-shadow: 0 0 8px #aaccee;
   transition: background-color 0.3s ease, box-shadow 0.3s ease;
   user-select: none;
+  text-align: center;
+  text-decoration: none;
 }
 
-.formulario-contato button[type="submit"]:hover {
+.btn:hover {
   background: #ddeeff;
   box-shadow: 0 0 15px #ddeeff;
 }
 
-html.light .formulario-contato button[type="submit"] {
+html.light .btn {
   background-color: #cccccc;
   color: #1f1f1f;
   box-shadow: none;
 }
 
-html.light .formulario-contato button[type="submit"]:hover {
+html.light .btn:hover {
   background-color: #bbbbbb;
-}
-
-/* Mensagens de sucesso e erro */
-#mensagemSucesso,
-#mensagemErro {
-  text-align: center;
-  font-weight: 600;
-  margin-top: 15px;
-}
-
-#mensagemSucesso {
-  color: limegreen;
-}
-
-#mensagemErro {
-  color: #f66;
 }
 
 /* Rodapé */
@@ -274,15 +271,9 @@ html.light footer {
     font-size: 1.1rem;
     padding: 10px 14px;
   }
-
-  /* Formulário responsivo */
-  .formulario-contato form {
-    max-width: 100%;
-    padding: 0 15px;
-  }
 }
 
-/* Imagem com animação (para projeto.html) */
+/* Imagem com animação */
 .print-jogo {
   display: block;
   max-width: 100%;
@@ -309,10 +300,4 @@ body:not(.light) h3 {
     0 0 6px rgba(0, 170, 255, 0.7),
     0 0 12px rgba(0, 170, 255, 0.6),
     0 0 20px rgba(0, 170, 255, 0.5);
-}
-
-/* Tema claro - fundo e texto */
-body.light {
-  background-color: #f4f4f4;
-  color: #1f1f1f;
 }
