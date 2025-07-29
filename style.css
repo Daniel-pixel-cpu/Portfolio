@@ -264,6 +264,6 @@ body:not(.light) h1,
 body:not(.light) h2,
 body:not(.light) h3 {
   color: #cce6ff;
-  text-shadow: 0 0 6px rgba(100, 170, 255, 0.35);
+  text-shadow: 0 0 6px rgba(100, 170, 255, 0.5);
 }
 
