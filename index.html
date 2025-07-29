@@ -9,7 +9,6 @@
   <script src="script.js" defer></script>
 
   <script>
-    // Aplica o tema salvo ANTES de carregar CSS para evitar piscar
     (function () {
       const temaSalvo = localStorage.getItem("tema");
       if (temaSalvo === "claro") {
@@ -22,7 +21,7 @@
 <body>
   <header>
     <nav class="menu">
-      <a href="index.html">Sobre mim</a>
+      <a href="index.html" aria-current="page" class="active">Sobre mim</a>
       <a href="projeto.html">Projeto Atual</a>
       <a href="contato.html">Contato</a>
     </nav>
@@ -34,26 +33,14 @@
   <main>
     <section>
       <h2>Sobre mim</h2>
-  <p>
-    Olá! Meu nome é Daniel e sou um desenvolvedor iniciante apaixonado por tecnologia, especialmente na criação de jogos. 
-    Tenho me dedicado ao aprendizado de Python e uso principalmente a biblioteca Pygame para desenvolver projetos interativos e criativos. 
-    Além disso, também tenho conhecimentos em desenvolvimento web com HTML, CSS e JavaScript, sempre buscando escrever códigos limpos, organizados e seguros.
-    </p>
-  <p>
-    Atualmente, estou trabalhando em um jogo de sobrevivência feito com Pygame, que inclui movimentação com câmera, zumbis, armas, sistema de HUD, itens colecionáveis e muito mais. 
-    Gosto de experimentar ideias diferentes e evoluir meus projetos com o tempo, sempre aprendendo algo novo. 
-    Este portfólio é uma forma de mostrar um pouco do que venho criando e também de acompanhar minha evolução como programador.
-    </p>
-    </section>
-  </main>
-
-  <footer>
-    &copy; 2025 desenvolvido por Daniel.
-  </footer>
-
-  <div class="buttons">
-    <button class="btn" id="botaoTema" aria-label="Trocar Tema">🌗</button>
-    <button class="btn" id="voltarTopo" aria-label="Voltar ao topo">🔝</button>
-  </div>
-</body>
-</html>
+      <p>
+        Olá! Meu nome é Daniel e sou um desenvolvedor iniciante apaixonado por tecnologia, especialmente na criação de jogos.
+        Tenho me dedicado ao aprendizado de Python e uso principalmente a biblioteca Pygame para desenvolver projetos interativos e criativos.
+        Além disso, também tenho conhecimentos em desenvolvimento web com HTML, CSS e JavaScript, sempre buscando escrever códigos limpos, organizados e seguros.
+      </p>
+      <p>
+        Atualmente, estou trabalhando em um jogo de sobrevivência feito com Pygame, que inclui movimentação com câmera, zumbis, armas, sistema de HUD, itens colecionáveis e muito mais.
+        Gosto de experimentar ideias diferentes e evoluir meus projetos com o tempo, sempre aprendendo algo novo.
+        Este portfólio é uma forma de mostrar um pouco do que venho criando e também de acompanhar minha evolução como programador.
+      </p>
+    </
