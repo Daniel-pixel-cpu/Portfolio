@@ -28,4 +28,11 @@ document.addEventListener("DOMContentLoaded", () => {
       window.scrollTo({ top: 0, behavior: "smooth" });
     });
   }
+  // Animação de entrada da imagem
+document.addEventListener("DOMContentLoaded", () => {
+  const imagem = document.querySelector(".animar-entrada");
+  if (imagem) {
+    setTimeout(() => imagem.classList.add("ativo"), 300);
+  }
+});
 });
