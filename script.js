@@ -32,9 +32,41 @@ document.addEventListener("DOMContentLoaded", () => {
   // Animação da imagem print-jogo
   const imagem = document.querySelector(".animar-entrada");
   if (imagem) {
-    // Delay para dar efeito suave na entrada
     setTimeout(() => {
       imagem.classList.add("ativo");
     }, 300);
+  }
+
+  // Envio do formulário contato com redirecionamento
+  const form = document.getElementById("formContato");
+  const sucessoMsg = document.getElementById("mensagemSucesso");
+  const erroMsg = document.getElementById("mensagemErro");
+
+  if (form) {
+    form.addEventListener("submit", async (e) => {
+      e.preventDefault();
+
+      sucessoMsg.style.display = "none";
+      erroMsg.style.display = "none";
+
+      const data = new FormData(form);
+
+      try {
+        const response = await fetch(form.action, {
+          method: form.method,
+          headers: { 'Accept': 'application/json' },
+          body: data
+        });
+
+        if (response.ok) {
+          // Redireciona para obrigado.html
+          window.location.href = "obrigado.html";
+        } else {
+          erroMsg.style.display = "block";
+        }
+      } catch {
+        erroMsg.style.display = "block";
+      }
+    });
   }
 });
