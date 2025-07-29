@@ -1,7 +1,13 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="pt-BR" class="">
 <head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Obrigado - Daniel</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="icon" type="image/png" href="Favicon.png" />
   <script>
+    // Aplica o tema salvo para evitar flash na carga
     (function () {
       const temaSalvo = localStorage.getItem("tema");
       if (temaSalvo === "claro") {
@@ -9,17 +15,7 @@
       }
     })();
   </script>
-
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Obrigado - Daniel</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Obrigado!</title>
-  <link rel="stylesheet" href="estilo_obrigado.css" />
-  <link rel="icon" type="image/png" href="Favicon.png" />
-  <script src="script.js" defer></script>
 </head>
-
 <body>
   <header>
     <nav class="menu">
@@ -27,42 +23,30 @@
       <a href="projeto.html">Projeto Atual</a>
       <a href="contato.html">Contato</a>
     </nav>
-
-    <h1>Portfólio do Daniel</h1>
-    <p class="subtitulo">Desenvolvedor iniciante apaixonado por tecnologia e jogos</p>
+    <h1>Mensagem Enviada!</h1>
+    <p class="subtitulo">Obrigado por entrar em contato, Daniel vai responder em breve.</p>
   </header>
 
-  <section id="agradecimento">
-    <h2>✅ Obrigado pelo contato!</h2>
-    <p>Recebi sua mensagem e responderei em breve.</p>
-    <p>Enquanto isso, você pode voltar à <a href="index.html">página inicial</a></p>
-  </section>
+  <main>
+    <section id="agradecimento">
+      <h2>✅ Sua mensagem foi enviada com sucesso!</h2>
+      <p>Fique à vontade para navegar pelo site ou voltar à página de contato caso precise enviar outra mensagem.</p>
+      <p>
+        <a href="index.html" class="btn">Voltar para o início</a>
+        <a href="contato.html" class="btn" style="margin-left: 15px;">Enviar outra mensagem</a>
+      </p>
+    </section>
+  </main>
 
   <footer>
     &copy; 2025 desenvolvido por Daniel.
   </footer>
 
-<div class="buttons">
-  <button id="toggle-theme" class="btn" title="Trocar tema">
-    <svg id="icon-sun" class="theme-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-      <circle cx="12" cy="12" r="5" fill="#facc15"/>
-      <g stroke="#facc15" stroke-width="2">
-        <line x1="12" y1="1" x2="12" y2="4"/>
-        <line x1="12" y1="20" x2="12" y2="23"/>
-        <line x1="4.22" y1="4.22" x2="6.34" y2="6.34"/>
-        <line x1="17.66" y1="17.66" x2="19.78" y2="19.78"/>
-        <line x1="1" y1="12" x2="4" y2="12"/>
-        <line x1="20" y1="12" x2="23" y2="12"/>
-        <line x1="4.22" y1="19.78" x2="6.34" y2="17.66"/>
-        <line x1="17.66" y1="6.34" x2="19.78" y2="4.22"/>
-      </g>
-    </svg>
-    <svg id="icon-moon" class="theme-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-      <path fill="#cbd5e1" d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"/>
-    </svg>
-  </button>
-</div>
+  <div class="buttons">
+    <button class="btn" id="botaoTema" aria-label="Trocar Tema">🌗</button>
+    <button class="btn" id="voltarTopo" aria-label="Voltar ao topo">🔝</button>
+  </div>
 
-  
+  <script src="script.js" defer></script>
 </body>
 </html>
