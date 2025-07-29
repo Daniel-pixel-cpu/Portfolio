@@ -1,7 +1,7 @@
 document.addEventListener("DOMContentLoaded", () => {
   const html = document.documentElement;
 
-  // Aplica o tema salvo (atualiza caso tenha mudado no armazenamento)
+  // Aplica o tema salvo (claro ou escuro)
   const temaSalvo = localStorage.getItem("tema");
   if (temaSalvo === "claro") {
     html.classList.add("light");
@@ -11,7 +11,7 @@ document.addEventListener("DOMContentLoaded", () => {
     console.log("🎨 Tema escuro aplicado (salvo).");
   }
 
-  // Botão de tema
+  // Botão trocar tema
   const botaoTema = document.getElementById("botaoTema");
   if (botaoTema) {
     botaoTema.addEventListener("click", () => {
@@ -28,11 +28,13 @@ document.addEventListener("DOMContentLoaded", () => {
       window.scrollTo({ top: 0, behavior: "smooth" });
     });
   }
-  // Animação de entrada da imagem
-document.addEventListener("DOMContentLoaded", () => {
+
+  // Animação da imagem print-jogo
   const imagem = document.querySelector(".animar-entrada");
   if (imagem) {
-    setTimeout(() => imagem.classList.add("ativo"), 300);
+    // Delay para dar efeito suave na entrada
+    setTimeout(() => {
+      imagem.classList.add("ativo");
+    }, 300);
   }
-});
 });
