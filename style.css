@@ -259,10 +259,11 @@ body.light {
   color: #222;
 }
 
-/* Títulos no modo escuro - brilho moderado */
+/* Títulos no modo escuro - brilho azul suave */
 body:not(.light) h1,
 body:not(.light) h2,
 body:not(.light) h3 {
-  color: #a8ffe2;
-  text-shadow: 0 0 6px rgba(0, 255, 170, 0.35);
+  color: #cce6ff;
+  text-shadow: 0 0 6px rgba(100, 170, 255, 0.35);
 }
+
