@@ -301,3 +301,38 @@ body:not(.light) h3 {
     0 0 12px rgba(0, 170, 255, 0.6),
     0 0 20px rgba(0, 170, 255, 0.5);
 }
+
+#galeria {
+  max-width: 700px;
+  margin: 40px auto;
+  padding: 0 20px;
+  text-align: center;
+}
+
+.galeria-unica {
+  background: rgba(20, 20, 20, 0.85);
+  border-radius: 12px;
+  padding: 25px;
+  box-shadow: 0 0 12px rgba(170, 200, 255, 0.2);
+  color: #cce0ff;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+html.light .galeria-unica {
+  background-color: #fff;
+  color: #1f1f1f;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.06);
+}
+
+.galeria-unica img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+  margin-bottom: 15px;
+}
+
+.galeria-unica p {
+  font-weight: 600;
+  font-size: 1.1rem;
+}
