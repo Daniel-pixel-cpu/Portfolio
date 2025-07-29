@@ -1,7 +1,15 @@
 <!DOCTYPE html>
-<html lang="pt-BR" class="">
+<html lang="pt-BR">
 <head>
-    <script>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Contato - Daniel</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="icon" type="image/png" href="Favicon.png" />
+  <script src="script.js" defer></script>
+
+  <script>
+    // Aplica o tema salvo ANTES de carregar CSS para evitar piscar
     (function () {
       const temaSalvo = localStorage.getItem("tema");
       if (temaSalvo === "claro") {
@@ -9,13 +17,6 @@
       }
     })();
   </script>
-  
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Contato - Daniel</title>
-  <link rel="stylesheet" href="style.css" />
-  <link rel="icon" type="image/png" href="Favicon.png" />
-  <script src="script.js" defer></script>
 </head>
 
 <body>
@@ -25,6 +26,7 @@
       <a href="projeto.html">Projeto Atual</a>
       <a href="contato.html" class="active">Contato</a>
     </nav>
+
     <h1>Contato</h1>
     <p class="subtitulo">Entre em contato comigo!</p>
   </header>
@@ -35,11 +37,15 @@
       <input type="text" name="nome" placeholder="Seu nome" required />
       <input type="email" name="email" placeholder="Seu e-mail" required />
       <textarea name="mensagem" placeholder="Digite sua mensagem..." required></textarea>
-      <button type="submit">Enviar Mensagem</button>
+      <button type="submit" class="btn">Enviar Mensagem</button>
     </form>
 
-    <p id="mensagemSucesso" style="display:none; color:lime;">✅ Mensagem enviada com sucesso!</p>
-    <p id="mensagemErro" style="display:none; color:#f66;">❌ Erro ao enviar, tente novamente.</p>
+    <p id="mensagemSucesso" style="display:none; color:lime;">
+      ✅ Mensagem enviada com sucesso!
+    </p>
+    <p id="mensagemErro" style="display:none; color:#f66;">
+      ❌ Erro ao enviar, tente novamente.
+    </p>
   </section>
 
   <footer>
@@ -47,9 +53,8 @@
   </footer>
 
   <div class="buttons">
-    <button class="btn" id="botaoTema">🌗 Trocar Tema</button>
-    <button class="btn" id="voltarTopo">🔝 Voltar ao Topo</button>
+    <button class="btn" id="botaoTema" aria-label="Trocar Tema">🌗</button>
+    <button class="btn" id="voltarTopo" aria-label="Voltar ao Topo">🔝</button>
   </div>
-
 </body>
 </html>
