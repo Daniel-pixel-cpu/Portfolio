@@ -259,89 +259,10 @@ body.light {
   color: #222;
 }
 
-body.light h1,
-body.light h2,
-body.light h3 {
-  color: #157a5b;
-  text-shadow: none;
+/* Títulos no modo escuro - brilho moderado */
+body:not(.light) h1,
+body:not(.light) h2,
+body:not(.light) h3 {
+  color: #a8ffe2;
+  text-shadow: 0 0 6px rgba(0, 255, 170, 0.35);
 }
-
-header {
-  padding: 20px;
-  text-align: center;
-}
-
-.menu {
-  display: flex;
-  justify-content: center;
-  gap: 20px;
-  margin-bottom: 10px;
-}
-
-.menu a {
-  text-decoration: none;
-  color: inherit;
-}
-
-.menu .active {
-  font-weight: bold;
-  text-decoration: underline;
-}
-
-.subtitulo {
-  font-size: 1rem;
-  color: #aaa;
-}
-
-section#projeto {
-  padding: 20px;
-  max-width: 800px;
-  margin: auto;
-}
-
-.print-jogo {
-  max-width: 100%;
-  border-radius: 12px;
-  margin-top: 20px;
-  box-shadow: 0 0 20px rgba(0, 255, 170, 0.2);
-  opacity: 0;
-  transform: translateY(20px);
-  transition: opacity 0.8s ease, transform 0.8s ease;
-}
-
-.print-jogo.ativo {
-  opacity: 1;
-  transform: translateY(0);
-}
-
-footer {
-  text-align: center;
-  padding: 20px;
-  font-size: 0.9em;
-}
-
-.buttons {
-  position: fixed;
-  bottom: 16px;
-  right: 16px;
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-}
-
-.btn {
-  background: #00c897;
-  color: white;
-  border: none;
-  border-radius: 8px;
-  padding: 10px 16px;
-  cursor: pointer;
-  font-size: 1rem;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
-  transition: transform 0.2s;
-}
-
-.btn:hover {
-  transform: scale(1.05);
-}
-
