@@ -268,3 +268,13 @@ body.light footer {
     padding: 10px 14px;
   }
 }
+
+.print-jogo {
+  display: block;
+  max-width: 100%;
+  height: auto;
+  margin: 20px auto;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+}
+
