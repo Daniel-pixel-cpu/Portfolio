@@ -132,121 +132,6 @@ html.light section {
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.06);
 }
 
-/* Estilo para formulário de contato */
-.formulario-contato {
-  max-width: 500px;
-  margin: 40px auto 60px;
-  background: rgba(30, 30, 30, 0.85);
-  padding: 30px 25px;
-  border-radius: 15px;
-  box-shadow: 0 0 18px rgba(0, 170, 255, 0.25);
-  color: #cceeff;
-  transition: background-color 0.3s ease, color 0.3s ease;
-}
-
-html.light .formulario-contato {
-  background-color: #f0f8ff;
-  color: #123456;
-  box-shadow: 0 0 12px rgba(0, 100, 150, 0.2);
-}
-
-.formulario-contato h2 {
-  text-align: center;
-  font-size: 2rem;
-  margin-bottom: 25px;
-  font-weight: 800;
-  text-shadow: 0 0 6px rgba(0, 170, 255, 0.7);
-  color: inherit;
-}
-
-.formulario-contato form {
-  display: flex;
-  flex-direction: column;
-  gap: 18px;
-}
-
-.formulario-contato input,
-.formulario-contato textarea {
-  background: rgba(40, 40, 40, 0.9);
-  border: 2px solid #2a7ade;
-  border-radius: 12px;
-  padding: 14px 18px;
-  font-size: 1rem;
-  color: #e0f0ff;
-  outline: none;
-  transition: border-color 0.3s ease, box-shadow 0.3s ease;
-  resize: vertical;
-  min-height: 44px;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-}
-
-.formulario-contato textarea {
-  min-height: 120px;
-}
-
-.formulario-contato input:focus,
-.formulario-contato textarea:focus {
-  border-color: #3399ff;
-  box-shadow: 0 0 10px #3399ffaa;
-  background: rgba(50, 50, 60, 0.95);
-  color: #ffffff;
-}
-
-html.light .formulario-contato input,
-html.light .formulario-contato textarea {
-  background-color: #fff;
-  border: 2px solid #88aaff;
-  color: #223344;
-}
-
-html.light .formulario-contato input:focus,
-html.light .formulario-contato textarea:focus {
-  border-color: #5599ff;
-  box-shadow: 0 0 8px #5599ffaa;
-  background-color: #e6f0ff;
-  color: #112233;
-}
-
-.formulario-contato button[type="submit"] {
-  background-color: #2a7ade;
-  color: white;
-  padding: 14px 0;
-  font-weight: 700;
-  font-size: 1.15rem;
-  border: none;
-  border-radius: 15px;
-  cursor: pointer;
-  box-shadow: 0 0 12px #3388ff88;
-  transition: background-color 0.3s ease, box-shadow 0.3s ease, transform 0.2s ease;
-  user-select: none;
-}
-
-.formulario-contato button[type="submit"]:hover {
-  background-color: #1f5db8;
-  box-shadow: 0 0 20px #5599ffcc;
-  transform: scale(1.03);
-}
-
-/* Mensagens de sucesso e erro */
-#mensagemSucesso,
-#mensagemErro {
-  margin-top: 15px;
-  font-weight: 600;
-  text-align: center;
-  font-size: 1rem;
-  user-select: none;
-}
-
-#mensagemSucesso {
-  color: #7ed957;
-  text-shadow: 0 0 5px #7ed957aa;
-}
-
-#mensagemErro {
-  color: #ff5959;
-  text-shadow: 0 0 5px #ff5959aa;
-}
-
 /* Botões */
 .btn {
   display: inline-block;
@@ -318,8 +203,7 @@ html.light footer {
     font-size: 0.95rem;
   }
 
-  section,
-  .formulario-contato {
+  section {
     margin: 25px 15px;
     padding: 25px 20px;
   }
@@ -335,15 +219,32 @@ html.light footer {
   }
 }
 
+/* Imagem com animação - tamanho menor e responsivo */
 .print-jogo {
-  max-width: 400px; /* limita a largura pra não ficar gigante */
-  width: 90%;       /* permite que diminua em telas pequenas */
-  height: auto;
   display: block;
+  max-width: 400px; /* limite máximo da largura */
+  width: 90%;       /* responsivo */
+  height: auto;
   margin: 20px auto;
   border-radius: 12px;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
   opacity: 0;
   transform: translateY(20px);
   transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.animar-entrada.ativo {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Brilho azul intenso nos títulos (modo escuro) */
+body:not(.light) h1,
+body:not(.light) h2,
+body:not(.light) h3 {
+  color: #cceeff;
+  text-shadow:
+    0 0 6px rgba(0, 170, 255, 0.7),
+    0 0 12px rgba(0, 170, 255, 0.6),
+    0 0 20px rgba(0, 170, 255, 0.5);
 }
