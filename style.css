@@ -132,60 +132,6 @@ html.light section {
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.06);
 }
 
-/* Formulário contato */
-/* Centraliza o título do formulário */
-.formulario-contato h2 {
-  text-align: center;
-  margin-bottom: 20px;
-}
-
-/* Formulário apertado e centralizado */
-.formulario-contato form {
-  display: flex;
-  flex-direction: column;
-  gap: 16px;
-  max-width: 400px; /* Limita a largura para apertar */
-  margin: 0 auto;
-}
-
-/* Inputs e textarea - largura cheia do formulário */
-.formulario-contato input,
-.formulario-contato textarea {
-  width: 100%;
-  background: rgba(40, 40, 40, 0.8);
-  border: 1.5px solid #aaccee;
-  border-radius: 10px;
-  color: #ddeeff;
-  padding: 12px 16px;
-  font-size: 1rem;
-  transition: border-color 0.3s ease, box-shadow 0.3s ease;
-  resize: vertical;
-  outline: none;
-}
-
-/* Foco */
-.formulario-contato input:focus,
-.formulario-contato textarea:focus {
-  border-color: #ddeeff;
-  box-shadow: 0 0 10px #ddeeff;
-  background: rgba(60, 60, 60, 0.85);
-  color: #fff;
-}
-
-/* Tema claro */
-html.light .formulario-contato input,
-html.light .formulario-contato textarea {
-  background-color: #f5f5f5;
-  color: #222;
-  border: 1px solid #ccc;
-}
-
-html.light .formulario-contato input:focus,
-html.light .formulario-contato textarea:focus {
-  border-color: #888;
-  box-shadow: 0 0 6px rgba(0,0,0,0.1);
-}
-
 /* Botões */
 .btn {
   display: inline-block;
@@ -291,17 +237,7 @@ html.light footer {
   transform: translateY(0);
 }
 
-/* Brilho azul intenso nos títulos (somente no modo escuro) */
-body:not(.light) h1,
-body:not(.light) h2,
-body:not(.light) h3 {
-  color: #cceeff;
-  text-shadow:
-    0 0 6px rgba(0, 170, 255, 0.7),
-    0 0 12px rgba(0, 170, 255, 0.6),
-    0 0 20px rgba(0, 170, 255, 0.5);
-}
-
+/* Galeria de projeto único */
 #galeria {
   max-width: 700px;
   margin: 40px auto;
@@ -335,4 +271,23 @@ html.light .galeria-unica {
 .galeria-unica p {
   font-weight: 600;
   font-size: 1.1rem;
+}
+
+/* Títulos no modo escuro */
+body:not(.light) h1,
+body:not(.light) h2,
+body:not(.light) h3 {
+  color: #cceeff;
+  text-shadow:
+    0 0 6px rgba(0, 170, 255, 0.7),
+    0 0 12px rgba(0, 170, 255, 0.6),
+    0 0 20px rgba(0, 170, 255, 0.5);
+}
+
+/* Títulos no modo claro */
+body.light h1,
+body.light h2,
+body.light h3 {
+  color: #1f1f1f;
+  text-shadow: none;
 }
