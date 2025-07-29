@@ -168,16 +168,47 @@ html.light .btn:hover {
 /* Rodapé */
 footer {
   text-align: center;
-  padding: 30px 10px 50px;
-  color: #aaccee;
-  font-weight: 500;
-  user-select: none;
-  background: transparent;
+  margin: 30px 0 10px;
+  color: #ccc;
+  font-family: Arial, sans-serif;
+  font-size: 0.9rem;
 }
 
-html.light footer {
-  color: #444;
-  background-color: #eaeaea;
+/* Ícones interativos no footer */
+.icones-footer {
+  margin-top: 12px;
+  display: flex;
+  justify-content: center;
+  gap: 28px;
+}
+
+.icone-link {
+  font-size: 32px;
+  color: #bbb;
+  text-decoration: none;
+  cursor: pointer;
+  transition: 
+    color 0.35s ease, 
+    transform 0.35s ease,
+    text-shadow 0.35s ease,
+    filter 0.35s ease;
+  filter: drop-shadow(0 0 1px rgba(0,0,0,0.3));
+}
+
+.icone-link:hover,
+.icone-link:focus {
+  color: #aaccff; /* azul claro do site */
+  transform: scale(1.3) rotate(5deg);
+  text-shadow:
+    0 0 6px #aaccff,
+    0 0 10px #6699ff;
+  filter: drop-shadow(0 0 6px #aaccff);
+  outline: none;
+}
+
+.icone-link:focus-visible {
+  outline: 2px solid #aaccff;
+  outline-offset: 4px;
 }
 
 /* Botões flutuantes */
@@ -237,61 +268,6 @@ html.light footer {
   transform: translateY(0);
 }
 
-/* Galeria de projeto único */
-#galeria {
-  max-width: 700px;
-  margin: 40px auto;
-  padding: 0 20px;
-  text-align: center;
-}
-
-.galeria-unica {
-  background: rgba(20, 20, 20, 0.85);
-  border-radius: 12px;
-  padding: 25px;
-  box-shadow: 0 0 12px rgba(170, 200, 255, 0.2);
-  color: #cce0ff;
-  transition: background-color 0.3s ease, color 0.3s ease;
-}
-
-html.light .galeria-unica {
-  background-color: #fff;
-  color: #1f1f1f;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.06);
-}
-
-.galeria-unica img {
-  max-width: 100%;
-  height: auto;
-  border-radius: 12px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
-  margin-bottom: 15px;
-}
-
-.galeria-unica p {
-  font-weight: 600;
-  font-size: 1.1rem;
-}
-
-/* Títulos no modo escuro */
-body:not(.light) h1,
-body:not(.light) h2,
-body:not(.light) h3 {
-  color: #cceeff;
-  text-shadow:
-    0 0 6px rgba(0, 170, 255, 0.7),
-    0 0 12px rgba(0, 170, 255, 0.6),
-    0 0 20px rgba(0, 170, 255, 0.5);
-}
-
-/* Títulos no modo claro */
-body.light h1,
-body.light h2,
-body.light h3 {
-  color: #1f1f1f;
-  text-shadow: none;
-}
-
 /* Estilo do formulário de contato */
 .formulario-contato form {
   display: flex;
@@ -338,67 +314,21 @@ html.light .formulario-contato textarea:focus {
   box-shadow: 0 0 8px rgba(0, 0, 0, 0.15);
 }
 
-/* Estilo do footer com ícones interativos */
-footer {
-  text-align: center;
-  margin: 30px 0 10px;
-  color: #ccc;
-  font-family: Arial, sans-serif;
-  font-size: 0.9rem;
-}
-
-.icones-footer {
-  margin-top: 10px;
-  display: flex;
-  justify-content: center;
-  gap: 24px;
-}
-
-.icone-link {
-  font-size: 28px;
-  color: #ccc;
-  transition: color 0.3s ease, transform 0.3s ease;
-  text-decoration: none;
-  cursor: pointer;
-}
-
-.icone-link:hover {
-  color: #00ff00; /* Cor do hover - pode ajustar para seu tema */
-  transform: scale(1.2);
-}
-
-.icones-footer {
-  margin-top: 12px;
-  display: flex;
-  justify-content: center;
-  gap: 28px;
-}
-
-.icone-link {
-  font-size: 32px;
-  color: #bbb;
-  text-decoration: none;
-  cursor: pointer;
-  transition: 
-    color 0.35s ease, 
-    transform 0.35s ease,
-    text-shadow 0.35s ease,
-    filter 0.35s ease;
-  filter: drop-shadow(0 0 1px rgba(0,0,0,0.3));
-}
-
-.icone-link:hover,
-.icone-link:focus {
-  color: #4ade80; /* Verde claro */
-  transform: scale(1.3) rotate(5deg);
+/* Títulos no modo escuro */
+body:not(.light) h1,
+body:not(.light) h2,
+body:not(.light) h3 {
+  color: #cceeff;
   text-shadow:
-    0 0 6px #4ade80,
-    0 0 10px #22c55e;
-  filter: drop-shadow(0 0 6px #4ade80);
-  outline: none;
+    0 0 6px rgba(0, 170, 255, 0.7),
+    0 0 12px rgba(0, 170, 255, 0.6),
+    0 0 20px rgba(0, 170, 255, 0.5);
 }
 
-.icone-link:focus-visible {
-  outline: 2px solid #4ade80;
-  outline-offset: 4px;
+/* Títulos no modo claro */
+body.light h1,
+body.light h2,
+body.light h3 {
+  color: #1f1f1f;
+  text-shadow: none;
 }
