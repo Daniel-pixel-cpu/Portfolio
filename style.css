@@ -5,7 +5,7 @@
   box-sizing: border-box;
 }
 
-/* Corpo com fundo escuro neutro e gradiente suave */
+/* Corpo e fonte */
 body {
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   background: linear-gradient(135deg, #121212, #1c1c1c);
@@ -16,7 +16,7 @@ body {
 }
 
 /* Tema claro */
-body.light {
+html.light body {
   background-color: #f4f4f4;
   color: #1f1f1f;
 }
@@ -33,7 +33,7 @@ header {
   transition: background-color 0.3s ease, color 0.3s ease;
 }
 
-body.light header {
+html.light header {
   background-color: #ffffff;
   color: #1f1f1f;
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
@@ -72,11 +72,11 @@ nav.menu a[aria-current="page"] {
   pointer-events: none;
 }
 
-body.light nav.menu a {
+html.light nav.menu a {
   color: #333;
 }
 
-body.light nav.menu a:hover {
+html.light nav.menu a:hover {
   color: #005c99;
   text-shadow: none;
 }
@@ -96,8 +96,8 @@ h2 {
   text-shadow: 0 0 6px #aaccff;
 }
 
-body.light h1,
-body.light h2 {
+html.light h1,
+html.light h2 {
   text-shadow: none;
   color: #1f1f1f;
 }
@@ -110,7 +110,7 @@ body.light h2 {
   margin-bottom: 25px;
 }
 
-body.light .subtitulo {
+html.light .subtitulo {
   color: #555;
 }
 
@@ -126,7 +126,7 @@ section {
   transition: background-color 0.3s ease, color 0.3s ease;
 }
 
-body.light section {
+html.light section {
   background-color: #ffffff;
   color: #1f1f1f;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.06);
@@ -155,64 +155,14 @@ body.light section {
   box-shadow: 0 0 15px #ddeeff;
 }
 
-body.light .btn {
+html.light .btn {
   background-color: #cccccc;
   color: #1f1f1f;
   box-shadow: none;
 }
 
-body.light .btn:hover {
+html.light .btn:hover {
   background-color: #bbbbbb;
-}
-
-/* Formulário */
-.formulario-contato form {
-  display: flex;
-  flex-direction: column;
-  gap: 20px;
-}
-
-.formulario-contato label {
-  font-weight: 600;
-  color: #aaccff;
-}
-
-body.light .formulario-contato label {
-  color: #333;
-}
-
-.formulario-contato input,
-.formulario-contato textarea {
-  background: rgba(40, 40, 40, 0.8);
-  border: 1.5px solid #aaccee;
-  border-radius: 10px;
-  color: #ddeeff;
-  padding: 12px 16px;
-  font-size: 1rem;
-  transition: border-color 0.3s ease, box-shadow 0.3s ease;
-  resize: vertical;
-  outline: none;
-}
-
-.formulario-contato input:focus,
-.formulario-contato textarea:focus {
-  border-color: #ddeeff;
-  box-shadow: 0 0 10px #ddeeff;
-  background: rgba(60, 60, 60, 0.85);
-  color: #fff;
-}
-
-body.light .formulario-contato input,
-body.light .formulario-contato textarea {
-  background-color: #f5f5f5;
-  color: #222;
-  border: 1px solid #ccc;
-}
-
-body.light .formulario-contato input:focus,
-body.light .formulario-contato textarea:focus {
-  border-color: #888;
-  box-shadow: 0 0 6px rgba(0,0,0,0.1);
 }
 
 /* Rodapé */
@@ -225,7 +175,7 @@ footer {
   background: transparent;
 }
 
-body.light footer {
+html.light footer {
   color: #444;
   background-color: #eaeaea;
 }
@@ -269,15 +219,7 @@ body.light footer {
   }
 }
 
-.print-jogo {
-  display: block;
-  max-width: 100%;
-  height: auto;
-  margin: 20px auto;
-  border-radius: 12px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
-}
-
+/* Imagem com animação */
 .print-jogo {
   display: block;
   max-width: 100%;
@@ -295,9 +237,16 @@ body.light footer {
   transform: translateY(0);
 }
 
-.imagem-titulo {
-  text-align: center;
-  font-size: 1.3rem;
-  margin-top: 30px;
-  color: var(--texto);
+/* Brilho no modo escuro */
+html:not(.light) h1,
+html:not(.light) h2,
+html:not(.light) .imagem-titulo,
+html:not(.light) .print-jogo.ativo {
+  text-shadow:
+    0 0 6px #7afff5,
+    0 0 12px #0ff,
+    0 0 18px #0ff,
+    0 0 24px #06f,
+    0 0 30px #06f;
+  transition: text-shadow 0.5s ease;
 }
