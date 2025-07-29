@@ -219,11 +219,10 @@ html.light footer {
   }
 }
 
-/* Imagem com animação - tamanho menor e responsivo */
+/* Imagem com animação */
 .print-jogo {
   display: block;
-  max-width: 400px; /* limite máximo da largura */
-  width: 90%;       /* responsivo */
+  max-width: 100%;
   height: auto;
   margin: 20px auto;
   border-radius: 12px;
@@ -238,13 +237,52 @@ html.light footer {
   transform: translateY(0);
 }
 
-/* Brilho azul intenso nos títulos (modo escuro) */
-body:not(.light) h1,
-body:not(.light) h2,
-body:not(.light) h3 {
-  color: #cceeff;
-  text-shadow:
-    0 0 6px rgba(0, 170, 255, 0.7),
-    0 0 12px rgba(0, 170, 255, 0.6),
-    0 0 20px rgba(0, 170, 255, 0.5);
+/* FORMULÁRIO DE CONTATO - ORGANIZAÇÃO VERTICAL E ESTILO */
+.formulario-contato form {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;        /* espaçamento vertical entre campos */
+  max-width: 500px; /* largura máxima */
+  margin: 0 auto;   /* centralizar horizontalmente */
+}
+
+.formulario-contato input,
+.formulario-contato textarea {
+  padding: 12px 15px;
+  font-size: 1rem;
+  border-radius: 10px;
+  border: 1.5px solid #aaccee;
+  background-color: rgba(40, 40, 40, 0.85);
+  color: #ddeeff;
+  resize: vertical;
+  outline: none;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.formulario-contato input:focus,
+.formulario-contato textarea:focus {
+  border-color: #ddeeff;
+  box-shadow: 0 0 10px #ddeeff;
+  background-color: rgba(60, 60, 60, 0.85);
+  color: #fff;
+}
+
+.formulario-contato button {
+  padding: 14px 20px;
+  font-size: 1.1rem;
+  border-radius: 15px;
+  border: none;
+  background-color: #aaccee;
+  color: #121212;
+  cursor: pointer;
+  font-weight: 700;
+  box-shadow: 0 0 8px #aaccee;
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+  user-select: none;
+  text-align: center;
+}
+
+.formulario-contato button:hover {
+  background-color: #ddeeff;
+  box-shadow: 0 0 15px #ddeeff;
 }
