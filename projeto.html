@@ -1,15 +1,6 @@
 <!DOCTYPE html>
-<html lang="pt-BR" class="">
+<html lang="pt-BR">
 <head>
-    <script>
-    (function () {
-      const temaSalvo = localStorage.getItem("tema");
-      if (temaSalvo === "claro") {
-        document.documentElement.classList.add("light");
-      }
-    })();
-  </script>
-  
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Projeto Atual - Daniel</title>
@@ -17,7 +8,7 @@
   <link rel="icon" type="image/png" href="Favicon.png" />
   <script src="script.js" defer></script>
 </head>
-  
+
 <body>
   <header>
     <nav class="menu">
@@ -30,27 +21,26 @@
     <p class="subtitulo">Desenvolvedor iniciante apaixonado por tecnologia e jogos</p>
   </header>
 
-<section id="projeto">
-  <h2>🎮 Projeto Atual: Survival Game</h2>
-  <p>
-    Estou desenvolvendo um jogo em Python usando Pygame, com uma temática de sobrevivência em um mundo tomado por zumbis. O jogador pode explorar o mapa, coletar armas e itens de cura, e enfrentar inimigos enquanto o sistema de câmera acompanha a ação.
-  </p>
-  <p>
-    O projeto está em constante evolução e conta com sistema de colisão, HUD, estados de jogo e muito mais. Planejo concluir uma boa parte até o final de julho de 2025.
-  </p>
+  <section id="projeto">
+    <h2>🎮 Projeto Atual: Survival Game</h2>
+    <p>
+      Estou desenvolvendo um jogo em Python usando Pygame, com uma temática de sobrevivência em um mundo tomado por zumbis. O jogador pode explorar o mapa, coletar armas e itens de cura, e enfrentar inimigos enquanto o sistema de câmera acompanha a ação.
+    </p>
+    <p>
+      O projeto está em constante evolução e conta com sistema de colisão, HUD, estados de jogo e muito mais. Planejo concluir uma boa parte até o final de julho de 2025.
+    </p>
 
-  <h3 class="imagem-titulo">📷 Visual do Jogo</h3>
-  <img src="print_jogo.png" alt="Print do jogo Survival Game" class="print-jogo animar-entrada">
-</section>
+    <h3 class="imagem-titulo">📷 Visual do Jogo</h3>
+    <img src="print_jogo.png" alt="Print do jogo Survival Game" class="print-jogo animar-entrada" />
+  </section>
 
   <footer id="contato">
     &copy; 2025 desenvolvido por Daniel.
   </footer>
 
   <div class="buttons">
-    <button class="btn" id="botaoTema">🌗 Trocar Tema</button>
-    <button class="btn" id="voltarTopo">🔝 Voltar ao Topo</button>
+    <button class="btn" id="botaoTema" aria-label="Trocar tema">🌗 Trocar Tema</button>
+    <button class="btn" id="voltarTopo" aria-label="Voltar ao topo">🔝 Voltar ao Topo</button>
   </div>
 </body>
-  
 </html>
