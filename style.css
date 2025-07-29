@@ -278,3 +278,26 @@ body.light footer {
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
 }
 
+.print-jogo {
+  display: block;
+  max-width: 100%;
+  height: auto;
+  margin: 20px auto;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.animar-entrada.ativo {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.imagem-titulo {
+  text-align: center;
+  font-size: 1.3rem;
+  margin-top: 30px;
+  color: var(--texto);
+}
